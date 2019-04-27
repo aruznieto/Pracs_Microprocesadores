@@ -1,21 +1,20 @@
 # Prácticas de Microprocesadores (2018-2019). UPCT
 
-_Acá va un párrafo que describa lo que es el proyecto_
+_A continuación podrás ver todas las prácticas resueltas que se realizaron en la asignatura de Microprocesadores en el curso 2018-2019, también podrás encontrar el manual utilizado y los enunciados de las prácticas._
 
 ## Comenzando 🚀
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
+_Para comenzar te tendrás que descargar MPLAB, cuyo link puedes encontrar en **Pre-requisitos**._
 
-Mira **Deployment** para conocer como desplegar el proyecto.
+Mira **Deployment** para conocer como desplegar cada práctica.
 
 
-### Pre-requisitos 📋
+## Pre-requisitos 📋
 
 _Para poder abrir los archivos necesitarás descargarte MPLAB_
 
-```
-https://upct-my.sharepoint.com/:u:/g/personal/andres_ruz_edu_upct_es/EanSx8QoX_BGtW-D1ypjAkYB0RiCn053U1K_2w_WgzLKDg?e=JZb7hh
-```
+[DESCARGAR](https://drive.google.com/uc?id=1CCaOsCV3ncx_mjpr_NpzwHRj33mEM9y9&export=download&authuser=0)
+
 
 ## Deployment 📦
 
@@ -23,7 +22,7 @@ _Descarga cada práctica y abrelo en MPLAB pulsado sobre "Project" < "Open"_
 
 ## Construido con 🛠️
 
-* [MPLAB](https://upct-my.sharepoint.com/:u:/g/personal/andres_ruz_edu_upct_es/EanSx8QoX_BGtW-D1ypjAkYB0RiCn053U1K_2w_WgzLKDg?e=JZb7hh) - Programa usado para el desarrollo
+* [MPLAB](https://drive.google.com/uc?id=1CCaOsCV3ncx_mjpr_NpzwHRj33mEM9y9&export=download&authuser=0) - Programa usado para el desarrollo
 
 ## Autores ✒️
 
