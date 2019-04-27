@@ -11,10 +11,10 @@ Mira **Deployment** para conocer como desplegar el proyecto.
 
 ### Pre-requisitos 📋
 
-_Que cosas necesitas para instalar el software y como instalarlas_
+_Para poder abrir los archivos necesitarás descargarte MPLAB_
 
 ```
-Da un ejemplo
+https://upct-my.sharepoint.com/:u:/g/personal/andres_ruz_edu_upct_es/EanSx8QoX_BGtW-D1ypjAkYB0RiCn053U1K_2w_WgzLKDg?e=JZb7hh
 ```
 
 ### Instalación 🔧
