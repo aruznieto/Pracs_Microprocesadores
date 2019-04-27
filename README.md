@@ -1,4 +1,4 @@
-# Título del Proyecto
+# Prácticas de Microprocesadores (2018-2019). UPCT
 
 _Acá va un párrafo que describa lo que es el proyecto_
 
