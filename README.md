@@ -17,57 +17,17 @@ _Para poder abrir los archivos necesitarás descargarte MPLAB_
 https://upct-my.sharepoint.com/:u:/g/personal/andres_ruz_edu_upct_es/EanSx8QoX_BGtW-D1ypjAkYB0RiCn053U1K_2w_WgzLKDg?e=JZb7hh
 ```
 
-### Instalación 🔧
-
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
-
-_Dí cómo será ese paso_
-
-```
-Da un ejemplo
-```
-
-_Y repite_
-
-```
-hasta finalizar
-```
-
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
-
-## Ejecutando las pruebas ⚙️
-
-_Explica como ejecutar las pruebas automatizadas para este sistema_
-
-### Analice las pruebas end-to-end 🔩
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
-
-### Y las pruebas de estilo de codificación ⌨️
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
-
 ## Deployment 📦
 
-_Agrega notas adicionales sobre como hacer deploy_
+_Descarga cada proyecto y abrelo en MPLAB pulsado sobre "Project" < "Open"_
 
 ## Construido con 🛠️
-
-_Menciona las herramientas que utilizaste para crear tu proyecto_
 
 * [MPLAB](https://upct-my.sharepoint.com/:u:/g/personal/andres_ruz_edu_upct_es/EanSx8QoX_BGtW-D1ypjAkYB0RiCn053U1K_2w_WgzLKDg?e=JZb7hh) - Programa usado para el desarrollo
 
 ## Autores ✒️
 
-* **Andrés Ruz Nieto** - *Desarrollo* - [villanuevand](https://github.com/aruznieto)
+* **Andrés Ruz Nieto** - *Desarrollo* - [aruznieto](https://github.com/aruznieto)
 * **Diego Ismael Antolinos García** - *Desarrollo* - [fulanitodetal](#fulanito-de-tal)
 
 ## Licencia 📄
