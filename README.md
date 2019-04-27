@@ -19,7 +19,7 @@ https://upct-my.sharepoint.com/:u:/g/personal/andres_ruz_edu_upct_es/EanSx8QoX_B
 
 ## Deployment 📦
 
-_Descarga cada proyecto y abrelo en MPLAB pulsado sobre "Project" < "Open"_
+_Descarga cada práctica y abrelo en MPLAB pulsado sobre "Project" < "Open"_
 
 ## Construido con 🛠️
 
