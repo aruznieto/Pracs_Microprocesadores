@@ -67,12 +67,8 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 
 ## Autores ✒️
 
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
-
-* **Andrés Villanueva** - *Trabajo Inicial* - [villanuevand](https://github.com/villanuevand)
-* **Fulanito Detal** - *Documentación* - [fulanitodetal](#fulanito-de-tal)
-
-También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
+* **Andrés Ruz Nieto** - *Desarrollo* - [villanuevand](https://github.com/aruznieto)
+* **Diego Ismael Antolinos García** - *Desarrollo* - [fulanitodetal](#fulanito-de-tal)
 
 ## Licencia 📄
 
