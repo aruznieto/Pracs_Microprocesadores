@@ -1,4 +1,4 @@
-# Título del Proyecto
+# Prácticas de Microprocesadores (2018-2019). UPCT
 
 _Acá va un párrafo que describa lo que es el proyecto_
 
@@ -90,7 +90,7 @@ También puedes mirar la lista de todos los [contribuyentes](https://github.com/
 
 ## Licencia 📄
 
-Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
+Estos archivos no tienen licencia.
 
 ## Expresiones de Gratitud 🎁
 
@@ -102,4 +102,4 @@ Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md
 
 
 ---
-⌨️ con ❤️ por [Villanuevand](https://github.com/Villanuevand) 😊
+⌨️ con ❤️ por [aruznieto](https://github.com/aruznieto) 😊
