@@ -14,7 +14,7 @@ Mira **Deployment** para conocer como desplegar el proyecto.
 _Para poder abrir los archivos necesitarás descargarte MPLAB_
 
 ```
-[Descargar](https://upct-my.sharepoint.com/:u:/g/personal/andres_ruz_edu_upct_es/EanSx8QoX_BGtW-D1ypjAkYB0RiCn053U1K_2w_WgzLKDg?e=JZb7hh)
+https://upct-my.sharepoint.com/:u:/g/personal/andres_ruz_edu_upct_es/EanSx8QoX_BGtW-D1ypjAkYB0RiCn053U1K_2w_WgzLKDg?e=JZb7hh
 ```
 
 ### Instalación 🔧
@@ -63,21 +63,7 @@ _Agrega notas adicionales sobre como hacer deploy_
 
 _Menciona las herramientas que utilizaste para crear tu proyecto_
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
-* [Maven](https://maven.apache.org/) - Manejador de dependencias
-* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
-
-## Contribuyendo 🖇️
-
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
-
-## Wiki 📖
-
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
-
-## Versionado 📌
-
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
+* [MPLAB](https://upct-my.sharepoint.com/:u:/g/personal/andres_ruz_edu_upct_es/EanSx8QoX_BGtW-D1ypjAkYB0RiCn053U1K_2w_WgzLKDg?e=JZb7hh) - Programa usado para el desarrollo
 
 ## Autores ✒️
 
