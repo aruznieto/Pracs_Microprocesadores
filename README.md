@@ -1,12 +1,12 @@
 # Prácticas de Microprocesadores (2018-2019). UPCT
 
-_Acá va un párrafo que describa lo que es el proyecto_
+_A continuación podrás ver todas las prácticas resueltas que se realizaron en la asignatura de Microprocesadores en el curso 2018-2019, también podrás encontrar el manual utilizado y los enunciados de las prácticas._
 
 ## Comenzando 🚀
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
+_Para comenzar te tendrás que descargar MPLAB, cuyo link puedes encontrar en **Pre-requisitos**._
 
-Mira **Deployment** para conocer como desplegar el proyecto.
+Mira **Deployment** para conocer como desplegar cada práctica.
 
 
 ### Pre-requisitos 📋
