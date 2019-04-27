@@ -9,10 +9,9 @@ _Para comenzar te tendrás que descargar MPLAB, cuyo link puedes encontrar en **
 Mira **Deployment** para conocer como desplegar cada práctica.
 
 
-### Pre-requisitos 📋
+## Pre-requisitos 📋
 
 _Para poder abrir los archivos necesitarás descargarte MPLAB_
-
 
 <https://upct-my.sharepoint.com/:u:/g/personal/andres_ruz_edu_upct_es/EanSx8QoX_BGtW-D1ypjAkYB0RiCn053U1K_2w_WgzLKDg?e=JZb7hh>
 
