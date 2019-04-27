@@ -13,7 +13,7 @@ Mira **Deployment** para conocer como desplegar cada práctica.
 
 _Para poder abrir los archivos necesitarás descargarte MPLAB_
 
-<https://upct-my.sharepoint.com/:u:/g/personal/andres_ruz_edu_upct_es/EanSx8QoX_BGtW-D1ypjAkYB0RiCn053U1K_2w_WgzLKDg?e=JZb7hh>
+[DESCARGAR](https://drive.google.com/uc?id=1CCaOsCV3ncx_mjpr_NpzwHRj33mEM9y9&export=download&authuser=0)
 
 
 ## Deployment 📦
@@ -22,7 +22,7 @@ _Descarga cada práctica y abrelo en MPLAB pulsado sobre "Project" < "Open"_
 
 ## Construido con 🛠️
 
-* [MPLAB](https://upct-my.sharepoint.com/:u:/g/personal/andres_ruz_edu_upct_es/EanSx8QoX_BGtW-D1ypjAkYB0RiCn053U1K_2w_WgzLKDg?e=JZb7hh) - Programa usado para el desarrollo
+* [MPLAB](https://drive.google.com/uc?id=1CCaOsCV3ncx_mjpr_NpzwHRj33mEM9y9&export=download&authuser=0) - Programa usado para el desarrollo
 
 ## Autores ✒️
 
