@@ -18,7 +18,7 @@ _Para poder abrir los archivos necesitarás descargarte MPLAB_
 
 ## Deployment 📦
 
-_Descarga cada práctica y abrelo en MPLAB pulsado sobre "Project" < "Open"_
+_Descarga cada práctica y abrela en MPLAB pulsado sobre "Project" > "Open"_
 
 ## Construido con 🛠️
 
