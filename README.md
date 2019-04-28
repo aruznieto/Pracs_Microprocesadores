@@ -27,7 +27,7 @@ _Descarga cada práctica y abrela en MPLAB pulsado sobre "Project" > "Open"_
 ## Autores ✒️
 
 * **Andrés Ruz Nieto** - *Desarrollo* - [aruznieto](https://github.com/aruznieto)
-* **Diego Ismael Antolinos García** - *Desarrollo* - [fulanitodetal](#fulanito-de-tal)
+* **Diego Ismael Antolinos García** - *Desarrollo* - [DiegoAntolinos](https://github.com/Diegoantolinos)
 
 ## Licencia 📄
 
@@ -43,4 +43,4 @@ Estos archivos no tienen licencia.
 
 
 ---
-⌨️ con ❤️ por [aruznieto](https://github.com/aruznieto) 😊
+⌨️ con ❤️ por [aruznieto](https://github.com/aruznieto) y [DiegoAntolinos](https://github.com/Diegoantolinos)😊
