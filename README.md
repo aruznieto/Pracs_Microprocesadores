@@ -2,27 +2,20 @@
 
 _A continuación podrás ver todas las prácticas resueltas que se realizaron en la asignatura de Microprocesadores en el curso 2018-2019, también podrás encontrar el manual utilizado y los enunciados de las prácticas._
 
-## Comenzando 🚀
+## Indice 🚀
 
-_Para comenzar te tendrás que descargar MPLAB, cuyo link puedes encontrar en **Pre-requisitos**._
+_A continuación encontrarás un índice con las prácticas que hemos hecho._
 
-Mira **Deployment** para conocer como desplegar cada práctica.
-
-
-## Pre-requisitos 📋
-
-_Para poder abrir los archivos necesitarás descargarte MPLAB_
-
-[DESCARGAR](https://drive.google.com/uc?id=1CCaOsCV3ncx_mjpr_NpzwHRj33mEM9y9&export=download&authuser=0)
-
-
-## Deployment 📦
-
-_Descarga cada práctica y abrela en MPLAB pulsado sobre "Project" > "Open"_
-
-## Construido con 🛠️
-
-* [MPLAB](https://drive.google.com/uc?id=1CCaOsCV3ncx_mjpr_NpzwHRj33mEM9y9&export=download&authuser=0) - Programa usado para el desarrollo
+* [PIC](https://github.com/aruznieto/Pracs_Microprocesadores/tree/master/PIC)
+    * Práctica 1: Bucle de retardo
+    * Práctica 2: Puertos E/S
+    * Práctica 3: Interrupciones
+    * Práctica 4: Convertidos A/D
+    * Práctica 5: Usart
+    * Proyecto: PICaRC
+    * Documentos
+    
+* [VHDL](https://github.com/aruznieto/Pracs_Microprocesadores/tree/master/VHDL)
 
 ## Autores ✒️
 
