@@ -23,17 +23,17 @@ inicio
 		MOVLW 	.12
 		MOVWF 	SPBRG ; Asignamos el ratio de baudios para el modo asincrono (VER EN LA TABLA DEL MANUAL REDUCIDO QUE SE PUDE ENCONTRAR EN LA PAGINA 98)
 
-		BSF 	TXSTA, BRGH ; Activamos el BIT para que el modo asincrono sea a baja velocidad (tambiÈn se ve en la tabla)
-		BSF		TXSTA, TXEN ; Activamos el BIT que habilita la transmisiÛn
-		BSF		PIE1, RCIE ; Activamos interrupcion de recepciÛn
+		BSF 	TXSTA, BRGH ; Activamos el BIT para que el modo asincrono sea a baja velocidad (tambi√©n se ve en la tabla)
+		BSF	TXSTA, TXEN ; Activamos el BIT que habilita la transmisi√≥n
+		BSF	PIE1, RCIE ; Activamos interrupcion de recepci√≥n
 
+		BSF	RCSTA, SPEN ; Activamos el BIT para habilitar el puerto serie
+		BSF	RCSTA, CREN ; Activamos el BIT para que est√© recibiendo continuamente
+		
 		BCF 	STATUS,RP0 ; Cambiamos al banco 0
 
-		BSF		RCSTA, SPEN ; Activamos el BIT para habilitar el puerto serie
-		BSF		RCSTA, CREN ; Activamos el BIT para que estÈ recibiendo continuamente
-
 		BSF 	INTCON, GIE ; Habilitamos el BIT de interrupciones - PAGINA 20 del manual resumido
-		BSF		INTCON, PEIE ; Habilitamos el BIT de interrupciones de perifericos - PAGINA 20 del manual resumido
+		BSF	INTCON, PEIE ; Habilitamos el BIT de interrupciones de perifericos - PAGINA 20 del manual resumido
 
 
 main
@@ -41,7 +41,7 @@ main
 ;-------------------------------------------------------
 
 ISR
-		BTFSS 	PIR1,RCIF ; Si RCIF est· activo saltaremos RETFIE 
+		BTFSS 	PIR1,RCIF ; Si RCIF est√° activo saltaremos RETFIE 
 RETFIE
 
 		MOVF 	RCREG,0
