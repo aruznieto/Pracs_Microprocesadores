@@ -11,9 +11,9 @@ Mira **Deployment** para conocer como desplegar cada práctica.
 
 ## Pre-requisitos 📋
 
-_Para poder abrir los archivos necesitarás descargarte MPLAB_
+_Para poder abrir los archivos necesitarás descargarte ISE DS 14.7. Con la versión DEMO puedes realizar todas las prácticas
 
-[DESCARGAR](https://drive.google.com/uc?id=1CCaOsCV3ncx_mjpr_NpzwHRj33mEM9y9&export=download&authuser=0)
+[DESCARGAR](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/design-tools.html)
 
 
 ## Deployment 📦
@@ -22,7 +22,7 @@ _Descarga cada práctica y abrela en MPLAB pulsado sobre "Project" > "Open"_
 
 ## Construido con 🛠️
 
-* [MPLAB](https://drive.google.com/uc?id=1CCaOsCV3ncx_mjpr_NpzwHRj33mEM9y9&export=download&authuser=0) - Programa usado para el desarrollo
+* [ISE DS 14.7](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/design-tools.html) - Programa usado para el desarrollo
 
 ## Autores ✒️
 
