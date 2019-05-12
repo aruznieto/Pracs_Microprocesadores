@@ -16,6 +16,7 @@ _A continuación encontrarás un índice con las prácticas que hemos hecho._
     * Documentos
     
 * [VHDL](https://github.com/aruznieto/Pracs_Microprocesadores/tree/master/VHDL)
+    * Práctica 1: Diseño de una ALU
 
 ## Autores ✒️
 
