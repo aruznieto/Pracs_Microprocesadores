@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2019-05-12T18:30:12</DateModified>
+  <DateModified>2019-05-13T17:46:13</DateModified>
   <ModuleName>ALU</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>D:/GIT/Pracs_Microprocesadores/VHDL/Practica1/iseconfig/ALU.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>D:/GIT/Pracs_Microprocesadores/VHDL/Practica1</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>D:/GIT/Pracs_Microprocesadores/VHDL/Practica1\</ImplementationReportsDirectory>
   <DateInitialized>2019-05-12T18:30:12</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

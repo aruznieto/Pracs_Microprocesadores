@@ -33,16 +33,17 @@ entity ALU is
     Port ( clk : in  STD_LOGIC;
            reset : in  STD_LOGIC;
            A_in : in  STD_LOGIC_VECTOR (7 DOWNTO 0);
-           DatoA : out  STD_LOGIC_VECTOR (7 DOWNTO 0);
+           DatoA : inout  STD_LOGIC_VECTOR (7 DOWNTO 0);
            B_in : in  STD_LOGIC_VECTOR (7 DOWNTO 0);
-           DatoB : out  STD_LOGIC_VECTOR (7 DOWNTO 0);
+           DatoB : inout  STD_LOGIC_VECTOR (7 DOWNTO 0);
            OP_in : in  STD_LOGIC_VECTOR (4 DOWNTO 0);
-           OP : out  STD_LOGIC_VECTOR (4 DOWNTO 0);
+           OP : inout  STD_LOGIC_VECTOR (4 DOWNTO 0);
            A_out : out  STD_LOGIC_VECTOR (7 DOWNTO 0);
            B_out : out  STD_LOGIC_VECTOR (7 DOWNTO 0);
-           TipoOP_out : out  STD_LOGIC_VECTOR (1 DOWNTO 0);
+           LEDs : out  STD_LOGIC_VECTOR (7 DOWNTO 0);
+           TipoOP_out : inout  STD_LOGIC_VECTOR (1 DOWNTO 0);
            TipoOP : in  STD_LOGIC_VECTOR (1 DOWNTO 0);
-           SALIDA_ALU : out  STD_LOGIC_VECTOR (7 DOWNTO 0));
+           SALIDA_ALU : inout  STD_LOGIC_VECTOR (7 DOWNTO 0));
 end ALU;
 
 architecture Behavioral of ALU is
@@ -80,6 +81,54 @@ begin
 			END IF;
 	END PROCESS;
 	
+-- REGISTRO LEDS
+	PROCESS(clk)
+		BEGIN
+			IF(clk'EVENT AND clk='1') THEN 
+				IF(TipoOP="10") THEN
+					LEDs <= SALIDA_ALU;
+				END IF;
+			END IF;
+	END PROCESS;
 
+-- ALU (MULTIPLEXOR)
+	PROCESS(OP,DatoA,DatoB)
+		BEGIN
+			IF(OP="00001") THEN
+				SALIDA_ALU <= DatoA OR DatoB;
+			ELSIF(OP="00010") THEN
+				SALIDA_ALU <= DatoA AND DatoB;
+			ELSIF(OP="00011") THEN
+				SALIDA_ALU <= DatoA XOR DatoB;
+			ELSIF(OP="00100") THEN
+				SALIDA_ALU <= DatoA NAND DatoB;
+			ELSIF(OP="00101") THEN
+				SALIDA_ALU <= NOT DatoA;
+			ELSIF(OP="00110") THEN
+				SALIDA_ALU <= DatoA ROR 1;
+			ELSIF(OP="00111") THEN
+				SALIDA_ALU <= DatoA ROL 1;
+			END IF;
+	END PROCESS;
+
+-- TipoOP
+	PROCESS(OP)
+		BEGIN
+			IF(OP="00001" or OP="00010" or OP="00011" or OP="00100" or OP="00101" or OP="00110" or OP="00111") THEN
+				TipoOP <= "10";
+			ELSE
+				TipoOP <= "00";
+			END IF;
+	END PROCESS;
+		
 end Behavioral;
 
+-- Codigos de operaciones lógicas que puede realizar la ALU
+
+-- OR = 00001
+-- AND = 00010
+-- XOR = 00011
+-- NAND = 00100
+-- NOT A = 00101
+-- RR A = 00110
+-- RL A = 00111

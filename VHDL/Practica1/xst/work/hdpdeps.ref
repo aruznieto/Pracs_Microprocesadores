@@ -1,6 +1,6 @@
 V3 3
-FL D:/GIT/Pracs_Microprocesadores/VHDL/Practica1/ALU.vhd 2019/05/12.19:11:33 P.20131013
-EN work/ALU 1557681100 FL D:/GIT/Pracs_Microprocesadores/VHDL/Practica1/ALU.vhd \
+FL D:/GIT/Pracs_Microprocesadores/VHDL/Practica1/ALU.vhd 2019/05/13.17:50:55 P.20131013
+EN work/ALU 1557762659 FL D:/GIT/Pracs_Microprocesadores/VHDL/Practica1/ALU.vhd \
       PB ieee/std_logic_1164 1381692176
-AR work/ALU/Behavioral 1557681101 \
-      FL D:/GIT/Pracs_Microprocesadores/VHDL/Practica1/ALU.vhd EN work/ALU 1557681100
+AR work/ALU/Behavioral 1557762660 \
+      FL D:/GIT/Pracs_Microprocesadores/VHDL/Practica1/ALU.vhd EN work/ALU 1557762659

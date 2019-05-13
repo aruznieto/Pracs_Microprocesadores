@@ -5,16 +5,16 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="Xst" num="1306" delta="old" >Output &lt;<arg fmt="%s" index="1">B_out</arg>&gt; is never assigned.
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">D:/GIT/Pracs_Microprocesadores/VHDL/Practica1/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">108</arg>. <arg fmt="%s" index="3">ROR</arg> can not have such operands in this context.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">reset</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="error" file="HDLParsers" num="808" delta="old" >&quot;<arg fmt="%s" index="1">D:/GIT/Pracs_Microprocesadores/VHDL/Practica1/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">110</arg>. <arg fmt="%s" index="3">ROL</arg> can not have such operands in this context.
 </msg>
 
-<msg type="warning" file="Xst" num="1306" delta="old" >Output &lt;<arg fmt="%s" index="1">SALIDA_ALU</arg>&gt; is never assigned.
+<msg type="error" file="HDLParsers" num="1402" delta="old" >&quot;<arg fmt="%s" index="1">D:/GIT/Pracs_Microprocesadores/VHDL/Practica1/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">118</arg>. Object <arg fmt="%s" index="3">TipoOP</arg> of mode <arg fmt="%s" index="4">IN</arg> can not be updated.
 </msg>
 
-<msg type="warning" file="Xst" num="1306" delta="old" >Output &lt;<arg fmt="%s" index="1">A_out</arg>&gt; is never assigned.
+<msg type="error" file="HDLParsers" num="1402" delta="old" >&quot;<arg fmt="%s" index="1">D:/GIT/Pracs_Microprocesadores/VHDL/Practica1/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">120</arg>. Object <arg fmt="%s" index="3">TipoOP</arg> of mode <arg fmt="%s" index="4">IN</arg> can not be updated.
 </msg>
 
 </messages>
