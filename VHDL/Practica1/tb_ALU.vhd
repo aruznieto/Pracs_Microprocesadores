@@ -68,7 +68,7 @@ ARCHITECTURE behavior OF tb_ALU IS
    signal TipoOP_out : std_logic_vector(1 downto 0);
 
    -- Clock period definitions
-   constant clk_period : time := 10 ns;
+   constant clk_period : time := 20 ns;
  
 BEGIN
  

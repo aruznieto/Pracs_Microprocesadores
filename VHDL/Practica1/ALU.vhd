@@ -83,9 +83,7 @@ begin
 -- REGISTRO TIPO OP
 	PROCESS(clk,reset)
 		BEGIN
-			IF (reset='1') THEN
-				TipoOP_out <= "00";
-			ELSIF(clk'EVENT AND clk='1') THEN 
+			IF(clk'EVENT AND clk='1') THEN 
 				TipoOP_out <= TipoOP;
 			END IF;
 	END PROCESS;
@@ -93,20 +91,20 @@ begin
 -- REGISTRO LEDS
 	PROCESS(clk,reset)
 		BEGIN
-			IF (reset='1') THEN
-				LEDs <= "00000000";
-			ELSIF(clk'EVENT AND clk='1') THEN 
+			IF(clk'EVENT AND clk='1') THEN 
 				IF(TipoOP="10") THEN
 					LEDs <= SALIDA_ALU;
 				END IF;
 			END IF;
 	END PROCESS;
 
+
+			A_out <= DatoA;
+			B_out <= DatoB;
+
 -- ALU (MULTIPLEXOR)
 	PROCESS(OP,DatoA,DatoB)
 		BEGIN
-			A_out <= DatoA;
-			B_out <= DatoB;
 			CASE OP IS
 				WHEN "00001" => SALIDA_ALU <= DatoA OR DatoB;
 				WHEN "00010" => SALIDA_ALU <= DatoA AND DatoB;

@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Reading design: ALU.prj
 
@@ -134,14 +134,14 @@ Synthesizing Unit <ALU>.
     Found 8-bit register for signal <DatoA>.
     Found 8-bit register for signal <DatoB>.
     Found 5-bit register for signal <OP>.
-    Found 1-bit xor2 for signal <SALIDA_ALU_0$xor0000> created at line 113.
-    Found 1-bit xor2 for signal <SALIDA_ALU_1$xor0000> created at line 113.
-    Found 1-bit xor2 for signal <SALIDA_ALU_2$xor0000> created at line 113.
-    Found 1-bit xor2 for signal <SALIDA_ALU_3$xor0000> created at line 113.
-    Found 1-bit xor2 for signal <SALIDA_ALU_4$xor0000> created at line 113.
-    Found 1-bit xor2 for signal <SALIDA_ALU_5$xor0000> created at line 113.
-    Found 1-bit xor2 for signal <SALIDA_ALU_6$xor0000> created at line 113.
-    Found 1-bit xor2 for signal <SALIDA_ALU_7$xor0000> created at line 113.
+    Found 1-bit xor2 for signal <SALIDA_ALU_0$xor0000> created at line 111.
+    Found 1-bit xor2 for signal <SALIDA_ALU_1$xor0000> created at line 111.
+    Found 1-bit xor2 for signal <SALIDA_ALU_2$xor0000> created at line 111.
+    Found 1-bit xor2 for signal <SALIDA_ALU_3$xor0000> created at line 111.
+    Found 1-bit xor2 for signal <SALIDA_ALU_4$xor0000> created at line 111.
+    Found 1-bit xor2 for signal <SALIDA_ALU_5$xor0000> created at line 111.
+    Found 1-bit xor2 for signal <SALIDA_ALU_6$xor0000> created at line 111.
+    Found 1-bit xor2 for signal <SALIDA_ALU_7$xor0000> created at line 111.
     Summary:
 	inferred  31 D-type flip-flop(s).
 Unit <ALU> synthesized.
@@ -247,8 +247,9 @@ Cell Usage :
 #      LUT4_L                      : 8
 #      MUXF5                       : 8
 # FlipFlops/Latches                : 46
-#      FDC                         : 38
-#      FDCE                        : 8
+#      FD                          : 1
+#      FDC                         : 37
+#      FDE                         : 8
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 48
@@ -298,7 +299,7 @@ Asynchronous Control Signals Information:
 -----------------------------------+------------------------+-------+
 Control Signal                     | Buffer(FF name)        | Load  |
 -----------------------------------+------------------------+-------+
-reset                              | IBUF                   | 46    |
+reset                              | IBUF                   | 37    |
 -----------------------------------+------------------------+-------+
 
 Timing Summary:
@@ -333,7 +334,7 @@ Delay:               5.364ns (Levels of Logic = 3)
      LUT4:I0->O            1   0.551   0.000  SALIDA_ALU_7_mux000041_F (N33)
      MUXF5:I0->O           1   0.360   0.827  SALIDA_ALU_7_mux000041 (SALIDA_ALU_7_mux000041)
      LUT4:I3->O            1   0.551   0.000  SALIDA_ALU_7_mux0000130 (SALIDA_ALU<7>)
-     FDCE:D                    0.203          LEDs_7
+     FDE:D                     0.203          LEDs_7
     ----------------------------------------
     Total                      5.364ns (2.385ns logic, 2.979ns route)
                                        (44.5% logic, 55.5% route)
@@ -380,11 +381,11 @@ Offset:              7.165ns (Levels of Logic = 1)
 
 
 Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 4.88 secs
+Total CPU time to Xst completion: 5.09 secs
  
 --> 
 
-Total memory usage is 4550472 kilobytes
+Total memory usage is 4550496 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    2 (   0 filtered)
