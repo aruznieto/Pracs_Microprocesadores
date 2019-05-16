@@ -98,54 +98,54 @@ BEGIN
    -- Stimulus process
    stim_proc: process
    begin		
-      -- hold reset state for 100 ns.
-      wait for 100 ns;	
-
-      wait for clk_period*10;
-
-      -- insert stimulus here 
-		
 		-- A AND B
 		A_in <= "01110001";
 		B_in <= "11010100";
 		OP_in <= "00010";
-		wait for 200 ns;	
+		
+      -- hold reset state for 100 ns.
+		reset <= '1';
+      wait for 85 ns;	
+		reset <= '0';
+      -- insert stimulus here 
+		
+		wait for 115 ns;	
 		
 		-- A OR B
 		A_in <= "01110001";
 		B_in <= "11010100";
 		OP_in <= "00001";
-		wait for 300 ns;
+		wait for 100 ns;
 		
 		-- A XOR B		
 		A_in <= "01110001";
 		B_in <= "11010100";
 		OP_in <= "00011";
-		wait for 400 ns;
+		wait for 100 ns;
 		
 		-- A NAND B
 		A_in <= "01110001";
 		B_in <= "11010100";
 		OP_in <= "00100";
-		wait for 500 ns;
+		wait for 100 ns;
 		
 		-- NOT A
 		A_in <= "01110001";
 		B_in <= "11010100";
 		OP_in <= "00101";
-		wait for 600 ns;
+		wait for 100 ns;
 		
 		-- RR A
 		A_in <= "01110001";
 		B_in <= "11010100";
 		OP_in <= "00110";
-		wait for 700 ns;
+		wait for 100 ns;
 						
 		-- RL A
 		A_in <= "01110001";
 		B_in <= "11010100";
 		OP_in <= "00111";
-		wait for 700 ns;
+		wait for 100 ns;
 		
       wait;
    end process;

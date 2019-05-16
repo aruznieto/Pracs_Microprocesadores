@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.12 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.12 secs
  
 --> Reading design: ALU.prj
 
@@ -105,8 +105,7 @@ Slice Utilization Ratio Delta      : 5
 *                          HDL Compilation                              *
 =========================================================================
 Compiling vhdl file "D:/GIT/Pracs_Microprocesadores/VHDL/Practica1/ALU.vhd" in Library work.
-Entity <alu> compiled.
-Entity <alu> (Architecture <behavioral>) compiled.
+Architecture behavioral of Entity alu is up to date.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -129,9 +128,6 @@ Performing bidirectional port resolution...
 
 Synthesizing Unit <ALU>.
     Related source file is "D:/GIT/Pracs_Microprocesadores/VHDL/Practica1/ALU.vhd".
-WARNING:Xst:1306 - Output <B_out> is never assigned.
-WARNING:Xst:647 - Input <reset> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:1306 - Output <A_out> is never assigned.
 WARNING:Xst:737 - Found 1-bit latch for signal <SALIDA_ALU_1>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
 WARNING:Xst:737 - Found 1-bit latch for signal <SALIDA_ALU_2>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -153,14 +149,14 @@ INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and 
     Found 8-bit register for signal <DatoA>.
     Found 8-bit register for signal <DatoB>.
     Found 5-bit register for signal <OP>.
-    Found 1-bit xor2 for signal <SALIDA_ALU_0$xor0000> created at line 103.
-    Found 1-bit xor2 for signal <SALIDA_ALU_1$xor0000> created at line 103.
-    Found 1-bit xor2 for signal <SALIDA_ALU_2$xor0000> created at line 103.
-    Found 1-bit xor2 for signal <SALIDA_ALU_3$xor0000> created at line 103.
-    Found 1-bit xor2 for signal <SALIDA_ALU_4$xor0000> created at line 103.
-    Found 1-bit xor2 for signal <SALIDA_ALU_5$xor0000> created at line 103.
-    Found 1-bit xor2 for signal <SALIDA_ALU_6$xor0000> created at line 103.
-    Found 1-bit xor2 for signal <SALIDA_ALU_7$xor0000> created at line 103.
+    Found 1-bit xor2 for signal <SALIDA_ALU_0$xor0000> created at line 115.
+    Found 1-bit xor2 for signal <SALIDA_ALU_1$xor0000> created at line 115.
+    Found 1-bit xor2 for signal <SALIDA_ALU_2$xor0000> created at line 115.
+    Found 1-bit xor2 for signal <SALIDA_ALU_3$xor0000> created at line 115.
+    Found 1-bit xor2 for signal <SALIDA_ALU_4$xor0000> created at line 115.
+    Found 1-bit xor2 for signal <SALIDA_ALU_5$xor0000> created at line 115.
+    Found 1-bit xor2 for signal <SALIDA_ALU_6$xor0000> created at line 115.
+    Found 1-bit xor2 for signal <SALIDA_ALU_7$xor0000> created at line 115.
     Summary:
 	inferred  31 D-type flip-flop(s).
 Unit <ALU> synthesized.
@@ -210,6 +206,22 @@ Optimizing unit <ALU> ...
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block ALU, actual ratio is 3.
+FlipFlop DatoB_7 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop DatoB_6 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop DatoB_5 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop DatoB_4 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop DatoB_3 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop DatoB_2 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop DatoB_1 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop DatoB_0 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop DatoA_7 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop DatoA_6 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop DatoA_5 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop DatoA_4 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop DatoA_3 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop DatoA_2 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop DatoA_1 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop DatoA_0 has been replicated 1 time(s) to handle iob=true attribute.
 
 Final Macro Processing ...
 
@@ -217,8 +229,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 30
- Flip-Flops                                            : 30
+# Registers                                            : 46
+ Flip-Flops                                            : 46
 
 =========================================================================
 
@@ -254,15 +266,15 @@ Cell Usage :
 #      LUT3                        : 8
 #      LUT4                        : 30
 #      MUXF5                       : 8
-# FlipFlops/Latches                : 38
-#      FD                          : 22
-#      FDE                         : 8
+# FlipFlops/Latches                : 54
+#      FDC                         : 38
+#      FDCE                        : 8
 #      LD                          : 8
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 31
-#      IBUF                        : 21
-#      OBUF                        : 10
+# IO Buffers                       : 48
+#      IBUF                        : 22
+#      OBUF                        : 26
 =========================================================================
 
 Device utilization summary:
@@ -274,8 +286,8 @@ Selected Device : 3s50tq144-4
  Number of Slice Flip Flops:             22  out of   1536     1%  
  Number of 4 input LUTs:                 42  out of   1536     2%  
  Number of IOs:                          49
- Number of bonded IOBs:                  32  out of     97    32%  
-    IOB Flip Flops:                      16
+ Number of bonded IOBs:                  49  out of     97    50%  
+    IOB Flip Flops:                      32
  Number of GCLKs:                         1  out of      8    12%  
 
 ---------------------------
@@ -299,7 +311,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 30    |
+clk                                | BUFGP                  | 46    |
 TipoOP<1>(TipoOP<1>1:O)            | NONE(*)(SALIDA_ALU_0)  | 8     |
 -----------------------------------+------------------------+-------+
 (*) This 1 clock signal(s) are generated by combinatorial logic,
@@ -309,14 +321,18 @@ INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered
 
 Asynchronous Control Signals Information:
 ----------------------------------------
-No asynchronous control signals found in this design
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+reset                              | IBUF                   | 46    |
+-----------------------------------+------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -4
 
    Minimum period: 5.378ns (Maximum Frequency: 185.943MHz)
-   Minimum input arrival time before clock: 1.825ns
+   Minimum input arrival time before clock: 1.901ns
    Maximum output required time after clock: 7.165ns
    Maximum combinational path delay: No path found
 
@@ -339,48 +355,48 @@ Delay:               5.378ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              11   0.720   1.483  OP_4 (OP_4)
+     FDC:C->Q             11   0.720   1.483  OP_4 (OP_4)
      LUT2_D:I0->LO         1   0.551   0.126  TipoOP<1>11 (N44)
      LUT4:I3->O           17   0.551   1.345  TipoOP<1>1 (TipoOP<1>)
-     FDE:CE                    0.602          LEDs_0
+     FDCE:CE                   0.602          LEDs_0
     ----------------------------------------
     Total                      5.378ns (2.424ns logic, 2.954ns route)
                                        (45.1% logic, 54.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 21 / 21
+  Total number of paths / destination ports: 37 / 37
 -------------------------------------------------------------------------
-Offset:              1.825ns (Levels of Logic = 1)
-  Source:            OP_in<0> (PAD)
-  Destination:       OP_0 (FF)
+Offset:              1.901ns (Levels of Logic = 1)
+  Source:            A_in<0> (PAD)
+  Destination:       DatoA_0 (FF)
   Destination Clock: clk rising
 
-  Data Path: OP_in<0> to OP_0
+  Data Path: A_in<0> to DatoA_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   0.821   0.801  OP_in_0_IBUF (OP_in_0_IBUF)
-     FD:D                      0.203          OP_0
+     IBUF:I->O             2   0.821   0.877  A_in_0_IBUF (A_in_0_IBUF)
+     FDC:D                     0.203          DatoA_0
     ----------------------------------------
-    Total                      1.825ns (1.024ns logic, 0.801ns route)
-                                       (56.1% logic, 43.9% route)
+    Total                      1.901ns (1.024ns logic, 0.877ns route)
+                                       (53.9% logic, 46.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 9 / 9
+  Total number of paths / destination ports: 25 / 25
 -------------------------------------------------------------------------
 Offset:              7.165ns (Levels of Logic = 1)
-  Source:            LEDs_7 (FF)
-  Destination:       LEDs<7> (PAD)
+  Source:            DatoB_7_1 (FF)
+  Destination:       B_out<7> (PAD)
   Source Clock:      clk rising
 
-  Data Path: LEDs_7 to LEDs<7>
+  Data Path: DatoB_7_1 to B_out<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              1   0.720   0.801  LEDs_7 (LEDs_7)
-     OBUF:I->O                 5.644          LEDs_7_OBUF (LEDs<7>)
+     FDC:C->Q              1   0.720   0.801  DatoB_7_1 (DatoB_7_1)
+     OBUF:I->O                 5.644          B_out_7_OBUF (B_out<7>)
     ----------------------------------------
     Total                      7.165ns (6.364ns logic, 0.801ns route)
                                        (88.8% logic, 11.2% route)
@@ -389,13 +405,13 @@ Offset:              7.165ns (Levels of Logic = 1)
 
 
 Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 5.29 secs
+Total CPU time to Xst completion: 4.94 secs
  
 --> 
 
 Total memory usage is 4550420 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   13 (   0 filtered)
+Number of warnings :   10 (   0 filtered)
 Number of infos    :    9 (   0 filtered)
 

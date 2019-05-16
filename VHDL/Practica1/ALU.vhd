@@ -51,41 +51,51 @@ architecture Behavioral of ALU is
 
 begin
 -- REGISTRO OP_IN
-	PROCESS(clk)
+	PROCESS(clk,reset)
 		BEGIN
-			IF(clk'EVENT AND clk='1') THEN 
+			IF (reset='1') THEN
+				OP <= "00000";
+			ELSIF(clk'EVENT AND clk='1') THEN 
 				OP <= OP_in;
 			END IF;
 	END PROCESS;
 	
 -- REGISTRO A_IN
-	PROCESS(clk)
+	PROCESS(clk,reset)
 		BEGIN
-			IF(clk'EVENT AND clk='1') THEN 
+			IF (reset='1') THEN
+				DatoA <= "00000000";
+			ELSIF(clk'EVENT AND clk='1') THEN 
 				DatoA <= A_in;
 			END IF;
 	END PROCESS;
 	
 -- REGISTRO B_IN
-	PROCESS(clk)
+	PROCESS(clk,reset)
 		BEGIN
-			IF(clk'EVENT AND clk='1') THEN 
+			IF (reset='1') THEN
+				DatoB <= "00000000";
+			ELSIF(clk'EVENT AND clk='1') THEN 
 				DatoB <= B_in;
 			END IF;
 	END PROCESS;
 	
 -- REGISTRO TIPO OP
-	PROCESS(clk)
+	PROCESS(clk,reset)
 		BEGIN
-			IF(clk'EVENT AND clk='1') THEN 
+			IF (reset='1') THEN
+				TipoOP_out <= "00";
+			ELSIF(clk'EVENT AND clk='1') THEN 
 				TipoOP_out <= TipoOP;
 			END IF;
 	END PROCESS;
 	
 -- REGISTRO LEDS
-	PROCESS(clk)
+	PROCESS(clk,reset)
 		BEGIN
-			IF(clk'EVENT AND clk='1') THEN 
+			IF (reset='1') THEN
+				LEDs <= "00000000";
+			ELSIF(clk'EVENT AND clk='1') THEN 
 				IF(TipoOP="10") THEN
 					LEDs <= SALIDA_ALU;
 				END IF;
@@ -95,6 +105,8 @@ begin
 -- ALU (MULTIPLEXOR)
 	PROCESS(OP,DatoA,DatoB)
 		BEGIN
+			A_out <= DatoA;
+			B_out <= DatoB;
 			IF(OP="00001") THEN
 				SALIDA_ALU <= DatoA OR DatoB;
 			ELSIF(OP="00010") THEN
