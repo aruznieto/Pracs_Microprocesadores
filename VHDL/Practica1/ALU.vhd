@@ -22,7 +22,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx primitives in this code.
@@ -33,20 +33,21 @@ entity ALU is
     Port ( clk : in  STD_LOGIC;
            reset : in  STD_LOGIC;
            A_in : in  STD_LOGIC_VECTOR (7 DOWNTO 0);
-           DatoA : inout  STD_LOGIC_VECTOR (7 DOWNTO 0);
            B_in : in  STD_LOGIC_VECTOR (7 DOWNTO 0);
-           DatoB : inout  STD_LOGIC_VECTOR (7 DOWNTO 0);
            OP_in : in  STD_LOGIC_VECTOR (4 DOWNTO 0);
-           OP : inout  STD_LOGIC_VECTOR (4 DOWNTO 0);
            A_out : out  STD_LOGIC_VECTOR (7 DOWNTO 0);
            B_out : out  STD_LOGIC_VECTOR (7 DOWNTO 0);
            LEDs : out  STD_LOGIC_VECTOR (7 DOWNTO 0);
-           TipoOP_out : inout  STD_LOGIC_VECTOR (1 DOWNTO 0);
-           TipoOP : in  STD_LOGIC_VECTOR (1 DOWNTO 0);
-           SALIDA_ALU : inout  STD_LOGIC_VECTOR (7 DOWNTO 0));
+           TipoOP_out : out  STD_LOGIC_VECTOR (1 DOWNTO 0));
+
 end ALU;
 
 architecture Behavioral of ALU is
+			signal OP : STD_LOGIC_VECTOR (4 DOWNTO 0);
+			signal DatoA : STD_LOGIC_VECTOR (7 DOWNTO 0);
+			signal DatoB : STD_LOGIC_VECTOR (7 DOWNTO 0);
+			signal TipoOP : STD_LOGIC_VECTOR (1 DOWNTO 0);
+			signal SALIDA_ALU : STD_LOGIC_VECTOR (7 DOWNTO 0);
 
 begin
 -- REGISTRO OP_IN
@@ -105,9 +106,23 @@ begin
 			ELSIF(OP="00101") THEN
 				SALIDA_ALU <= NOT DatoA;
 			ELSIF(OP="00110") THEN
-				SALIDA_ALU <= DatoA ROR 1;
+				SALIDA_ALU(6)  <= DatoA(7);
+				SALIDA_ALU(5)  <= DatoA(6);
+				SALIDA_ALU(4)  <= DatoA(5);
+				SALIDA_ALU(3)  <= DatoA(4);
+				SALIDA_ALU(2)  <= DatoA(3);
+				SALIDA_ALU(1)  <= DatoA(2);
+				SALIDA_ALU(0)  <= DatoA(1);
+				SALIDA_ALU(7)  <= DatoA(0);
 			ELSIF(OP="00111") THEN
-				SALIDA_ALU <= DatoA ROL 1;
+				SALIDA_ALU(7)  <= DatoA(6);
+				SALIDA_ALU(6)  <= DatoA(5);
+				SALIDA_ALU(5)  <= DatoA(4);
+				SALIDA_ALU(4)  <= DatoA(3);
+				SALIDA_ALU(3)  <= DatoA(2);
+				SALIDA_ALU(2)  <= DatoA(1);
+				SALIDA_ALU(1)  <= DatoA(0);
+				SALIDA_ALU(0)  <= DatoA(7);
 			END IF;
 	END PROCESS;
 
