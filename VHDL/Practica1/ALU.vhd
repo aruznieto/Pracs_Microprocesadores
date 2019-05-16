@@ -107,35 +107,32 @@ begin
 		BEGIN
 			A_out <= DatoA;
 			B_out <= DatoB;
-			IF(OP="00001") THEN
-				SALIDA_ALU <= DatoA OR DatoB;
-			ELSIF(OP="00010") THEN
-				SALIDA_ALU <= DatoA AND DatoB;
-			ELSIF(OP="00011") THEN
-				SALIDA_ALU <= DatoA XOR DatoB;
-			ELSIF(OP="00100") THEN
-				SALIDA_ALU <= DatoA NAND DatoB;
-			ELSIF(OP="00101") THEN
-				SALIDA_ALU <= NOT DatoA;
-			ELSIF(OP="00110") THEN
-				SALIDA_ALU(6)  <= DatoA(7);
-				SALIDA_ALU(5)  <= DatoA(6);
-				SALIDA_ALU(4)  <= DatoA(5);
-				SALIDA_ALU(3)  <= DatoA(4);
-				SALIDA_ALU(2)  <= DatoA(3);
-				SALIDA_ALU(1)  <= DatoA(2);
-				SALIDA_ALU(0)  <= DatoA(1);
-				SALIDA_ALU(7)  <= DatoA(0);
-			ELSIF(OP="00111") THEN
-				SALIDA_ALU(7)  <= DatoA(6);
-				SALIDA_ALU(6)  <= DatoA(5);
-				SALIDA_ALU(5)  <= DatoA(4);
-				SALIDA_ALU(4)  <= DatoA(3);
-				SALIDA_ALU(3)  <= DatoA(2);
-				SALIDA_ALU(2)  <= DatoA(1);
-				SALIDA_ALU(1)  <= DatoA(0);
-				SALIDA_ALU(0)  <= DatoA(7);
-			END IF;
+			CASE OP IS
+				WHEN "00001" => SALIDA_ALU <= DatoA OR DatoB;
+				WHEN "00010" => SALIDA_ALU <= DatoA AND DatoB;
+				WHEN "00011" => SALIDA_ALU <= DatoA XOR DatoB;
+				WHEN "00100" => SALIDA_ALU <= DatoA NAND DatoB;
+				WHEN "00101" => SALIDA_ALU <= NOT DatoA;
+				WHEN "00110" =>
+					SALIDA_ALU(6)  <= DatoA(7);
+					SALIDA_ALU(5)  <= DatoA(6);
+					SALIDA_ALU(4)  <= DatoA(5);
+					SALIDA_ALU(3)  <= DatoA(4);
+					SALIDA_ALU(2)  <= DatoA(3);
+					SALIDA_ALU(1)  <= DatoA(2);
+					SALIDA_ALU(0)  <= DatoA(1);
+					SALIDA_ALU(7)  <= DatoA(0);
+				WHEN "00111" =>
+					SALIDA_ALU(7)  <= DatoA(6);
+					SALIDA_ALU(6)  <= DatoA(5);
+					SALIDA_ALU(5)  <= DatoA(4);
+					SALIDA_ALU(4)  <= DatoA(3);
+					SALIDA_ALU(3)  <= DatoA(2);
+					SALIDA_ALU(2)  <= DatoA(1);
+					SALIDA_ALU(1)  <= DatoA(0);
+					SALIDA_ALU(0)  <= DatoA(7);
+				WHEN others => SALIDA_ALU <= "00000000";
+			END CASE;
 	END PROCESS;
 
 -- TipoOP

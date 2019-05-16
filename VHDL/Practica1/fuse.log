@@ -17,4 +17,4 @@ Waiting for 1 sub-compilation(s) to finish...
 Compiled 6 VHDL Units
 Built simulation executable D:/GIT/Pracs_Microprocesadores/VHDL/Practica1/tb_ALU_isim_beh.exe
 Fuse Memory Usage: 35144 KB
-Fuse CPU Usage: 546 ms
+Fuse CPU Usage: 592 ms

@@ -105,7 +105,8 @@ Slice Utilization Ratio Delta      : 5
 *                          HDL Compilation                              *
 =========================================================================
 Compiling vhdl file "D:/GIT/Pracs_Microprocesadores/VHDL/Practica1/ALU.vhd" in Library work.
-Architecture behavioral of Entity alu is up to date.
+Entity <alu> compiled.
+Entity <alu> (Architecture <behavioral>) compiled.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -128,35 +129,19 @@ Performing bidirectional port resolution...
 
 Synthesizing Unit <ALU>.
     Related source file is "D:/GIT/Pracs_Microprocesadores/VHDL/Practica1/ALU.vhd".
-WARNING:Xst:737 - Found 1-bit latch for signal <SALIDA_ALU_1>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
-WARNING:Xst:737 - Found 1-bit latch for signal <SALIDA_ALU_2>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
-WARNING:Xst:737 - Found 1-bit latch for signal <SALIDA_ALU_3>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
-WARNING:Xst:737 - Found 1-bit latch for signal <SALIDA_ALU_4>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
-WARNING:Xst:737 - Found 1-bit latch for signal <SALIDA_ALU_5>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
-WARNING:Xst:737 - Found 1-bit latch for signal <SALIDA_ALU_6>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
-WARNING:Xst:737 - Found 1-bit latch for signal <SALIDA_ALU_7>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
-WARNING:Xst:737 - Found 1-bit latch for signal <SALIDA_ALU_0>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
     Found 8-bit register for signal <LEDs>.
     Found 2-bit register for signal <TipoOP_out>.
     Found 8-bit register for signal <DatoA>.
     Found 8-bit register for signal <DatoB>.
     Found 5-bit register for signal <OP>.
-    Found 1-bit xor2 for signal <SALIDA_ALU_0$xor0000> created at line 115.
-    Found 1-bit xor2 for signal <SALIDA_ALU_1$xor0000> created at line 115.
-    Found 1-bit xor2 for signal <SALIDA_ALU_2$xor0000> created at line 115.
-    Found 1-bit xor2 for signal <SALIDA_ALU_3$xor0000> created at line 115.
-    Found 1-bit xor2 for signal <SALIDA_ALU_4$xor0000> created at line 115.
-    Found 1-bit xor2 for signal <SALIDA_ALU_5$xor0000> created at line 115.
-    Found 1-bit xor2 for signal <SALIDA_ALU_6$xor0000> created at line 115.
-    Found 1-bit xor2 for signal <SALIDA_ALU_7$xor0000> created at line 115.
+    Found 1-bit xor2 for signal <SALIDA_ALU_0$xor0000> created at line 113.
+    Found 1-bit xor2 for signal <SALIDA_ALU_1$xor0000> created at line 113.
+    Found 1-bit xor2 for signal <SALIDA_ALU_2$xor0000> created at line 113.
+    Found 1-bit xor2 for signal <SALIDA_ALU_3$xor0000> created at line 113.
+    Found 1-bit xor2 for signal <SALIDA_ALU_4$xor0000> created at line 113.
+    Found 1-bit xor2 for signal <SALIDA_ALU_5$xor0000> created at line 113.
+    Found 1-bit xor2 for signal <SALIDA_ALU_6$xor0000> created at line 113.
+    Found 1-bit xor2 for signal <SALIDA_ALU_7$xor0000> created at line 113.
     Summary:
 	inferred  31 D-type flip-flop(s).
 Unit <ALU> synthesized.
@@ -170,8 +155,6 @@ Macro Statistics
  2-bit register                                        : 1
  5-bit register                                        : 1
  8-bit register                                        : 3
-# Latches                                              : 8
- 1-bit latch                                           : 8
 # Xors                                                 : 8
  1-bit xor2                                            : 8
 
@@ -189,8 +172,6 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # Registers                                            : 31
  Flip-Flops                                            : 31
-# Latches                                              : 8
- 1-bit latch                                           : 8
 # Xors                                                 : 8
  1-bit xor2                                            : 8
 
@@ -259,17 +240,15 @@ Design Statistics
 # IOs                              : 49
 
 Cell Usage :
-# BELS                             : 51
+# BELS                             : 43
 #      GND                         : 1
-#      LUT2                        : 3
 #      LUT2_D                      : 1
-#      LUT3                        : 8
-#      LUT4                        : 30
+#      LUT4                        : 25
+#      LUT4_L                      : 8
 #      MUXF5                       : 8
-# FlipFlops/Latches                : 54
+# FlipFlops/Latches                : 46
 #      FDC                         : 38
 #      FDCE                        : 8
-#      LD                          : 8
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 48
@@ -282,12 +261,12 @@ Device utilization summary:
 
 Selected Device : 3s50tq144-4 
 
- Number of Slices:                       27  out of    768     3%  
- Number of Slice Flip Flops:             22  out of   1536     1%  
- Number of 4 input LUTs:                 42  out of   1536     2%  
+ Number of Slices:                       29  out of    768     3%  
+ Number of Slice Flip Flops:             30  out of   1536     1%  
+ Number of 4 input LUTs:                 34  out of   1536     2%  
  Number of IOs:                          49
  Number of bonded IOBs:                  49  out of     97    50%  
-    IOB Flip Flops:                      32
+    IOB Flip Flops:                      16
  Number of GCLKs:                         1  out of      8    12%  
 
 ---------------------------
@@ -312,12 +291,7 @@ Clock Information:
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
 clk                                | BUFGP                  | 46    |
-TipoOP<1>(TipoOP<1>1:O)            | NONE(*)(SALIDA_ALU_0)  | 8     |
 -----------------------------------+------------------------+-------+
-(*) This 1 clock signal(s) are generated by combinatorial logic,
-and XST is not able to identify which are the primary clock signals.
-Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
-INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -331,7 +305,7 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 5.378ns (Maximum Frequency: 185.943MHz)
+   Minimum period: 5.364ns (Maximum Frequency: 186.428MHz)
    Minimum input arrival time before clock: 1.901ns
    Maximum output required time after clock: 7.165ns
    Maximum combinational path delay: No path found
@@ -342,26 +316,27 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 5.378ns (frequency: 185.943MHz)
-  Total number of paths / destination ports: 45 / 9
+  Clock period: 5.364ns (frequency: 186.428MHz)
+  Total number of paths / destination ports: 173 / 17
 -------------------------------------------------------------------------
-Delay:               5.378ns (Levels of Logic = 2)
-  Source:            OP_4 (FF)
+Delay:               5.364ns (Levels of Logic = 3)
+  Source:            OP_2 (FF)
   Destination:       LEDs_0 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: OP_4 to LEDs_0
+  Data Path: OP_2 to LEDs_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             11   0.720   1.483  OP_4 (OP_4)
-     LUT2_D:I0->LO         1   0.551   0.126  TipoOP<1>11 (N44)
-     LUT4:I3->O           17   0.551   1.345  TipoOP<1>1 (TipoOP<1>)
-     FDCE:CE                   0.602          LEDs_0
+     FDC:C->Q             25   0.720   2.152  OP_2 (OP_2)
+     LUT4:I0->O            1   0.551   0.000  SALIDA_ALU_7_mux000041_F (N33)
+     MUXF5:I0->O           1   0.360   0.827  SALIDA_ALU_7_mux000041 (SALIDA_ALU_7_mux000041)
+     LUT4:I3->O            1   0.551   0.000  SALIDA_ALU_7_mux0000130 (SALIDA_ALU<7>)
+     FDCE:D                    0.203          LEDs_7
     ----------------------------------------
-    Total                      5.378ns (2.424ns logic, 2.954ns route)
-                                       (45.1% logic, 54.9% route)
+    Total                      5.364ns (2.385ns logic, 2.979ns route)
+                                       (44.5% logic, 55.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
@@ -405,13 +380,13 @@ Offset:              7.165ns (Levels of Logic = 1)
 
 
 Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 4.94 secs
+Total CPU time to Xst completion: 4.88 secs
  
 --> 
 
-Total memory usage is 4550420 kilobytes
+Total memory usage is 4550472 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   10 (   0 filtered)
-Number of infos    :    9 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
 
