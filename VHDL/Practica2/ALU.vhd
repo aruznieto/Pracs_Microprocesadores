@@ -36,8 +36,8 @@ entity ALU is
            A_in : in  STD_LOGIC_VECTOR(7 DOWNTO 0);
            B_in : in  STD_LOGIC_VECTOR(7 DOWNTO 0);
            OP_in : in  STD_LOGIC_VECTOR(4 DOWNTO 0);
-           A_out : out  STD_LOGIC_VECTOR(7 DOWNTO 0);
-           B_out : out  STD_LOGIC_VECTOR(7 DOWNTO 0);
+           A_out : out  STD_LOGIC_VECTOR(8 DOWNTO 0);
+           B_out : out  STD_LOGIC_VECTOR(8 DOWNTO 0);
            LEDs : out  STD_LOGIC_VECTOR(7 DOWNTO 0);
            RESULTADO : out  STD_LOGIC_VECTOR(8 DOWNTO 0);
            CERO : out  STD_LOGIC;
@@ -69,7 +69,7 @@ begin
 	PROCESS(clk,reset)
 		BEGIN
 			IF (reset='1') THEN -- Si reset esta activado pon DatoA a 0
-				DatoA <= "00000000";
+				DatoA <= "000000000";
 			ELSIF(clk'EVENT AND clk='1') THEN -- Si llega un ciclo de reloj actualiza DatoA
 				IF(A_in(7)='0') THEN DatoA <= '0' & signed(A_in);
 				ELSE DatoA <= '1' & signed(A_in);
@@ -81,7 +81,7 @@ begin
 	PROCESS(clk,reset)
 		BEGIN
 			IF (reset='1') THEN -- Si reset esta activado pon DatoB a 0
-				DatoB <= "00000000";
+				DatoB <= "000000000";
 			ELSIF(clk'EVENT AND clk='1') THEN -- Si llega un ciclo de reloj actualiza DatoB
 				DatoB <= B_in(7) & signed(B_in); -- Copiamos el bit más significativo para mantener el signo
 			END IF;
@@ -100,7 +100,7 @@ begin
 		BEGIN
 			IF(clk'EVENT AND clk='1') THEN -- Si llega un ciclo de reloj actualiza LEDS
 				IF(TipoOP="10") THEN
-					LEDs <= STD_LOGIC_VECTOR(SALIDA_ALU);
+					LEDs <= STD_LOGIC_VECTOR(SALIDA_ALU(7 downto 0));
 				END IF;
 			END IF;
 	END PROCESS;
@@ -128,9 +128,9 @@ begin
 				WHEN "00100" => SALIDA_ALU <= DatoA NAND DatoB;
 				WHEN "00101" => SALIDA_ALU <= NOT DatoA;
 				WHEN "00110" =>
-					SALIDA_ALU	<= DatoA(0) & DatoA(7 downto 1);
+					SALIDA_ALU	<= DatoA(0) & DatoA(8 downto 1);
 				WHEN "00111" =>
-					SALIDA_ALU	<= DatoA(7) & DatoA(6 downto 0);
+					SALIDA_ALU	<= DatoA(8) & DatoA(7 downto 0);
 					
 				-- ###### ARITMETICAS
 					-- A+0 = 01000
@@ -150,20 +150,20 @@ begin
 				WHEN "01111" => SALIDA_ALU <= DatoA-DatoB;
 				WHEN "01100" => SALIDA_ALU <= DatoA+1;
 				WHEN "01101" => SALIDA_ALU <= DatoA-1;
-				WHEN "01110" => SALIDA_ALU <= DatoA(7) & DatoA(6 downto 0);
-				WHEN "01011" => SALIDA_ALU <= DatoA(0) & DatoA(7 downto 1);
+				WHEN "01110" => SALIDA_ALU <= DatoA(8) & DatoA(6 downto 0) & '0';
+				WHEN "01011" => SALIDA_ALU <= DatoA(8) & '0' & DatoA(7 downto 1);
 				WHEN "10000" => SALIDA_ALU <= NOT(DatoA)+1;
-				WHEN "10001" => SALIDA_ALU <= "00000000";
-				WHEN "10010" => SALIDA_ALU <= "00000000";
+				WHEN "10001" => SALIDA_ALU <= "000000000";
+				WHEN "10010" => SALIDA_ALU <= "000000000";
 				
 				-- ###### COMPARACION
 					-- A<B = 10011
 					-- A>B = 10100
 					-- A=B = 10101
-				WHEN "10011" => SALIDA_ALU <= "00000000";
-				WHEN "10100" => SALIDA_ALU <= "00000000";
-				WHEN "10101" => SALIDA_ALU <= "00000000";
-				WHEN others => SALIDA_ALU <= "00000000";
+				WHEN "10011" => SALIDA_ALU <= "000000000";
+				WHEN "10100" => SALIDA_ALU <= "000000000";
+				WHEN "10101" => SALIDA_ALU <= "000000000";
+				WHEN others => SALIDA_ALU <= "000000000";
 			END CASE;
 	END PROCESS;
 

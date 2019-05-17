@@ -2,10 +2,10 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   09:43:01 05/16/2019
+-- Create Date:   10:45:25 05/17/2019
 -- Design Name:   
--- Module Name:   D:/GIT/Pracs_Microprocesadores/VHDL/Practica1/tb_ALU.vhd
--- Project Name:  Practica1
+-- Module Name:   D:/GIT/Pracs_Microprocesadores/VHDL/Practica2/tb_ALU.vhd
+-- Project Name:  Practica2
 -- Target Device:  
 -- Tool versions:  
 -- Description:   
@@ -46,9 +46,12 @@ ARCHITECTURE behavior OF tb_ALU IS
          A_in : IN  std_logic_vector(7 downto 0);
          B_in : IN  std_logic_vector(7 downto 0);
          OP_in : IN  std_logic_vector(4 downto 0);
-         A_out : OUT  std_logic_vector(7 downto 0);
-         B_out : OUT  std_logic_vector(7 downto 0);
+         A_out : OUT  std_logic_vector(8 downto 0);
+         B_out : OUT  std_logic_vector(8 downto 0);
          LEDs : OUT  std_logic_vector(7 downto 0);
+         RESULTADO : OUT  std_logic_vector(8 downto 0);
+         CERO : OUT  std_logic;
+         SIGNO : OUT  std_logic;
          TipoOP_out : OUT  std_logic_vector(1 downto 0)
         );
     END COMPONENT;
@@ -62,13 +65,16 @@ ARCHITECTURE behavior OF tb_ALU IS
    signal OP_in : std_logic_vector(4 downto 0) := (others => '0');
 
  	--Outputs
-   signal A_out : std_logic_vector(7 downto 0);
-   signal B_out : std_logic_vector(7 downto 0);
+   signal A_out : std_logic_vector(8 downto 0);
+   signal B_out : std_logic_vector(8 downto 0);
    signal LEDs : std_logic_vector(7 downto 0);
+   signal RESULTADO : std_logic_vector(8 downto 0);
+   signal CERO : std_logic;
+   signal SIGNO : std_logic;
    signal TipoOP_out : std_logic_vector(1 downto 0);
 
    -- Clock period definitions
-   constant clk_period : time := 20 ns;
+   constant clk_period : time := 10 ns;
  
 BEGIN
  
@@ -82,6 +88,9 @@ BEGIN
           A_out => A_out,
           B_out => B_out,
           LEDs => LEDs,
+          RESULTADO => RESULTADO,
+          CERO => CERO,
+          SIGNO => SIGNO,
           TipoOP_out => TipoOP_out
         );
 
@@ -98,55 +107,16 @@ BEGIN
    -- Stimulus process
    stim_proc: process
    begin		
-		-- A AND B
-		A_in <= "01110001";
-		B_in <= "11010100";
-		OP_in <= "00010";
-		
       -- hold reset state for 100 ns.
-		reset <= '1';
-      wait for 85 ns;	
-		reset <= '0';
+      wait for 100 ns;	
+
+      wait for clk_period*10;
+
       -- insert stimulus here 
-		
-		wait for 115 ns;	
-		
-		-- A OR B
 		A_in <= "01110001";
 		B_in <= "11010100";
-		OP_in <= "00001";
+		OP_in <= "01011";
 		wait for 100 ns;
-		
-		-- A XOR B		
-		A_in <= "01110001";
-		B_in <= "11010100";
-		OP_in <= "00011";
-		wait for 100 ns;
-		
-		-- A NAND B
-		A_in <= "01110001";
-		B_in <= "11010100";
-		OP_in <= "00100";
-		wait for 100 ns;
-		
-		-- NOT A
-		A_in <= "01110001";
-		B_in <= "11010100";
-		OP_in <= "00101";
-		wait for 100 ns;
-		
-		-- RR A
-		A_in <= "01110001";
-		B_in <= "11010100";
-		OP_in <= "00110";
-		wait for 100 ns;
-						
-		-- RL A
-		A_in <= "01110001";
-		B_in <= "11010100";
-		OP_in <= "00111";
-		wait for 100 ns;
-		
       wait;
    end process;
 
