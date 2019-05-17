@@ -5,22 +5,55 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="Xst" num="1306" delta="old" >Output &lt;<arg fmt="%s" index="1">RESULTADO</arg>&gt; is never assigned.
+<msg type="error" file="HDLParsers" num="3384" delta="new" >&quot;<arg fmt="%s" index="1">D:/GIT/Pracs_Microprocesadores/VHDL/Practica2/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">72</arg>. Size mismatch.  String literal &quot;<arg fmt="%s" index="3">00000000</arg>&quot; is of size <arg fmt="%u" index="4">8</arg> but is expected to be of size <arg fmt="%u" index="5">9</arg>.
 </msg>
 
-<msg type="warning" file="Xst" num="1306" delta="old" >Output &lt;<arg fmt="%s" index="1">SIGNO</arg>&gt; is never assigned.
+<msg type="error" file="HDLParsers" num="3403" delta="new" >&quot;<arg fmt="%s" index="1">D:/GIT/Pracs_Microprocesadores/VHDL/Practica2/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">74</arg>. Size of target (<arg fmt="%d" index="3">9</arg>) and size of right-hand side expression (<arg fmt="%d" index="4">8</arg>) does not match. 
 </msg>
 
-<msg type="warning" file="Xst" num="1306" delta="old" >Output &lt;<arg fmt="%s" index="1">CERO</arg>&gt; is never assigned.
+<msg type="error" file="HDLParsers" num="3384" delta="new" >&quot;<arg fmt="%s" index="1">D:/GIT/Pracs_Microprocesadores/VHDL/Practica2/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">82</arg>. Size mismatch.  String literal &quot;<arg fmt="%s" index="3">00000000</arg>&quot; is of size <arg fmt="%u" index="4">8</arg> but is expected to be of size <arg fmt="%u" index="5">9</arg>.
 </msg>
 
-<msg type="info" file="Xst" num="1767" delta="old" >HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+<msg type="error" file="HDLParsers" num="3403" delta="new" >&quot;<arg fmt="%s" index="1">D:/GIT/Pracs_Microprocesadores/VHDL/Practica2/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">84</arg>. Size of target (<arg fmt="%d" index="3">9</arg>) and size of right-hand side expression (<arg fmt="%d" index="4">8</arg>) does not match. 
 </msg>
 
-<msg type="info" file="Xst" num="1843" delta="new" >HDL ADVISOR - FlipFlop <arg fmt="%s" index="1">OP_3</arg> connected to a primary input has been replicated
+<msg type="error" file="HDLParsers" num="3403" delta="new" >&quot;<arg fmt="%s" index="1">D:/GIT/Pracs_Microprocesadores/VHDL/Practica2/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">101</arg>. Size of target (<arg fmt="%d" index="3">8</arg>) and size of right-hand side expression (<arg fmt="%d" index="4">9</arg>) does not match. 
 </msg>
 
-<msg type="info" file="Xst" num="1843" delta="old" >HDL ADVISOR - FlipFlop <arg fmt="%s" index="1">OP_4</arg> connected to a primary input has been replicated
+<msg type="error" file="HDLParsers" num="3403" delta="new" >&quot;<arg fmt="%s" index="1">D:/GIT/Pracs_Microprocesadores/VHDL/Practica2/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">106</arg>. Size of target (<arg fmt="%d" index="3">8</arg>) and size of right-hand side expression (<arg fmt="%d" index="4">9</arg>) does not match. 
+</msg>
+
+<msg type="error" file="HDLParsers" num="3403" delta="new" >&quot;<arg fmt="%s" index="1">D:/GIT/Pracs_Microprocesadores/VHDL/Practica2/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">107</arg>. Size of target (<arg fmt="%d" index="3">8</arg>) and size of right-hand side expression (<arg fmt="%d" index="4">9</arg>) does not match. 
+</msg>
+
+<msg type="error" file="HDLParsers" num="804" delta="new" >&quot;<arg fmt="%s" index="1">D:/GIT/Pracs_Microprocesadores/VHDL/Practica2/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">129</arg>. Size of <arg fmt="%s" index="3">concat operation</arg> is different than size of <arg fmt="%s" index="4">the target</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="804" delta="new" >&quot;<arg fmt="%s" index="1">D:/GIT/Pracs_Microprocesadores/VHDL/Practica2/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">131</arg>. Size of <arg fmt="%s" index="3">concat operation</arg> is different than size of <arg fmt="%s" index="4">the target</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="804" delta="new" >&quot;<arg fmt="%s" index="1">D:/GIT/Pracs_Microprocesadores/VHDL/Practica2/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">151</arg>. Size of <arg fmt="%s" index="3">concat operation</arg> is different than size of <arg fmt="%s" index="4">the target</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="804" delta="new" >&quot;<arg fmt="%s" index="1">D:/GIT/Pracs_Microprocesadores/VHDL/Practica2/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">152</arg>. Size of <arg fmt="%s" index="3">concat operation</arg> is different than size of <arg fmt="%s" index="4">the target</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="3384" delta="new" >&quot;<arg fmt="%s" index="1">D:/GIT/Pracs_Microprocesadores/VHDL/Practica2/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">154</arg>. Size mismatch.  String literal &quot;<arg fmt="%s" index="3">00000000</arg>&quot; is of size <arg fmt="%u" index="4">8</arg> but is expected to be of size <arg fmt="%u" index="5">9</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="3384" delta="new" >&quot;<arg fmt="%s" index="1">D:/GIT/Pracs_Microprocesadores/VHDL/Practica2/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">155</arg>. Size mismatch.  String literal &quot;<arg fmt="%s" index="3">00000000</arg>&quot; is of size <arg fmt="%u" index="4">8</arg> but is expected to be of size <arg fmt="%u" index="5">9</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="3384" delta="new" >&quot;<arg fmt="%s" index="1">D:/GIT/Pracs_Microprocesadores/VHDL/Practica2/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">161</arg>. Size mismatch.  String literal &quot;<arg fmt="%s" index="3">00000000</arg>&quot; is of size <arg fmt="%u" index="4">8</arg> but is expected to be of size <arg fmt="%u" index="5">9</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="3384" delta="new" >&quot;<arg fmt="%s" index="1">D:/GIT/Pracs_Microprocesadores/VHDL/Practica2/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">162</arg>. Size mismatch.  String literal &quot;<arg fmt="%s" index="3">00000000</arg>&quot; is of size <arg fmt="%u" index="4">8</arg> but is expected to be of size <arg fmt="%u" index="5">9</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="3384" delta="new" >&quot;<arg fmt="%s" index="1">D:/GIT/Pracs_Microprocesadores/VHDL/Practica2/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">163</arg>. Size mismatch.  String literal &quot;<arg fmt="%s" index="3">00000000</arg>&quot; is of size <arg fmt="%u" index="4">8</arg> but is expected to be of size <arg fmt="%u" index="5">9</arg>.
+</msg>
+
+<msg type="error" file="HDLParsers" num="3384" delta="new" >&quot;<arg fmt="%s" index="1">D:/GIT/Pracs_Microprocesadores/VHDL/Practica2/ALU.vhd</arg>&quot; Line <arg fmt="%d" index="2">164</arg>. Size mismatch.  String literal &quot;<arg fmt="%s" index="3">00000000</arg>&quot; is of size <arg fmt="%u" index="4">8</arg> but is expected to be of size <arg fmt="%u" index="5">9</arg>.
 </msg>
 
 </messages>

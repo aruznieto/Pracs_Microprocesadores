@@ -49,10 +49,10 @@ end ALU;
 architecture Behavioral of ALU is
 -- Declaramos las señales internas
 			signal OP : STD_LOGIC_VECTOR (4 DOWNTO 0);
-			signal DatoA : signed(7 DOWNTO 0);
-			signal DatoB : signed(7 DOWNTO 0);
+			signal DatoA : signed(8 DOWNTO 0);
+			signal DatoB : signed(8 DOWNTO 0);
 			signal TipoOP : STD_LOGIC_VECTOR (1 DOWNTO 0);
-			signal SALIDA_ALU : signed(7 DOWNTO 0);
+			signal SALIDA_ALU : signed(8 DOWNTO 0);
 
 begin
 -- REGISTRO OP_IN, creamos el registro destinado a guardar OP_IN
@@ -71,7 +71,9 @@ begin
 			IF (reset='1') THEN -- Si reset esta activado pon DatoA a 0
 				DatoA <= "00000000";
 			ELSIF(clk'EVENT AND clk='1') THEN -- Si llega un ciclo de reloj actualiza DatoA
-				DatoA <= signed(A_in);
+				IF(A_in(7)='0') THEN DatoA <= '0' & signed(A_in);
+				ELSE DatoA <= '1' & signed(A_in);
+				END IF;
 			END IF;
 	END PROCESS;
 	
@@ -81,7 +83,7 @@ begin
 			IF (reset='1') THEN -- Si reset esta activado pon DatoB a 0
 				DatoB <= "00000000";
 			ELSIF(clk'EVENT AND clk='1') THEN -- Si llega un ciclo de reloj actualiza DatoB
-				DatoB <= signed(B_in);
+				DatoB <= B_in(7) & signed(B_in); -- Copiamos el bit más significativo para mantener el signo
 			END IF;
 	END PROCESS;
 	
