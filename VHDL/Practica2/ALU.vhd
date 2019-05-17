@@ -33,26 +33,26 @@ entity ALU is
 -- Aquí se ponen solo las entradas y las salidas de la "caja"
     Port ( clk : in  STD_LOGIC;
            reset : in  STD_LOGIC;
-           A_in : in  STD_LOGIC_VECTOR (7 DOWNTO 0);
-           B_in : in  STD_LOGIC_VECTOR (7 DOWNTO 0);
-           OP_in : in  STD_LOGIC_VECTOR (4 DOWNTO 0);
-           A_out : out  STD_LOGIC_VECTOR (7 DOWNTO 0);
-           B_out : out  STD_LOGIC_VECTOR (7 DOWNTO 0);
-           LEDs : out  STD_LOGIC_VECTOR (7 DOWNTO 0);
-           RESULTADO : out  STD_LOGIC_VECTOR (7 DOWNTO 0);
+           A_in : in  STD_LOGIC_VECTOR(7 DOWNTO 0);
+           B_in : in  STD_LOGIC_VECTOR(7 DOWNTO 0);
+           OP_in : in  STD_LOGIC_VECTOR(4 DOWNTO 0);
+           A_out : out  STD_LOGIC_VECTOR(7 DOWNTO 0);
+           B_out : out  STD_LOGIC_VECTOR(7 DOWNTO 0);
+           LEDs : out  STD_LOGIC_VECTOR(7 DOWNTO 0);
+           RESULTADO : out  STD_LOGIC_VECTOR(8 DOWNTO 0);
            CERO : out  STD_LOGIC;
            SIGNO : out  STD_LOGIC;
-           TipoOP_out : out  STD_LOGIC_VECTOR (1 DOWNTO 0));
+           TipoOP_out : out  STD_LOGIC_VECTOR(1 DOWNTO 0));
 
 end ALU;
 
 architecture Behavioral of ALU is
 -- Declaramos las señales internas
 			signal OP : STD_LOGIC_VECTOR (4 DOWNTO 0);
-			signal DatoA : STD_LOGIC_VECTOR (7 DOWNTO 0);
-			signal DatoB : STD_LOGIC_VECTOR (7 DOWNTO 0);
+			signal DatoA : signed(7 DOWNTO 0);
+			signal DatoB : signed(7 DOWNTO 0);
 			signal TipoOP : STD_LOGIC_VECTOR (1 DOWNTO 0);
-			signal SALIDA_ALU : STD_LOGIC_VECTOR (7 DOWNTO 0);
+			signal SALIDA_ALU : signed(7 DOWNTO 0);
 
 begin
 -- REGISTRO OP_IN, creamos el registro destinado a guardar OP_IN
@@ -71,7 +71,7 @@ begin
 			IF (reset='1') THEN -- Si reset esta activado pon DatoA a 0
 				DatoA <= "00000000";
 			ELSIF(clk'EVENT AND clk='1') THEN -- Si llega un ciclo de reloj actualiza DatoA
-				DatoA <= A_in;
+				DatoA <= signed(A_in);
 			END IF;
 	END PROCESS;
 	
@@ -81,7 +81,7 @@ begin
 			IF (reset='1') THEN -- Si reset esta activado pon DatoB a 0
 				DatoB <= "00000000";
 			ELSIF(clk'EVENT AND clk='1') THEN -- Si llega un ciclo de reloj actualiza DatoB
-				DatoB <= B_in;
+				DatoB <= signed(B_in);
 			END IF;
 	END PROCESS;
 	
@@ -98,13 +98,13 @@ begin
 		BEGIN
 			IF(clk'EVENT AND clk='1') THEN -- Si llega un ciclo de reloj actualiza LEDS
 				IF(TipoOP="10") THEN
-					LEDs <= SALIDA_ALU;
+					LEDs <= STD_LOGIC_VECTOR(SALIDA_ALU);
 				END IF;
 			END IF;
 	END PROCESS;
 
-			A_out <= DatoA; -- Damos valor a A_out
-			B_out <= DatoB; -- Damos valor a B_out
+			A_out <= STD_LOGIC_VECTOR(DatoA);  -- Damos valor a A_out
+			B_out <= STD_LOGIC_VECTOR(DatoB);  -- Damos valor a B_out
 
 -- ALU (MULTIPLEXOR)
 	PROCESS(OP,DatoA,DatoB)
@@ -126,55 +126,41 @@ begin
 				WHEN "00100" => SALIDA_ALU <= DatoA NAND DatoB;
 				WHEN "00101" => SALIDA_ALU <= NOT DatoA;
 				WHEN "00110" =>
-					SALIDA_ALU(6)  <= DatoA(7);
-					SALIDA_ALU(5)  <= DatoA(6);
-					SALIDA_ALU(4)  <= DatoA(5);
-					SALIDA_ALU(3)  <= DatoA(4);
-					SALIDA_ALU(2)  <= DatoA(3);
-					SALIDA_ALU(1)  <= DatoA(2);
-					SALIDA_ALU(0)  <= DatoA(1);
-					SALIDA_ALU(7)  <= DatoA(0);
+					SALIDA_ALU	<= DatoA(0) & DatoA(7 downto 1);
 				WHEN "00111" =>
-					SALIDA_ALU(7)  <= DatoA(6);
-					SALIDA_ALU(6)  <= DatoA(5);
-					SALIDA_ALU(5)  <= DatoA(4);
-					SALIDA_ALU(4)  <= DatoA(3);
-					SALIDA_ALU(3)  <= DatoA(2);
-					SALIDA_ALU(2)  <= DatoA(1);
-					SALIDA_ALU(1)  <= DatoA(0);
-					SALIDA_ALU(0)  <= DatoA(7);
+					SALIDA_ALU	<= DatoA(7) & DatoA(6 downto 0);
 					
 				-- ###### ARITMETICAS
 					-- A+0 = 01000
 					-- B+0 = 01001
 					-- A+B = 01010
-					-- A-B = 01101
+					-- A-B = 01111
 					-- A+1 = 01100
 					-- A-1 = 01101
 					-- 2*A = 01110
-					-- A/2 = 01111
+					-- A/2 = 01011
 					-- |A| = 10000
 					-- MAX(A,B) = 10001
 					-- MIN(A,B) = 10010
 				WHEN "01000" => SALIDA_ALU <= DatoA;
 				WHEN "01001" => SALIDA_ALU <= DatoB;
-				WHEN "01010" => SALIDA_ALU <= A+B;
-				WHEN "01101" => SALIDA_ALU <= A+B;
-				WHEN "01100" => SALIDA_ALU <= A+B;
-				WHEN "01101" => SALIDA_ALU <= A+B;
-				WHEN "01110" => SALIDA_ALU <= A+B;
-				WHEN "01111" => SALIDA_ALU <= A+B;
-				WHEN "10000" => SALIDA_ALU <= A+B;
-				WHEN "10001" => SALIDA_ALU <= A+B;
-				WHEN "10010" => SALIDA_ALU <= A+B;
+				WHEN "01010" => SALIDA_ALU <= DatoA+DatoB;
+				WHEN "01111" => SALIDA_ALU <= DatoA-DatoB;
+				WHEN "01100" => SALIDA_ALU <= DatoA+1;
+				WHEN "01101" => SALIDA_ALU <= DatoA-1;
+				WHEN "01110" => SALIDA_ALU <= DatoA(7) & DatoA(6 downto 0);
+				WHEN "01011" => SALIDA_ALU <= DatoA(0) & DatoA(7 downto 1);
+				WHEN "10000" => SALIDA_ALU <= NOT(DatoA)+1;
+				WHEN "10001" => SALIDA_ALU <= "00000000";
+				WHEN "10010" => SALIDA_ALU <= "00000000";
 				
 				-- ###### COMPARACION
 					-- A<B = 10011
 					-- A>B = 10100
 					-- A=B = 10101
-				WHEN "10011" => SALIDA_ALU <= A+B;
-				WHEN "10100" => SALIDA_ALU <= A+B;
-				WHEN "10101" => SALIDA_ALU <= A+B;
+				WHEN "10011" => SALIDA_ALU <= "00000000";
+				WHEN "10100" => SALIDA_ALU <= "00000000";
+				WHEN "10101" => SALIDA_ALU <= "00000000";
 				WHEN others => SALIDA_ALU <= "00000000";
 			END CASE;
 	END PROCESS;
@@ -184,6 +170,10 @@ begin
 		BEGIN
 			IF(OP="00001" or OP="00010" or OP="00011" or OP="00100" or OP="00101" or OP="00110" or OP="00111") THEN
 				TipoOP <= "10";
+			ELSIF(OP="10011" or OP="10100" or OP="10101") THEN
+				TipoOP <= "11";
+			ELSIF(OP="01000" or OP="01001" or OP="01010" or OP="01111" or OP="01100" or OP="01101" or OP="01110" or OP="01011" or OP="10000" or OP="10001" or OP="10010") THEN
+				TipoOP <= "01";
 			ELSE
 				TipoOP <= "00";
 			END IF;

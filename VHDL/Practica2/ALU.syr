@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total CPU time to Xst completion: 0.12 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total CPU time to Xst completion: 0.12 secs
  
 --> Reading design: ALU.prj
 
@@ -104,7 +104,7 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "D:/GIT/Pracs_Microprocesadores/VHDL/Practica1/ALU.vhd" in Library work.
+Compiling vhdl file "D:/GIT/Pracs_Microprocesadores/VHDL/Practica2/ALU.vhd" in Library work.
 Entity <alu> compiled.
 Entity <alu> (Architecture <behavioral>) compiled.
 
@@ -128,35 +128,40 @@ Entity <ALU> analyzed. Unit <ALU> generated.
 Performing bidirectional port resolution...
 
 Synthesizing Unit <ALU>.
-    Related source file is "D:/GIT/Pracs_Microprocesadores/VHDL/Practica1/ALU.vhd".
+    Related source file is "D:/GIT/Pracs_Microprocesadores/VHDL/Practica2/ALU.vhd".
+WARNING:Xst:1306 - Output <RESULTADO> is never assigned.
+WARNING:Xst:1306 - Output <SIGNO> is never assigned.
+WARNING:Xst:1306 - Output <CERO> is never assigned.
+    Found 32x2-bit ROM for signal <TipoOP>.
     Found 8-bit register for signal <LEDs>.
     Found 2-bit register for signal <TipoOP_out>.
     Found 8-bit register for signal <DatoA>.
     Found 8-bit register for signal <DatoB>.
     Found 5-bit register for signal <OP>.
-    Found 1-bit xor2 for signal <SALIDA_ALU_0$xor0000> created at line 111.
-    Found 1-bit xor2 for signal <SALIDA_ALU_1$xor0000> created at line 111.
-    Found 1-bit xor2 for signal <SALIDA_ALU_2$xor0000> created at line 111.
-    Found 1-bit xor2 for signal <SALIDA_ALU_3$xor0000> created at line 111.
-    Found 1-bit xor2 for signal <SALIDA_ALU_4$xor0000> created at line 111.
-    Found 1-bit xor2 for signal <SALIDA_ALU_5$xor0000> created at line 111.
-    Found 1-bit xor2 for signal <SALIDA_ALU_6$xor0000> created at line 111.
-    Found 1-bit xor2 for signal <SALIDA_ALU_7$xor0000> created at line 111.
+    Found 8-bit addsub for signal <SALIDA_ALU$addsub0000>.
+    Found 8-bit xor2 for signal <SALIDA_ALU$xor0000> created at line 125.
     Summary:
+	inferred   1 ROM(s).
 	inferred  31 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
 Unit <ALU> synthesized.
 
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
+# ROMs                                                 : 1
+ 32x2-bit ROM                                          : 1
+# Adders/Subtractors                                   : 1
+ 8-bit addsub                                          : 1
 # Registers                                            : 5
  2-bit register                                        : 1
  5-bit register                                        : 1
  8-bit register                                        : 3
-# Xors                                                 : 8
- 1-bit xor2                                            : 8
+# Xors                                                 : 1
+ 8-bit xor2                                            : 1
 
 =========================================================================
 
@@ -164,29 +169,35 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst:1710 - FF/Latch <TipoOP_out_0> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
+# ROMs                                                 : 1
+ 32x2-bit ROM                                          : 1
+# Adders/Subtractors                                   : 1
+ 8-bit addsub                                          : 1
 # Registers                                            : 31
  Flip-Flops                                            : 31
-# Xors                                                 : 8
- 1-bit xor2                                            : 8
+# Xors                                                 : 1
+ 8-bit xor2                                            : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1710 - FF/Latch <TipoOP_out_0> (without init value) has a constant value of 0 in block <ALU>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <ALU> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block ALU, actual ratio is 3.
+Found area constraint ratio of 100 (+ 5) on block ALU, actual ratio is 7.
+FlipFlop OP_3 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop OP_3 connected to a primary input has been replicated
+FlipFlop OP_4 has been replicated 1 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop OP_4 connected to a primary input has been replicated
 FlipFlop DatoB_7 has been replicated 1 time(s) to handle iob=true attribute.
 FlipFlop DatoB_6 has been replicated 1 time(s) to handle iob=true attribute.
 FlipFlop DatoB_5 has been replicated 1 time(s) to handle iob=true attribute.
@@ -210,8 +221,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 46
- Flip-Flops                                            : 46
+# Registers                                            : 49
+ Flip-Flops                                            : 49
 
 =========================================================================
 
@@ -237,18 +248,24 @@ Optimization Goal                  : Speed
 Keep Hierarchy                     : No
 
 Design Statistics
-# IOs                              : 49
+# IOs                              : 60
 
 Cell Usage :
-# BELS                             : 43
-#      GND                         : 1
-#      LUT2_D                      : 1
-#      LUT4                        : 25
-#      LUT4_L                      : 8
-#      MUXF5                       : 8
-# FlipFlops/Latches                : 46
-#      FD                          : 1
-#      FDC                         : 37
+# BELS                             : 103
+#      LUT2                        : 1
+#      LUT2_L                      : 2
+#      LUT3                        : 13
+#      LUT3_D                      : 3
+#      LUT3_L                      : 8
+#      LUT4                        : 47
+#      LUT4_D                      : 3
+#      LUT4_L                      : 10
+#      MUXCY                       : 7
+#      MUXF5                       : 1
+#      XORCY                       : 8
+# FlipFlops/Latches                : 49
+#      FD                          : 2
+#      FDC                         : 39
 #      FDE                         : 8
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
@@ -262,10 +279,10 @@ Device utilization summary:
 
 Selected Device : 3s50tq144-4 
 
- Number of Slices:                       29  out of    768     3%  
- Number of Slice Flip Flops:             30  out of   1536     1%  
- Number of 4 input LUTs:                 34  out of   1536     2%  
- Number of IOs:                          49
+ Number of Slices:                       46  out of    768     5%  
+ Number of Slice Flip Flops:             33  out of   1536     2%  
+ Number of 4 input LUTs:                 87  out of   1536     5%  
+ Number of IOs:                          60
  Number of bonded IOBs:                  49  out of     97    50%  
     IOB Flip Flops:                      16
  Number of GCLKs:                         1  out of      8    12%  
@@ -291,7 +308,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 46    |
+clk                                | BUFGP                  | 49    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -299,14 +316,14 @@ Asynchronous Control Signals Information:
 -----------------------------------+------------------------+-------+
 Control Signal                     | Buffer(FF name)        | Load  |
 -----------------------------------+------------------------+-------+
-reset                              | IBUF                   | 37    |
+reset                              | IBUF                   | 39    |
 -----------------------------------+------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 5.364ns (Maximum Frequency: 186.428MHz)
+   Minimum period: 9.441ns (Maximum Frequency: 105.921MHz)
    Minimum input arrival time before clock: 1.901ns
    Maximum output required time after clock: 7.165ns
    Maximum combinational path delay: No path found
@@ -317,31 +334,39 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 5.364ns (frequency: 186.428MHz)
-  Total number of paths / destination ports: 173 / 17
+  Clock period: 9.441ns (frequency: 105.921MHz)
+  Total number of paths / destination ports: 1228 / 18
 -------------------------------------------------------------------------
-Delay:               5.364ns (Levels of Logic = 3)
-  Source:            OP_2 (FF)
-  Destination:       LEDs_0 (FF)
+Delay:               9.441ns (Levels of Logic = 11)
+  Source:            OP_1 (FF)
+  Destination:       LEDs_7 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: OP_2 to LEDs_0
+  Data Path: OP_1 to LEDs_7
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             25   0.720   2.152  OP_2 (OP_2)
-     LUT4:I0->O            1   0.551   0.000  SALIDA_ALU_7_mux000041_F (N33)
-     MUXF5:I0->O           1   0.360   0.827  SALIDA_ALU_7_mux000041 (SALIDA_ALU_7_mux000041)
-     LUT4:I3->O            1   0.551   0.000  SALIDA_ALU_7_mux0000130 (SALIDA_ALU<7>)
+     FDC:C->Q             24   0.720   1.865  OP_1 (OP_1)
+     LUT3_D:I2->O          6   0.551   1.029  SALIDA_ALU_mux0000<0>1_SW0 (N39)
+     LUT4:I3->O            1   0.551   0.827  SALIDA_ALU_mux0000<1>1 (SALIDA_ALU_mux0000<1>)
+     LUT4:I3->O            1   0.551   0.000  Maddsub_SALIDA_ALU_addsub0000_lut<1> (Maddsub_SALIDA_ALU_addsub0000_lut<1>)
+     MUXCY:S->O            1   0.500   0.000  Maddsub_SALIDA_ALU_addsub0000_cy<1> (Maddsub_SALIDA_ALU_addsub0000_cy<1>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_SALIDA_ALU_addsub0000_cy<2> (Maddsub_SALIDA_ALU_addsub0000_cy<2>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_SALIDA_ALU_addsub0000_cy<3> (Maddsub_SALIDA_ALU_addsub0000_cy<3>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_SALIDA_ALU_addsub0000_cy<4> (Maddsub_SALIDA_ALU_addsub0000_cy<4>)
+     MUXCY:CI->O           1   0.064   0.000  Maddsub_SALIDA_ALU_addsub0000_cy<5> (Maddsub_SALIDA_ALU_addsub0000_cy<5>)
+     MUXCY:CI->O           0   0.064   0.000  Maddsub_SALIDA_ALU_addsub0000_cy<6> (Maddsub_SALIDA_ALU_addsub0000_cy<6>)
+     XORCY:CI->O           1   0.904   0.869  Maddsub_SALIDA_ALU_addsub0000_xor<7> (SALIDA_ALU_addsub0000<7>)
+     LUT3:I2->O            1   0.551   0.000  SALIDA_ALU<7>67 (SALIDA_ALU<7>)
      FDE:D                     0.203          LEDs_7
     ----------------------------------------
-    Total                      5.364ns (2.385ns logic, 2.979ns route)
-                                       (44.5% logic, 55.5% route)
+    Total                      9.441ns (4.851ns logic, 4.590ns route)
+                                       (51.4% logic, 48.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 37 / 37
+  Total number of paths / destination ports: 39 / 39
 -------------------------------------------------------------------------
 Offset:              1.901ns (Levels of Logic = 1)
   Source:            A_in<0> (PAD)
@@ -360,7 +385,7 @@ Offset:              1.901ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 25 / 25
+  Total number of paths / destination ports: 26 / 26
 -------------------------------------------------------------------------
 Offset:              7.165ns (Levels of Logic = 1)
   Source:            DatoB_7_1 (FF)
@@ -381,13 +406,13 @@ Offset:              7.165ns (Levels of Logic = 1)
 
 
 Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 5.09 secs
+Total CPU time to Xst completion: 5.55 secs
  
 --> 
 
-Total memory usage is 4550496 kilobytes
+Total memory usage is 4550448 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    2 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
 
