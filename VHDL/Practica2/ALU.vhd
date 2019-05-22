@@ -153,8 +153,37 @@ begin
 				WHEN "01110" => SALIDA_ALU <= DatoA(8) & DatoA(6 downto 0) & '0';
 				WHEN "01011" => SALIDA_ALU <= DatoA(8) & '0' & DatoA(7 downto 1);
 				WHEN "10000" => SALIDA_ALU <= NOT(DatoA)+1;
-				WHEN "10001" => SALIDA_ALU <= "000000000";
-				WHEN "10010" => SALIDA_ALU <= "000000000";
+				WHEN "10001" => 
+					IF(DatoA(8) = DatoB(8)) THEN
+						IF(DatoA(8)='1') THEN
+							IF(DatoA(7 downto 0) > DatoB(7 downto 0)) THEN
+								SALIDA_ALU <= DatoB;
+							ELSE SALIDA_ALU <= DatoA;
+							END IF;
+						ELSIF(DatoA(7 downto 0) > DatoB(7 downto 0)) THEN
+							SALIDA_ALU <= DatoA;
+						ELSE SALIDA_ALU <= DatoB;
+						END IF;
+					ELSIF (DatoA(8)='1') THEN
+						SALIDA_ALU <= DatoB;
+					ELSE
+						SALIDA_ALU <= DatoA;
+					END IF;
+				WHEN "10010" => IF(DatoA(8) = DatoB(8)) THEN
+						IF(DatoA(8)='1') THEN
+							IF(DatoA(7 downto 0) > DatoB(7 downto 0)) THEN
+								SALIDA_ALU <= DatoA;
+							ELSE SALIDA_ALU <= DatoB;
+							END IF;
+						ELSIF(DatoA(7 downto 0) > DatoB(7 downto 0)) THEN
+							SALIDA_ALU <= DatoB;
+						ELSE SALIDA_ALU <= DatoA;
+						END IF;
+					ELSIF (DatoA(8)='1') THEN
+						SALIDA_ALU <= DatoA;
+					ELSE
+						SALIDA_ALU <= DatoB;
+					END IF;
 				
 				-- ###### COMPARACION
 					-- A<B = 10011
