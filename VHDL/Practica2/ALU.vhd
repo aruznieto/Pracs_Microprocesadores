@@ -169,7 +169,8 @@ begin
 					ELSE
 						SALIDA_ALU <= DatoA;
 					END IF;
-				WHEN "10010" => IF(DatoA(8) = DatoB(8)) THEN
+				WHEN "10010" => 
+					IF(DatoA(8) = DatoB(8)) THEN
 						IF(DatoA(8)='1') THEN
 							IF(DatoA(7 downto 0) > DatoB(7 downto 0)) THEN
 								SALIDA_ALU <= DatoA;
@@ -189,9 +190,44 @@ begin
 					-- A<B = 10011
 					-- A>B = 10100
 					-- A=B = 10101
-				WHEN "10011" => SALIDA_ALU <= "000000000";
-				WHEN "10100" => SALIDA_ALU <= "000000000";
-				WHEN "10101" => SALIDA_ALU <= "000000000";
+				WHEN "10011" => 
+					IF(DatoA(8) = DatoB(8)) THEN
+						IF(DatoA(8)='1') THEN
+							IF(DatoA(7 downto 0) > DatoB(7 downto 0)) THEN
+								SALIDA_ALU <= "000000001";
+							ELSE SALIDA_ALU <= "000000000";
+							END IF;
+						ELSIF(DatoA(7 downto 0) > DatoB(7 downto 0)) THEN
+							SALIDA_ALU <= "000000000";
+						ELSE SALIDA_ALU <= "000000001";
+						END IF;
+					ELSIF (DatoA(8)='1') THEN
+						SALIDA_ALU <= "000000001";
+					ELSE
+						SALIDA_ALU <= "000000000";
+					END IF;
+				WHEN "10100" => 					
+					IF(DatoA(8) = DatoB(8)) THEN
+						IF(DatoA(8)='1') THEN
+							IF(DatoA(7 downto 0) > DatoB(7 downto 0)) THEN
+								SALIDA_ALU <= "000000000";
+							ELSE SALIDA_ALU <= "000000001";
+							END IF;
+						ELSIF(DatoA(7 downto 0) > DatoB(7 downto 0)) THEN
+							SALIDA_ALU <= "000000001";
+						ELSE SALIDA_ALU <= "000000000";
+						END IF;
+					ELSIF (DatoA(8)='1') THEN
+						SALIDA_ALU <= "000000000";
+					ELSE
+						SALIDA_ALU <= "000000001";
+					END IF;
+				WHEN "10101" =>
+					IF(DatoA(8) = DatoB(8)) THEN
+						SALIDA_ALU <= "000000001";
+					ELSE
+						SALIDA_ALU <= "000000000";
+					END IF;
 				WHEN others => SALIDA_ALU <= "000000000";
 			END CASE;
 	END PROCESS;

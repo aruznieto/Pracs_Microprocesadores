@@ -113,9 +113,9 @@ BEGIN
       wait for clk_period*10;
 
       -- insert stimulus here 
-		A_in <= "01110001";
-		B_in <= "11010100";
-		OP_in <= "01011";
+		A_in <= "10000001";
+		B_in <= "10000010";
+		OP_in <= "10001";
 		wait for 100 ns;
       wait;
    end process;
