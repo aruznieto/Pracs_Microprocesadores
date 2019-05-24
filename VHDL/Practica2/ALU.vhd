@@ -88,7 +88,7 @@ begin
 	END PROCESS;
 	
 -- REGISTRO TIPO OP, creamos el registro destinado a guardar TIPO OP
-	PROCESS(clk,reset)
+	PROCESS(clk)
 		BEGIN
 			IF(clk'EVENT AND clk='1') THEN -- Si llega un ciclo de reloj actualiza TipoOP_out
 				TipoOP_out <= TipoOP;
@@ -96,11 +96,47 @@ begin
 	END PROCESS;
 	
 -- REGISTRO LEDS
-	PROCESS(clk,reset)
+	PROCESS(clk)
 		BEGIN
 			IF(clk'EVENT AND clk='1') THEN -- Si llega un ciclo de reloj actualiza LEDS
-				IF(TipoOP="10") THEN
+				IF(TipoOP="10" or TipoOP="11") THEN
 					LEDs <= STD_LOGIC_VECTOR(SALIDA_ALU(7 downto 0));
+				END IF;
+			END IF;
+	END PROCESS;
+	
+-- REGISTRO CERO
+	PROCESS(clk,SALIDA_ALU)
+		BEGIN
+			IF(clk'EVENT AND clk='1') THEN -- Si llega un ciclo de reloj actualiza LEDS
+				IF(SALIDA_ALU="000000000") THEN
+					CERO <= '1';
+				ELSE
+					CERO <= '0';
+				END IF;
+			END IF;
+	END PROCESS;
+
+-- REGISTRO SIGNO
+	PROCESS(clk,SALIDA_ALU)
+		BEGIN
+			IF(clk'EVENT AND clk='1') THEN -- Si llega un ciclo de reloj actualiza LEDS
+				IF(SALIDA_ALU(8)='1' and TipoOP="01") THEN
+					SIGNO <= '1';
+				ELSE
+					SIGNO <= '0';
+				END IF;
+			END IF;
+	END PROCESS;
+	
+	-- REGISTRO CERO
+	PROCESS(clk,SALIDA_ALU)
+		BEGIN
+			IF(clk'EVENT AND clk='1') THEN -- Si llega un ciclo de reloj actualiza LEDS
+				IF(TipoOP="01") THEN
+					RESULTADO <= STD_LOGIC_VECTOR(SALIDA_ALU);
+				ELSE
+					RESULTADO <= "000000000";
 				END IF;
 			END IF;
 	END PROCESS;
@@ -154,73 +190,35 @@ begin
 				WHEN "01011" => SALIDA_ALU <= DatoA(8) & '0' & DatoA(7 downto 1);
 				WHEN "10000" => SALIDA_ALU <= NOT(DatoA)+1;
 				WHEN "10001" => 
-					IF(DatoA(8) = DatoB(8)) THEN
-						IF(DatoA(8)='1') THEN
-							IF(DatoA(7 downto 0) > DatoB(7 downto 0)) THEN
-								SALIDA_ALU <= DatoB;
-							ELSE SALIDA_ALU <= DatoA;
-							END IF;
-						ELSIF(DatoA(7 downto 0) > DatoB(7 downto 0)) THEN
-							SALIDA_ALU <= DatoA;
-						ELSE SALIDA_ALU <= DatoB;
-						END IF;
-					ELSIF (DatoA(8)='1') THEN
+					IF (DatoA < DatoB) THEN
 						SALIDA_ALU <= DatoB;
 					ELSE
 						SALIDA_ALU <= DatoA;
 					END IF;
+					
 				WHEN "10010" => 
-					IF(DatoA(8) = DatoB(8)) THEN
-						IF(DatoA(8)='1') THEN
-							IF(DatoA(7 downto 0) > DatoB(7 downto 0)) THEN
-								SALIDA_ALU <= DatoA;
-							ELSE SALIDA_ALU <= DatoB;
-							END IF;
-						ELSIF(DatoA(7 downto 0) > DatoB(7 downto 0)) THEN
-							SALIDA_ALU <= DatoB;
-						ELSE SALIDA_ALU <= DatoA;
-						END IF;
-					ELSIF (DatoA(8)='1') THEN
-						SALIDA_ALU <= DatoA;
-					ELSE
+					IF (DatoA > DatoB) THEN
 						SALIDA_ALU <= DatoB;
+					ELSE
+						SALIDA_ALU <= DatoA;
 					END IF;
+					
 				
 				-- ###### COMPARACION
 					-- A<B = 10011
 					-- A>B = 10100
 					-- A=B = 10101
 				WHEN "10011" => 
-					IF(DatoA(8) = DatoB(8)) THEN
-						IF(DatoA(8)='1') THEN
-							IF(DatoA(7 downto 0) > DatoB(7 downto 0)) THEN
-								SALIDA_ALU <= "000000001";
-							ELSE SALIDA_ALU <= "000000000";
-							END IF;
-						ELSIF(DatoA(7 downto 0) > DatoB(7 downto 0)) THEN
-							SALIDA_ALU <= "000000000";
-						ELSE SALIDA_ALU <= "000000001";
-						END IF;
-					ELSIF (DatoA(8)='1') THEN
+					IF (DatoA < DatoB) THEN
 						SALIDA_ALU <= "000000001";
 					ELSE
 						SALIDA_ALU <= "000000000";
 					END IF;
 				WHEN "10100" => 					
-					IF(DatoA(8) = DatoB(8)) THEN
-						IF(DatoA(8)='1') THEN
-							IF(DatoA(7 downto 0) > DatoB(7 downto 0)) THEN
-								SALIDA_ALU <= "000000000";
-							ELSE SALIDA_ALU <= "000000001";
-							END IF;
-						ELSIF(DatoA(7 downto 0) > DatoB(7 downto 0)) THEN
-							SALIDA_ALU <= "000000001";
-						ELSE SALIDA_ALU <= "000000000";
-						END IF;
-					ELSIF (DatoA(8)='1') THEN
-						SALIDA_ALU <= "000000000";
-					ELSE
+					IF (DatoA > DatoB) THEN
 						SALIDA_ALU <= "000000001";
+					ELSE
+						SALIDA_ALU <= "000000000";
 					END IF;
 				WHEN "10101" =>
 					IF(DatoA(8) = DatoB(8)) THEN

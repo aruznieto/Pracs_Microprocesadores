@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2019-05-22T17:06:25</DateModified>
+  <DateModified>2019-05-24T09:23:38</DateModified>
   <ModuleName>ALU</ModuleName>
-  <SummaryTimeStamp>2019-05-16T10:21:10</SummaryTimeStamp>
+  <SummaryTimeStamp>2019-05-24T09:16:22</SummaryTimeStamp>
   <SavedFilePath>D:/GIT/Pracs_Microprocesadores/VHDL/Practica2/iseconfig/ALU.xreport</SavedFilePath>
   <ImplementationReportsDirectory>D:/GIT/Pracs_Microprocesadores/VHDL/Practica2\</ImplementationReportsDirectory>
   <DateInitialized>2019-05-12T18:30:12</DateInitialized>

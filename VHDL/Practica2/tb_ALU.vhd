@@ -113,10 +113,112 @@ BEGIN
       wait for clk_period*10;
 
       -- insert stimulus here 
-		A_in <= "10000001";
-		B_in <= "10000010";
+		A_in <= "01110001";
+		B_in <= "11010100";
+		OP_in <= "00010";
+		wait for 200 ns;		
+		
+		A_in <= "01110001";
+		B_in <= "11010100";
+		OP_in <= "00001";
+		wait for 200 ns;		
+		
+		A_in <= "01110001";
+		B_in <= "11010100";
+		OP_in <= "00011";
+		wait for 200 ns;	
+		
+		A_in <= "01110001";
+		B_in <= "11010100";
+		OP_in <= "00100";
+		wait for 200 ns;	
+		
+		A_in <= "01110001";
+		B_in <= "11010100";
+		OP_in <= "00101";
+		wait for 200 ns;	
+		
+		A_in <= "01110001";
+		B_in <= "11010100";
+		OP_in <= "00110";
+		wait for 200 ns;	
+		
+		A_in <= "01110001";
+		B_in <= "11010100";
+		OP_in <= "00111";
+		wait for 200 ns;		
+		
+		A_in <= "01110001";
+		B_in <= "00110111";
+		OP_in <= "01000";
+		wait for 200 ns;	
+		
+		A_in <= "01110001";
+		B_in <= "00110111";
+		OP_in <= "01001";
+		wait for 200 ns;	
+		
+		A_in <= "01110001";
+		B_in <= "00110111";
+		OP_in <= "01010";
+		wait for 200 ns;	
+		
+		A_in <= "01110001";
+		B_in <= "00110111";
+		OP_in <= "01111";
+		wait for 200 ns;	
+		
+		A_in <= "01110001";
+		B_in <= "00110111";
+		OP_in <= "01100";
+		wait for 200 ns;	
+		
+		A_in <= "01110001";
+		B_in <= "00110111";
+		OP_in <= "01101";
+		wait for 200 ns;	
+		
+		A_in <= "01110001";
+		B_in <= "00110111";
 		OP_in <= "10001";
-		wait for 100 ns;
+		wait for 200 ns;		
+		
+		A_in <= "01110001";
+		B_in <= "00110111";
+		OP_in <= "10010";
+		wait for 200 ns;	
+		
+		A_in <= "01110001";
+		B_in <= "00110111";
+		OP_in <= "01110";
+		wait for 200 ns;	
+		
+		A_in <= "01110001";
+		B_in <= "00110111";
+		OP_in <= "01011";
+		wait for 200 ns;	
+		
+		A_in <= "01110001";
+		B_in <= "00110111";
+		OP_in <= "10000";
+		wait for 200 ns;
+		
+		A_in <= "01110001";
+		B_in <= "00110111";
+		OP_in <= "10011";
+		wait for 200 ns;	
+		
+		A_in <= "01110001";
+		B_in <= "00110111";
+		OP_in <= "10100";
+		wait for 200 ns;	
+		
+		A_in <= "01110001";
+		B_in <= "00110111";
+		OP_in <= "10101";
+		wait for 200 ns;
+		
+		
       wait;
    end process;
 
