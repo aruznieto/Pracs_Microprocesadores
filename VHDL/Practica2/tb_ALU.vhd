@@ -74,7 +74,7 @@ ARCHITECTURE behavior OF tb_ALU IS
    signal TipoOP_out : std_logic_vector(1 downto 0);
 
    -- Clock period definitions
-   constant clk_period : time := 10 ns;
+   constant clk_period : time := 20 ns;
  
 BEGIN
  
@@ -110,8 +110,12 @@ BEGIN
       -- hold reset state for 100 ns.
       wait for 100 ns;	
 
-      wait for clk_period*10;
+			reset <= '1';
+		wait for 85 ns;	
+			reset <= '0';
 
+		wait for 100 ns; 
+		
       -- insert stimulus here 
 		A_in <= "01110001";
 		B_in <= "11010100";
@@ -216,6 +220,91 @@ BEGIN
 		A_in <= "01110001";
 		B_in <= "00110111";
 		OP_in <= "10101";
+		wait for 200 ns;
+		
+		A_in <= "11110001";
+		B_in <= "00110111";
+		OP_in <= "01000";
+		wait for 200 ns;
+				
+		A_in <= "11110001";
+		B_in <= "00110111";
+		OP_in <= "01010";
+		wait for 200 ns;
+						
+		A_in <= "11110001";
+		B_in <= "00110111";
+		OP_in <= "01111";
+		wait for 200 ns;
+								
+		A_in <= "11110001";
+		B_in <= "00110111";
+		OP_in <= "01100";
+		wait for 200 ns;
+										
+		A_in <= "11110001";
+		B_in <= "00110111";
+		OP_in <= "10001";
+		wait for 200 ns;
+												
+		A_in <= "11110001";
+		B_in <= "00110111";
+		OP_in <= "10010";
+		wait for 200 ns;
+														
+		A_in <= "11110001";
+		B_in <= "00110111";
+		OP_in <= "10011";
+		wait for 200 ns;
+																
+		A_in <= "11110001";
+		B_in <= "00110111";
+		OP_in <= "10100";
+		wait for 200 ns;
+																		
+		A_in <= "11110001";
+		B_in <= "00110111";
+		OP_in <= "10101";
+		wait for 200 ns;
+																				
+		A_in <= "11110001";
+		B_in <= "00110111";
+		OP_in <= "01110";
+		wait for 200 ns;
+																						
+		A_in <= "11110001";
+		B_in <= "00110111";
+		OP_in <= "01011";
+		wait for 200 ns;
+																								
+		A_in <= "11110001";
+		B_in <= "00110111";
+		OP_in <= "10000";
+		wait for 200 ns;
+																										
+		A_in <= "11110001";
+		B_in <= "00110111";
+		OP_in <= "01111";
+		wait for 200 ns;
+																												
+		A_in <= "11110001";
+		B_in <= "00110111";
+		OP_in <= "01010";
+		wait for 200 ns;
+																														
+		A_in <= "11110001";
+		B_in <= "00110111";
+		OP_in <= "00110";
+		wait for 200 ns;
+		
+		A_in <= "11110001";
+		B_in <= "00110111";
+		OP_in <= "00111";
+		wait for 200 ns;
+				
+		A_in <= "11110001";
+		B_in <= "00110111";
+		OP_in <= "00011";
 		wait for 200 ns;
 		
 		

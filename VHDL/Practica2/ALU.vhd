@@ -101,6 +101,7 @@ begin
 			IF(clk'EVENT AND clk='1') THEN -- Si llega un ciclo de reloj actualiza LEDS
 				IF(TipoOP="10" or TipoOP="11") THEN
 					LEDs <= STD_LOGIC_VECTOR(SALIDA_ALU(7 downto 0));
+				ELSE LEDs <= "00000000";
 				END IF;
 			END IF;
 	END PROCESS;
@@ -150,53 +151,39 @@ begin
 			CASE OP IS -- Creamos un SWITCH de Java, para cada caso de OP, los codigos de 
 						  -- las distintas operaciones se pueden ver a continuacion
 						  
-				-- ###### LOGICAS
-					-- OR = 00001
-					-- AND = 00010
-					-- XOR = 00011
-					-- NAND = 00100
-					-- NOT A = 00101
-					-- RR A = 00110
-					-- RL A = 00111	
-				WHEN "00001" => SALIDA_ALU <= DatoA OR DatoB;
-				WHEN "00010" => SALIDA_ALU <= DatoA AND DatoB;
-				WHEN "00011" => SALIDA_ALU <= DatoA XOR DatoB;
-				WHEN "00100" => SALIDA_ALU <= DatoA NAND DatoB;
-				WHEN "00101" => SALIDA_ALU <= NOT DatoA;
+				-- ###### LOGICAS	
+				WHEN "00001" => SALIDA_ALU <= DatoA OR DatoB; -- OR = 00001
+				WHEN "00010" => SALIDA_ALU <= DatoA AND DatoB; -- AND = 00010
+				WHEN "00011" => SALIDA_ALU <= DatoA XOR DatoB; -- XOR = 00011
+				WHEN "00100" => SALIDA_ALU <= DatoA NAND DatoB; -- NAND = 00100
+				WHEN "00101" => SALIDA_ALU <= NOT DatoA; -- NOT A = 00101
 				WHEN "00110" =>
-					SALIDA_ALU	<= DatoA(0) & DatoA(8 downto 1);
+					SALIDA_ALU	<= DatoA(0) & DatoA(8 downto 1); -- RR A = 00110
 				WHEN "00111" =>
-					SALIDA_ALU	<= DatoA(8) & DatoA(7 downto 0);
+					SALIDA_ALU	<= DatoA(8) & DatoA(7 downto 0); -- RL A = 00111
 					
 				-- ###### ARITMETICAS
-					-- A+0 = 01000
-					-- B+0 = 01001
-					-- A+B = 01010
-					-- A-B = 01111
-					-- A+1 = 01100
-					-- A-1 = 01101
-					-- 2*A = 01110
-					-- A/2 = 01011
-					-- |A| = 10000
-					-- MAX(A,B) = 10001
-					-- MIN(A,B) = 10010
-				WHEN "01000" => SALIDA_ALU <= DatoA;
-				WHEN "01001" => SALIDA_ALU <= DatoB;
-				WHEN "01010" => SALIDA_ALU <= DatoA+DatoB;
-				WHEN "01111" => SALIDA_ALU <= DatoA-DatoB;
-				WHEN "01100" => SALIDA_ALU <= DatoA+1;
-				WHEN "01101" => SALIDA_ALU <= DatoA-1;
-				WHEN "01110" => SALIDA_ALU <= DatoA(8) & DatoA(6 downto 0) & '0';
-				WHEN "01011" => SALIDA_ALU <= DatoA(8) & '0' & DatoA(7 downto 1);
-				WHEN "10000" => SALIDA_ALU <= NOT(DatoA)+1;
-				WHEN "10001" => 
+				WHEN "01000" => SALIDA_ALU <= DatoA; -- A+0 = 01000
+				WHEN "01001" => SALIDA_ALU <= DatoB; -- B+0 = 01001
+				WHEN "01010" => SALIDA_ALU <= DatoA+DatoB; -- A+B = 01010
+				WHEN "01111" => SALIDA_ALU <= DatoA-DatoB; -- A-B = 01111
+				WHEN "01100" => SALIDA_ALU <= DatoA+1; -- A+1 = 01100
+				WHEN "01101" => SALIDA_ALU <= DatoA-1; -- A-1 = 01101
+				WHEN "01110" => SALIDA_ALU <= DatoA(7 downto 0) & '0'; -- 2*A = 01110
+				WHEN "01011" => 
+					IF (DatoA(8) = '1') THEN
+						SALIDA_ALU <= DatoA(8) & '1' & DatoA(7 downto 1); -- A/2 = 01011 | Para numero negativo
+					ELSE
+						SALIDA_ALU <= DatoA(8) & '0' & DatoA(7 downto 1); -- A/2 = 01011 | Para numero positivo
+					END IF;
+				WHEN "10000" => SALIDA_ALU <= NOT(DatoA)+1; -- |A| = 10000
+				WHEN "10001" =>  -- MAX(A,B) = 10001
 					IF (DatoA < DatoB) THEN
 						SALIDA_ALU <= DatoB;
 					ELSE
 						SALIDA_ALU <= DatoA;
-					END IF;
-					
-				WHEN "10010" => 
+					END IF;	
+				WHEN "10010" =>  -- MIN(A,B) = 10010
 					IF (DatoA > DatoB) THEN
 						SALIDA_ALU <= DatoB;
 					ELSE
@@ -205,22 +192,19 @@ begin
 					
 				
 				-- ###### COMPARACION
-					-- A<B = 10011
-					-- A>B = 10100
-					-- A=B = 10101
-				WHEN "10011" => 
+				WHEN "10011" => -- A<B = 10011
 					IF (DatoA < DatoB) THEN
 						SALIDA_ALU <= "000000001";
 					ELSE
 						SALIDA_ALU <= "000000000";
 					END IF;
-				WHEN "10100" => 					
+				WHEN "10100" => -- A>B = 10100					
 					IF (DatoA > DatoB) THEN
 						SALIDA_ALU <= "000000001";
 					ELSE
 						SALIDA_ALU <= "000000000";
 					END IF;
-				WHEN "10101" =>
+				WHEN "10101" => -- A=B = 10101
 					IF(DatoA(8) = DatoB(8)) THEN
 						SALIDA_ALU <= "000000001";
 					ELSE
