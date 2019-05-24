@@ -160,7 +160,7 @@ begin
 				WHEN "00110" =>
 					SALIDA_ALU	<= DatoA(0) & DatoA(8 downto 1); -- RR A = 00110
 				WHEN "00111" =>
-					SALIDA_ALU	<= DatoA(8) & DatoA(7 downto 0); -- RL A = 00111
+					SALIDA_ALU	<= DatoA(7 downto 0) & DatoA(8); -- RL A = 00111
 					
 				-- ###### ARITMETICAS
 				WHEN "01000" => SALIDA_ALU <= DatoA; -- A+0 = 01000
@@ -170,12 +170,7 @@ begin
 				WHEN "01100" => SALIDA_ALU <= DatoA+1; -- A+1 = 01100
 				WHEN "01101" => SALIDA_ALU <= DatoA-1; -- A-1 = 01101
 				WHEN "01110" => SALIDA_ALU <= DatoA(7 downto 0) & '0'; -- 2*A = 01110
-				WHEN "01011" => 
-					IF (DatoA(8) = '1') THEN
-						SALIDA_ALU <= DatoA(8) & '1' & DatoA(7 downto 1); -- A/2 = 01011 | Para numero negativo
-					ELSE
-						SALIDA_ALU <= DatoA(8) & '0' & DatoA(7 downto 1); -- A/2 = 01011 | Para numero positivo
-					END IF;
+				WHEN "01011" => SALIDA_ALU <= DatoA(8) & DatoA(8 downto 1); -- A/2 = 01011
 				WHEN "10000" => SALIDA_ALU <= NOT(DatoA)+1; -- |A| = 10000
 				WHEN "10001" =>  -- MAX(A,B) = 10001
 					IF (DatoA < DatoB) THEN
@@ -205,7 +200,7 @@ begin
 						SALIDA_ALU <= "000000000";
 					END IF;
 				WHEN "10101" => -- A=B = 10101
-					IF(DatoA(8) = DatoB(8)) THEN
+					IF(DatoA = DatoB) THEN
 						SALIDA_ALU <= "000000001";
 					ELSE
 						SALIDA_ALU <= "000000000";
