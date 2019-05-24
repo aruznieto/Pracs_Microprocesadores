@@ -171,7 +171,7 @@ begin
 				WHEN "01101" => SALIDA_ALU <= DatoA-1; -- A-1 = 01101
 				WHEN "01110" => SALIDA_ALU <= DatoA(7 downto 0) & '0'; -- 2*A = 01110
 				WHEN "01011" => SALIDA_ALU <= DatoA(8) & DatoA(8 downto 1); -- A/2 = 01011
-				WHEN "10000" => SALIDA_ALU <= NOT(DatoA)+1; -- |A| = 10000
+				WHEN "10000" => SALIDA_ALU <= NOT DatoA + 1; -- |A| = 10000
 				WHEN "10001" =>  -- MAX(A,B) = 10001
 					IF (DatoA < DatoB) THEN
 						SALIDA_ALU <= DatoB;

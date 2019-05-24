@@ -15,5 +15,5 @@ Compiling architecture behavior of entity tb_alu
 Time Resolution for simulation is 1ps.
 Compiled 6 VHDL Units
 Built simulation executable D:/GIT/Pracs_Microprocesadores/VHDL/Practica2/tb_ALU_isim_beh.exe
-Fuse Memory Usage: 35312 KB
-Fuse CPU Usage: 656 ms
+Fuse Memory Usage: 34588 KB
+Fuse CPU Usage: 687 ms
