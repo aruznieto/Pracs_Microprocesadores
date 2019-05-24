@@ -99,7 +99,7 @@ begin
 	PROCESS(clk)
 		BEGIN
 			IF(clk'EVENT AND clk='1') THEN -- Si llega un ciclo de reloj actualiza LEDS
-				IF(TipoOP="10" or TipoOP="11") THEN
+				IF(TipoOP="10" or TipoOP="11") THEN -- Comprobamos el tipo de operación que realizamos
 					LEDs <= STD_LOGIC_VECTOR(SALIDA_ALU(7 downto 0));
 				ELSE LEDs <= "00000000";
 				END IF;
@@ -109,8 +109,8 @@ begin
 -- REGISTRO CERO
 	PROCESS(clk,SALIDA_ALU)
 		BEGIN
-			IF(clk'EVENT AND clk='1') THEN -- Si llega un ciclo de reloj actualiza LEDS
-				IF(SALIDA_ALU="000000000") THEN
+			IF(clk'EVENT AND clk='1') THEN -- Si llega un ciclo de reloj actualiza CERO
+				IF(SALIDA_ALU="000000000") THEN -- Si la SALIDA_ALU es 0 ponemos CERO a 1, si no, CERO es 0
 					CERO <= '1';
 				ELSE
 					CERO <= '0';
@@ -121,8 +121,8 @@ begin
 -- REGISTRO SIGNO
 	PROCESS(clk,SALIDA_ALU)
 		BEGIN
-			IF(clk'EVENT AND clk='1') THEN -- Si llega un ciclo de reloj actualiza LEDS
-				IF(SALIDA_ALU(8)='1' and TipoOP="01") THEN
+			IF(clk'EVENT AND clk='1') THEN -- Si llega un ciclo de reloj actualiza SIGNO
+				IF(SALIDA_ALU(8)='1' and TipoOP="01") THEN -- Si realizamos una operacion aritmetica y el signo es -, ponemos SIGNO a 1, si no, SIGNO es 0
 					SIGNO <= '1';
 				ELSE
 					SIGNO <= '0';
@@ -130,11 +130,11 @@ begin
 			END IF;
 	END PROCESS;
 	
-	-- REGISTRO CERO
+	-- REGISTRO RESULTADO
 	PROCESS(clk,SALIDA_ALU)
 		BEGIN
-			IF(clk'EVENT AND clk='1') THEN -- Si llega un ciclo de reloj actualiza LEDS
-				IF(TipoOP="01") THEN
+			IF(clk'EVENT AND clk='1') THEN -- Si llega un ciclo de reloj actualiza RESULTADO
+				IF(TipoOP="01") THEN -- Si la operación es aritmética metemos su valor en RESULTADO
 					RESULTADO <= STD_LOGIC_VECTOR(SALIDA_ALU);
 				ELSE
 					RESULTADO <= "000000000";
@@ -171,36 +171,41 @@ begin
 				WHEN "01101" => SALIDA_ALU <= DatoA-1; -- A-1 = 01101
 				WHEN "01110" => SALIDA_ALU <= DatoA(7 downto 0) & '0'; -- 2*A = 01110
 				WHEN "01011" => SALIDA_ALU <= DatoA(8) & DatoA(8 downto 1); -- A/2 = 01011
-				WHEN "10000" => SALIDA_ALU <= NOT DatoA + 1; -- |A| = 10000
-				WHEN "10001" =>  -- MAX(A,B) = 10001
-					IF (DatoA < DatoB) THEN
-						SALIDA_ALU <= DatoB;
+				WHEN "10000" => 
+					IF(DatoA(8)='1') THEN
+						SALIDA_ALU <= NOT DatoA + 1; -- |A| = 10000, para numeros negativos
 					ELSE
+						SALIDA_ALU <= DatoA; -- |A| = 10000, para numeros positivos
+					END IF;
+				WHEN "10001" =>  -- MAX(A,B) = 10001
+					IF (DatoA < DatoB) THEN -- Si A es menor que B, SALIDA_ALU es DatoB
+						SALIDA_ALU <= DatoB;
+					ELSE	 -- Si no, SALIDA_ALU es DatoA
 						SALIDA_ALU <= DatoA;
 					END IF;	
 				WHEN "10010" =>  -- MIN(A,B) = 10010
-					IF (DatoA > DatoB) THEN
+					IF (DatoA > DatoB) THEN  -- Si A es mayor que B, SALIDA_ALU es DatoB
 						SALIDA_ALU <= DatoB;
-					ELSE
-						SALIDA_ALU <= DatoA;
+					ELSE	 -- Si no, SALIDA_ALU es DatoA
+						SALIDA_ALU <= DatoA; 
 					END IF;
 					
 				
 				-- ###### COMPARACION
 				WHEN "10011" => -- A<B = 10011
-					IF (DatoA < DatoB) THEN
+					IF (DatoA < DatoB) THEN -- Si A es menor que B, SALIDA_ALU es 1, si no, es 0
 						SALIDA_ALU <= "000000001";
 					ELSE
 						SALIDA_ALU <= "000000000";
 					END IF;
 				WHEN "10100" => -- A>B = 10100					
-					IF (DatoA > DatoB) THEN
+					IF (DatoA > DatoB) THEN -- Si A es mayor que B, SALIDA_ALU es 1, si no, es 0
 						SALIDA_ALU <= "000000001";
 					ELSE
 						SALIDA_ALU <= "000000000";
 					END IF;
 				WHEN "10101" => -- A=B = 10101
-					IF(DatoA = DatoB) THEN
+					IF(DatoA = DatoB) THEN -- Si A es igual que B, SALIDA_ALU es 1, si no, es 0
 						SALIDA_ALU <= "000000001";
 					ELSE
 						SALIDA_ALU <= "000000000";
@@ -213,11 +218,11 @@ begin
 	PROCESS(OP)
 		BEGIN
 			IF(OP="00001" or OP="00010" or OP="00011" or OP="00100" or OP="00101" or OP="00110" or OP="00111") THEN
-				TipoOP <= "10";
+				TipoOP <= "10"; -- Operación LÓGICA
 			ELSIF(OP="10011" or OP="10100" or OP="10101") THEN
-				TipoOP <= "11";
+				TipoOP <= "11"; -- Operación de COMPARACIÓN
 			ELSIF(OP="01000" or OP="01001" or OP="01010" or OP="01111" or OP="01100" or OP="01101" or OP="01110" or OP="01011" or OP="10000" or OP="10001" or OP="10010") THEN
-				TipoOP <= "01";
+				TipoOP <= "01"; -- Operación ARITMÉTICA
 			ELSE
 				TipoOP <= "00";
 			END IF;
