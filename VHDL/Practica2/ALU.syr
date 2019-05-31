@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.17 secs
+Total CPU time to Xst completion: 0.20 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.18 secs
+Total CPU time to Xst completion: 0.20 secs
  
 --> Reading design: ALU.prj
 
@@ -216,7 +216,7 @@ FlipFlop OP_0 has been replicated 2 time(s)
 INFO:Xst:1843 - HDL ADVISOR - FlipFlop OP_0 connected to a primary input has been replicated
 FlipFlop OP_1 has been replicated 1 time(s)
 INFO:Xst:1843 - HDL ADVISOR - FlipFlop OP_1 connected to a primary input has been replicated
-FlipFlop OP_2 has been replicated 1 time(s)
+FlipFlop OP_2 has been replicated 2 time(s)
 INFO:Xst:1843 - HDL ADVISOR - FlipFlop OP_2 connected to a primary input has been replicated
 FlipFlop OP_3 has been replicated 2 time(s)
 INFO:Xst:1843 - HDL ADVISOR - FlipFlop OP_3 connected to a primary input has been replicated
@@ -245,8 +245,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 69
- Flip-Flops                                            : 69
+# Registers                                            : 70
+ Flip-Flops                                            : 70
 
 =========================================================================
 
@@ -275,23 +275,23 @@ Design Statistics
 # IOs                              : 62
 
 Cell Usage :
-# BELS                             : 197
-#      LUT2                        : 23
+# BELS                             : 200
+#      LUT2                        : 22
 #      LUT2_D                      : 2
-#      LUT2_L                      : 2
-#      LUT3                        : 22
-#      LUT3_D                      : 7
-#      LUT3_L                      : 1
-#      LUT4                        : 71
+#      LUT2_L                      : 3
+#      LUT3                        : 21
+#      LUT3_D                      : 8
+#      LUT3_L                      : 2
+#      LUT4                        : 74
 #      LUT4_D                      : 5
-#      LUT4_L                      : 27
+#      LUT4_L                      : 26
 #      MUXCY                       : 26
 #      MUXF5                       : 1
 #      VCC                         : 1
 #      XORCY                       : 9
-# FlipFlops/Latches                : 69
+# FlipFlops/Latches                : 70
 #      FD                          : 2
-#      FDC                         : 48
+#      FDC                         : 49
 #      FDR                         : 19
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
@@ -305,9 +305,9 @@ Device utilization summary:
 
 Selected Device : 3s50tq144-4 
 
- Number of Slices:                       87  out of    768    11%  
- Number of Slice Flip Flops:             51  out of   1536     3%  
- Number of 4 input LUTs:                160  out of   1536    10%  
+ Number of Slices:                       91  out of    768    11%  
+ Number of Slice Flip Flops:             52  out of   1536     3%  
+ Number of 4 input LUTs:                163  out of   1536    10%  
  Number of IOs:                          62
  Number of bonded IOBs:                  62  out of     97    63%  
     IOB Flip Flops:                      18
@@ -334,7 +334,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 69    |
+clk                                | BUFGP                  | 70    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -342,7 +342,7 @@ Asynchronous Control Signals Information:
 -----------------------------------+------------------------+-------+
 Control Signal                     | Buffer(FF name)        | Load  |
 -----------------------------------+------------------------+-------+
-reset                              | IBUF                   | 48    |
+reset                              | IBUF                   | 49    |
 -----------------------------------+------------------------+-------+
 
 Timing Summary:
@@ -361,7 +361,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 14.954ns (frequency: 66.872MHz)
-  Total number of paths / destination ports: 8851 / 38
+  Total number of paths / destination ports: 8809 / 38
 -------------------------------------------------------------------------
 Delay:               14.954ns (Levels of Logic = 16)
   Source:            DatoB_0 (FF)
@@ -385,10 +385,10 @@ Delay:               14.954ns (Levels of Logic = 16)
      MUXCY:CI->O           1   0.064   0.000  Mcompar_SALIDA_ALU_cmp_lt0000_cy<7> (Mcompar_SALIDA_ALU_cmp_lt0000_cy<7>)
      MUXCY:CI->O           3   0.303   0.975  Mcompar_SALIDA_ALU_cmp_lt0000_cy<8> (Mcompar_SALIDA_ALU_cmp_lt0000_cy<8>)
      LUT3:I2->O            1   0.551   0.827  SALIDA_ALU<0>8117 (SALIDA_ALU<0>8117)
-     LUT4:I3->O            9   0.551   1.150  SALIDA_ALU<0>8128 (N31)
+     LUT4:I3->O            9   0.551   1.150  SALIDA_ALU<0>8128 (N32)
      LUT4:I3->O            1   0.551   0.869  SALIDA_ALU<4>49 (SALIDA_ALU<4>49)
      LUT4:I2->O            3   0.551   1.246  SALIDA_ALU<4>84 (SALIDA_ALU<4>)
-     LUT4:I0->O            1   0.551   0.827  CERO_not000115_SW0 (N10)
+     LUT4:I0->O            1   0.551   0.827  CERO_not000115_SW0 (N8)
      LUT4:I3->O            1   0.551   0.801  CERO_not000115 (CERO_not0001)
      FDR:R                     1.026          CERO
     ----------------------------------------
@@ -397,7 +397,7 @@ Delay:               14.954ns (Levels of Logic = 16)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 48 / 48
+  Total number of paths / destination ports: 49 / 49
 -------------------------------------------------------------------------
 Offset:              1.941ns (Levels of Logic = 1)
   Source:            A_in<7> (PAD)
@@ -436,12 +436,12 @@ Offset:              7.165ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 8.51 secs
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 8.52 secs
  
 --> 
 
-Total memory usage is 4550472 kilobytes
+Total memory usage is 4550428 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

@@ -71,10 +71,12 @@
    <wvobject fp_name="/tb_alu/leds" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">leds[7:0]</obj_property>
       <obj_property name="ObjectShortName">leds[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_alu/resultado" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">resultado[8:0]</obj_property>
       <obj_property name="ObjectShortName">resultado[8:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_alu/cero" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">cero</obj_property>

@@ -107,7 +107,7 @@ begin
 	END PROCESS;
 	
 -- REGISTRO CERO
-	PROCESS(clk,SALIDA_ALU)
+	PROCESS(clk)
 		BEGIN
 			IF(clk'EVENT AND clk='1') THEN -- Si llega un ciclo de reloj actualiza CERO
 				IF(SALIDA_ALU="000000000") THEN -- Si la SALIDA_ALU es 0 ponemos CERO a 1, si no, CERO es 0
@@ -119,7 +119,7 @@ begin
 	END PROCESS;
 
 -- REGISTRO SIGNO
-	PROCESS(clk,SALIDA_ALU)
+	PROCESS(clk)
 		BEGIN
 			IF(clk'EVENT AND clk='1') THEN -- Si llega un ciclo de reloj actualiza SIGNO
 				IF(SALIDA_ALU(8)='1' and TipoOP="01") THEN -- Si realizamos una operacion aritmetica y el signo es -, ponemos SIGNO a 1, si no, SIGNO es 0
@@ -131,7 +131,7 @@ begin
 	END PROCESS;
 	
 	-- REGISTRO RESULTADO
-	PROCESS(clk,SALIDA_ALU)
+	PROCESS(clk)
 		BEGIN
 			IF(clk'EVENT AND clk='1') THEN -- Si llega un ciclo de reloj actualiza RESULTADO
 				IF(TipoOP="01") THEN -- Si la operación es aritmética metemos su valor en RESULTADO
@@ -158,9 +158,9 @@ begin
 				WHEN "00100" => SALIDA_ALU <= DatoA NAND DatoB; -- NAND = 00100
 				WHEN "00101" => SALIDA_ALU <= NOT DatoA; -- NOT A = 00101
 				WHEN "00110" =>
-					SALIDA_ALU	<= DatoA(0) & DatoA(8 downto 1); -- RR A = 00110
+					SALIDA_ALU	<= DatoA(8) & DatoA(0) & DatoA(7 downto 1); -- RR A = 00110
 				WHEN "00111" =>
-					SALIDA_ALU	<= DatoA(7 downto 0) & DatoA(8); -- RL A = 00111
+					SALIDA_ALU	<= DatoA(8) & DatoA(6 downto 0) & DatoA(7); -- RL A = 00111
 					
 				-- ###### ARITMETICAS
 				WHEN "01000" => SALIDA_ALU <= DatoA; -- A+0 = 01000
