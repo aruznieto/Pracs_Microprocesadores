@@ -4,7 +4,7 @@
 --
 -- Create Date:   10:37:53 05/31/2019
 -- Design Name:   
--- Module Name:   D:/GIT/Pracs_Microprocesadores/VHDL/Practica3/xx.vhd
+-- Module Name:   D:/GIT/Pracs_Microprocesadores/VHDL/Practica3/tb_Display7Seg.vhd
 -- Project Name:  Practica3
 -- Target Device:  
 -- Tool versions:  
