@@ -74,34 +74,35 @@ architecture Behavioral of Display7Seg is
 	
 	OUTPUT_PROC:PROCESS(current_state)
 		BEGIN
-			IF current_state = START THEN
+			CASE (current_state) is
+			WHEN START =>
 				reinicia <= '1';
 				enable_carga_paso1 <='0';
 				enable_desplaza_paso2 <= '0';
 				enable_contador_iteraciones <= '0';
 				enable_actualiza_salida <= '0';
 				
-			ELSIF current_state = PASO1 THEN
+			WHEN PASO1 =>
 				enable_carga_paso1 <='1';
 				reinicia <= '0';
 				enable_desplaza_paso2 <= '0';
 				enable_contador_iteraciones <='0';
 				enable_actualiza_salida <= '0';
 				
-			ELSIF current_state = PASO2 THEN
+			WHEN PASO2 =>
 				enable_desplaza_paso2 <= '1';
 				reinicia <= '0';
 				enable_carga_paso1 <='0';
 				enable_contador_iteraciones <= '1'; 
 				enable_actualiza_salida <= '0';
 				
-			ELSIF current_state = FIN THEN
+			WHEN FIN =>
 				enable_desplaza_paso2 <= '0';
 				reinicia <= '0';
 				enable_carga_paso1 <='0';
 				enable_contador_iteraciones <= '0'; 
 				enable_actualiza_salida <= '1';
-			END IF;
+			END CASE;
 	END PROCESS;
 	
 	NEXT_STATE_PROC:PROCESS(current_state,dato,iteracion)
@@ -160,8 +161,8 @@ architecture Behavioral of Display7Seg is
 				ELSIF(enable_carga_paso1 = '1') THEN
 					IF (DIGITO2 >= 5) THEN
 							DIGITO2 <= DIGITO2 +3;
-						END IF;
-					ELSIF (enable_desplaza_paso2 = '1') THEN
+					END IF;
+				ELSIF (enable_desplaza_paso2 = '1') THEN
 						DIGITO2 <= DIGITO2(2 DOWNTO 0) & DIGITO1(3);
 				END IF;
 			END IF;
@@ -241,7 +242,7 @@ architecture Behavioral of Display7Seg is
 			IF (reset = '1') THEN
 				count <= (OTHERS => '0');
 			ELSIF (clk='1' and clk'EVENT) THEN
-			IF(count = 19999) THEN -- Contamos 20000 ciclos de reloj = 400us y reiniciamos la cuenta
+				IF(count = 19999) THEN -- Contamos 20000 ciclos de reloj = 400us y reiniciamos la cuenta
 					count <= (OTHERS => '0');	
 				ELSE
 					count <= count + 1;	

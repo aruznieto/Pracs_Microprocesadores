@@ -5,7 +5,7 @@ run
 -ifmt mixed
 -ofn Display7Seg
 -ofmt NGC
--p xc3s50-4-tq144
+-p xc3s400-4-ft256
 -top Display7Seg
 -opt_mode Speed
 -opt_level 1

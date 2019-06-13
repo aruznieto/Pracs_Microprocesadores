@@ -20,3 +20,26 @@ at 90 ns(1), Instance /tb_display7seg/uut/ : Warning: NUMERIC_STD."=": metavalue
 # run 200 us
 # run 1000 us
 # run 4000 us
+# restart
+# run 12us
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /tb_display7seg/uut/ : Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+Finished circuit initialization process.
+at 10 ns(1), Instance /tb_display7seg/uut/ : Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+at 10 ns(2), Instance /tb_display7seg/uut/ : Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+at 30 ns(1), Instance /tb_display7seg/uut/ : Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+at 50 ns(1), Instance /tb_display7seg/uut/ : Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+at 70 ns(1), Instance /tb_display7seg/uut/ : Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+at 90 ns(1), Instance /tb_display7seg/uut/ : Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+# run 12ms
+# restart
+# run 12ms
+Simulator is doing circuit initialization process.
+at 0 ps, Instance /tb_display7seg/uut/ : Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+Finished circuit initialization process.
+at 10 ns(1), Instance /tb_display7seg/uut/ : Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+at 10 ns(2), Instance /tb_display7seg/uut/ : Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+at 30 ns(1), Instance /tb_display7seg/uut/ : Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+at 50 ns(1), Instance /tb_display7seg/uut/ : Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+at 70 ns(1), Instance /tb_display7seg/uut/ : Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+at 90 ns(1), Instance /tb_display7seg/uut/ : Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
