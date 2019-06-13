@@ -2,9 +2,9 @@ Command line:
    tb_Display7Seg_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  50254
+     -socket  51039
 
-Fri May 31 10:48:43 2019
+Thu Jun 13 09:44:42 2019
 
 
- Elaboration Time: 0.125 sec
+ Elaboration Time: 0.09375 sec

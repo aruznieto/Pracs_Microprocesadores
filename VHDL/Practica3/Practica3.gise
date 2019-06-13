@@ -31,6 +31,8 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="Display7Seg.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="Display7Seg.xst"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="Display7Seg_envsettings.html"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Display7Seg_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Display7Seg_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="Display7Seg_summary.html"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Display7Seg_vhdl.prj"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="Display7Seg_xst.xrpt"/>
@@ -50,6 +52,7 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_Display7Seg_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="tb_Display7Seg_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="tb_Display7Seg_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_Display7Seg_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
@@ -63,48 +66,33 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1559292516" xil_pn:in_ck="-2002537034394646515" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1559292516">
+    <transform xil_pn:end_ts="1560411873" xil_pn:in_ck="-2002537034394646515" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1560411873">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Display7Seg.vhd"/>
       <outfile xil_pn:name="tb_Display7Seg.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1559292516" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="1741310552142241879" xil_pn:start_ts="1559292516">
+    <transform xil_pn:end_ts="1560411779" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="1741310552142241879" xil_pn:start_ts="1560411779">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1559292516" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-5828449212993102577" xil_pn:start_ts="1559292516">
+    <transform xil_pn:end_ts="1560411779" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-5828449212993102577" xil_pn:start_ts="1560411779">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1559291872" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="2227647186960079513" xil_pn:start_ts="1559291872">
+    <transform xil_pn:end_ts="1560410812" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="2227647186960079513" xil_pn:start_ts="1560410812">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
     </transform>
-    <transform xil_pn:end_ts="1559292516" xil_pn:in_ck="-2002537034394646515" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1559292516">
+    <transform xil_pn:end_ts="1560411876" xil_pn:in_ck="-2002537034394646515" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1560411876">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Display7Seg.vhd"/>
       <outfile xil_pn:name="tb_Display7Seg.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1559292521" xil_pn:in_ck="-2002537034394646515" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="1803944173835715083" xil_pn:start_ts="1559292516">
+    <transform xil_pn:end_ts="1560411880" xil_pn:in_ck="-2002537034394646515" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="1803944173835715083" xil_pn:start_ts="1560411876">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
@@ -112,15 +100,12 @@
       <outfile xil_pn:name="tb_Display7Seg_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1559292521" xil_pn:in_ck="-4650115453033278096" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="5148122935443080984" xil_pn:start_ts="1559292521">
+    <transform xil_pn:end_ts="1560411880" xil_pn:in_ck="5243378983525270667" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="5148122935443080984" xil_pn:start_ts="1560411880">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputRemoved"/>
-      <status xil_pn:value="OutputChanged"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="tb_Display7Seg_isim_beh.wdb"/>
     </transform>
     <transform xil_pn:end_ts="1560410389" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1560410389">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -150,7 +135,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1560410525" xil_pn:in_ck="-8713771606265276516" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="-2434765420824755709" xil_pn:start_ts="1560410518">
+    <transform xil_pn:end_ts="1560410706" xil_pn:in_ck="-8713771606265276516" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="-2434765420824755709" xil_pn:start_ts="1560410698">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Display7Seg.lso"/>

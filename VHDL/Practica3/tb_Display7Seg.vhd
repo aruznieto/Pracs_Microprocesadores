@@ -2,7 +2,7 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   10:37:53 05/31/2019
+-- Create Date:   09:26:53 06/13/2019
 -- Design Name:   
 -- Module Name:   D:/GIT/Pracs_Microprocesadores/VHDL/Practica3/tb_Display7Seg.vhd
 -- Project Name:  Practica3
@@ -30,7 +30,7 @@ USE ieee.std_logic_1164.ALL;
  
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---USE ieee.numeric_std.ALL;
+USE ieee.numeric_std.ALL;
  
 ENTITY tb_Display7Seg IS
 END tb_Display7Seg;
@@ -43,7 +43,7 @@ ARCHITECTURE behavior OF tb_Display7Seg IS
     PORT(
          clk : IN  std_logic;
          reset : IN  std_logic;
-         dato : IN  std_logic;
+         dato : IN  std_logic_vector(7 downto 0);
          AN_display7seg : OUT  std_logic_vector(3 downto 0);
          display7seg : OUT  std_logic_vector(7 downto 0)
         );
@@ -53,11 +53,11 @@ ARCHITECTURE behavior OF tb_Display7Seg IS
    --Inputs
    signal clk : std_logic := '0';
    signal reset : std_logic := '0';
-   signal dato : std_logic := '0';
+   signal dato : std_logic_vector(7 downto 0) := (others => '0');
 
  	--Outputs
-   signal AN_display7seg_m : std_logic_vector(3 downto 0);
-   signal display7seg_m : std_logic_vector(7 downto 0);
+   signal AN_display7segm : std_logic_vector(3 downto 0);
+   signal display7segm : std_logic_vector(7 downto 0);
 
    -- Clock period definitions
    constant clk_period : time := 20 ns;
@@ -69,8 +69,8 @@ BEGIN
           clk => clk,
           reset => reset,
           dato => dato,
-          AN_display7seg => AN_display7seg_m,
-          display7seg => display7seg_m
+          AN_display7seg => AN_display7segm,
+          display7seg => display7segm
         );
 
    -- Clock process definitions
@@ -86,9 +86,39 @@ BEGIN
    -- Stimulus process
    stim_proc: process
    begin		
- 		reset <= '1';
-      wait for 85 ns;	
+      -- hold reset state for 100 ns.
+		wait for 100 ns;
+		reset <= '1';
+		
+		wait for 100 ns;
 		reset <= '0';
+		
+      wait for 100 ns;	
+      dato <= "10000011";
+		
+		wait for 1600 us;		
+		dato <= "01001100";
+		
+		wait for 1600 us;		
+		dato <= "00000000";	
+		
+		wait for 1600 us;		
+		dato <= "00000000";
+				
+		wait for 1600 us;		
+		dato <= "00001111";
+				
+		wait for 1600 us;		
+		dato <= "11111111";
+				
+		wait for 1600 us;		
+		dato <= "00000001";
+				
+		wait for 1600 us;		
+		dato <= "10010100";
+
+
+      -- insert stimulus here 
 
       wait;
    end process;

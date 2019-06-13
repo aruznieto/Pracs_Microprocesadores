@@ -1,3 +1,4 @@
 xst -intstyle ise -ifn "D:/GIT/Pracs_Microprocesadores/VHDL/Practica3/Display7Seg.xst" -ofn "D:/GIT/Pracs_Microprocesadores/VHDL/Practica3/Display7Seg.syr" 
 xst -intstyle ise -ifn "D:/GIT/Pracs_Microprocesadores/VHDL/Practica3/Display7Seg.xst" -ofn "D:/GIT/Pracs_Microprocesadores/VHDL/Practica3/Display7Seg.syr" 
 xst -intstyle ise -ifn "D:/GIT/Pracs_Microprocesadores/VHDL/Practica3/Display7Seg.xst" -ofn "D:/GIT/Pracs_Microprocesadores/VHDL/Practica3/Display7Seg.syr" 
+xst -intstyle ise -ifn "D:/GIT/Pracs_Microprocesadores/VHDL/Practica3/Display7Seg.xst" -ofn "D:/GIT/Pracs_Microprocesadores/VHDL/Practica3/Display7Seg.syr" 

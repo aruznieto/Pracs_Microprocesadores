@@ -30,7 +30,7 @@ char *ieee_p_1242562249_sub_1919365254_1035706684(char *, char *, char *, char *
 unsigned char ieee_p_1242562249_sub_3143221075_1035706684(char *, char *, char *, int );
 
 
-static void work_a_0344055537_3212880686_p_0(char *t0)
+static void work_a_0013313564_3212880686_p_0(char *t0)
 {
     char *t1;
     char *t2;
@@ -101,7 +101,7 @@ LAB7:    t2 = (t0 + 1032U);
 
 }
 
-static void work_a_0344055537_3212880686_p_1(char *t0)
+static void work_a_0013313564_3212880686_p_1(char *t0)
 {
     char *t1;
     char *t2;
@@ -316,7 +316,7 @@ LAB9:    xsi_set_current_line(99, ng0);
 
 }
 
-static void work_a_0344055537_3212880686_p_2(char *t0)
+static void work_a_0013313564_3212880686_p_2(char *t0)
 {
     char *t1;
     char *t2;
@@ -400,7 +400,7 @@ LAB7:    xsi_set_current_line(116, ng0);
 
 }
 
-static void work_a_0344055537_3212880686_p_3(char *t0)
+static void work_a_0013313564_3212880686_p_3(char *t0)
 {
     char t19[16];
     char t20[16];
@@ -520,7 +520,7 @@ LAB13:    xsi_size_not_matching(8U, t22, 0);
 
 }
 
-static void work_a_0344055537_3212880686_p_4(char *t0)
+static void work_a_0013313564_3212880686_p_4(char *t0)
 {
     char t17[16];
     char t27[16];
@@ -695,7 +695,7 @@ LAB20:    xsi_size_not_matching(4U, t29, 0);
 
 }
 
-static void work_a_0344055537_3212880686_p_5(char *t0)
+static void work_a_0013313564_3212880686_p_5(char *t0)
 {
     char t17[16];
     char t27[16];
@@ -870,7 +870,7 @@ LAB20:    xsi_size_not_matching(4U, t29, 0);
 
 }
 
-static void work_a_0344055537_3212880686_p_6(char *t0)
+static void work_a_0013313564_3212880686_p_6(char *t0)
 {
     char t17[16];
     char t27[16];
@@ -1045,7 +1045,7 @@ LAB20:    xsi_size_not_matching(4U, t29, 0);
 
 }
 
-static void work_a_0344055537_3212880686_p_7(char *t0)
+static void work_a_0013313564_3212880686_p_7(char *t0)
 {
     char t17[16];
     unsigned char t1;
@@ -1168,7 +1168,7 @@ LAB16:    xsi_size_not_matching(4U, t19, 0);
 
 }
 
-static void work_a_0344055537_3212880686_p_8(char *t0)
+static void work_a_0013313564_3212880686_p_8(char *t0)
 {
     char *t1;
     char *t2;
@@ -1255,7 +1255,7 @@ LAB10:    xsi_set_current_line(209, ng0);
 
 }
 
-static void work_a_0344055537_3212880686_p_9(char *t0)
+static void work_a_0013313564_3212880686_p_9(char *t0)
 {
     char *t1;
     char *t2;
@@ -1342,7 +1342,7 @@ LAB10:    xsi_set_current_line(221, ng0);
 
 }
 
-static void work_a_0344055537_3212880686_p_10(char *t0)
+static void work_a_0013313564_3212880686_p_10(char *t0)
 {
     char *t1;
     char *t2;
@@ -1429,7 +1429,7 @@ LAB10:    xsi_set_current_line(233, ng0);
 
 }
 
-static void work_a_0344055537_3212880686_p_11(char *t0)
+static void work_a_0013313564_3212880686_p_11(char *t0)
 {
     char t17[16];
     char *t1;
@@ -1544,7 +1544,7 @@ LAB13:    xsi_size_not_matching(15U, t19, 0);
 
 }
 
-static void work_a_0344055537_3212880686_p_12(char *t0)
+static void work_a_0013313564_3212880686_p_12(char *t0)
 {
     char *t1;
     char *t2;
@@ -1588,7 +1588,7 @@ LAB2:    xsi_set_current_line(256, ng0);
 
 }
 
-static void work_a_0344055537_3212880686_p_13(char *t0)
+static void work_a_0013313564_3212880686_p_13(char *t0)
 {
     char t23[16];
     char t25[16];
@@ -1725,7 +1725,7 @@ LAB13:    xsi_size_not_matching(4U, t29, 0);
 
 }
 
-static void work_a_0344055537_3212880686_p_14(char *t0)
+static void work_a_0013313564_3212880686_p_14(char *t0)
 {
     char *t1;
     char *t2;
@@ -1755,7 +1755,7 @@ LAB4:    goto LAB2;
 
 }
 
-static void work_a_0344055537_3212880686_p_15(char *t0)
+static void work_a_0013313564_3212880686_p_15(char *t0)
 {
     char *t1;
     char *t2;
@@ -1905,7 +1905,7 @@ LAB26:    t5 = (t5 + 1);
 
 }
 
-static void work_a_0344055537_3212880686_p_16(char *t0)
+static void work_a_0013313564_3212880686_p_16(char *t0)
 {
     char *t1;
     char *t2;
@@ -2120,9 +2120,9 @@ LAB24:;
 }
 
 
-extern void work_a_0344055537_3212880686_init()
+extern void work_a_0013313564_3212880686_init()
 {
-	static char *pe[] = {(void *)work_a_0344055537_3212880686_p_0,(void *)work_a_0344055537_3212880686_p_1,(void *)work_a_0344055537_3212880686_p_2,(void *)work_a_0344055537_3212880686_p_3,(void *)work_a_0344055537_3212880686_p_4,(void *)work_a_0344055537_3212880686_p_5,(void *)work_a_0344055537_3212880686_p_6,(void *)work_a_0344055537_3212880686_p_7,(void *)work_a_0344055537_3212880686_p_8,(void *)work_a_0344055537_3212880686_p_9,(void *)work_a_0344055537_3212880686_p_10,(void *)work_a_0344055537_3212880686_p_11,(void *)work_a_0344055537_3212880686_p_12,(void *)work_a_0344055537_3212880686_p_13,(void *)work_a_0344055537_3212880686_p_14,(void *)work_a_0344055537_3212880686_p_15,(void *)work_a_0344055537_3212880686_p_16};
-	xsi_register_didat("work_a_0344055537_3212880686", "isim/tb_Display7Seg_isim_beh.exe.sim/work/a_0344055537_3212880686.didat");
+	static char *pe[] = {(void *)work_a_0013313564_3212880686_p_0,(void *)work_a_0013313564_3212880686_p_1,(void *)work_a_0013313564_3212880686_p_2,(void *)work_a_0013313564_3212880686_p_3,(void *)work_a_0013313564_3212880686_p_4,(void *)work_a_0013313564_3212880686_p_5,(void *)work_a_0013313564_3212880686_p_6,(void *)work_a_0013313564_3212880686_p_7,(void *)work_a_0013313564_3212880686_p_8,(void *)work_a_0013313564_3212880686_p_9,(void *)work_a_0013313564_3212880686_p_10,(void *)work_a_0013313564_3212880686_p_11,(void *)work_a_0013313564_3212880686_p_12,(void *)work_a_0013313564_3212880686_p_13,(void *)work_a_0013313564_3212880686_p_14,(void *)work_a_0013313564_3212880686_p_15,(void *)work_a_0013313564_3212880686_p_16};
+	xsi_register_didat("work_a_0013313564_3212880686", "isim/Display7Seg_isim_beh.exe.sim/work/a_0013313564_3212880686.didat");
 	xsi_register_executes(pe);
 }
