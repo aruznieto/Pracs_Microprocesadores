@@ -224,6 +224,8 @@
     <transform xil_pn:end_ts="1560412944" xil_pn:in_ck="7186079887596555902" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="6918683465102363066" xil_pn:start_ts="1560412940">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Display7Seg.pcf"/>
       <outfile xil_pn:name="Display7Seg_map.map"/>
       <outfile xil_pn:name="Display7Seg_map.mrp"/>
@@ -259,6 +261,10 @@
       <outfile xil_pn:name="usage_statistics_webtalk.html"/>
       <outfile xil_pn:name="webtalk.log"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
+    </transform>
+    <transform xil_pn:end_ts="1560413037" xil_pn:in_ck="6656213331594007289" xil_pn:name="TRAN_impactProgrammingTool" xil_pn:prop_ck="-6864680952955714571" xil_pn:start_ts="1560413037">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1560412954" xil_pn:in_ck="4040652194739783290" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416186" xil_pn:start_ts="1560412951">
       <status xil_pn:value="SuccessfullyRun"/>
