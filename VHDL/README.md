@@ -4,7 +4,7 @@ _A continuación podrás ver todas las prácticas resueltas que se realizaron en
 
 ## Comenzando 🚀
 
-_Para comenzar te tendrás que descargar MPLAB, cuyo link puedes encontrar en **Pre-requisitos**._
+_Para comenzar te tendrás que descargar ISE DS 14.7, cuyo link puedes encontrar en **Pre-requisitos**._
 
 Mira **Deployment** para conocer como desplegar cada práctica.
 

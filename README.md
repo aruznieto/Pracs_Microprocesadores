@@ -19,6 +19,7 @@ _A continuación encontrarás un índice con las prácticas que hemos hecho._
     * Práctica 1: Diseño de una ALU
     * Práctica 2: Diseño de una ALU (ampliado)
     * Práctica 3: Representación de números en display 7 segmentos
+    * Proyecto: UART
     * Documentos
 
 ## Autores ✒️
