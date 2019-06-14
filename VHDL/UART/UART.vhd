@@ -33,10 +33,7 @@ entity UART is
     Port ( clk : in  STD_LOGIC;
            reset : in  STD_LOGIC;
            TX_DATA : in  STD_LOGIC_VECTOR(7 downto 0);
-			  RX_DATA : out  STD_LOGIC_VECTOR(7 downto 0);
-			  RX_NEWDATA : out  STD_LOGIC_VECTOR(7 downto 0);
            BTN_IN : in  STD_LOGIC;
-			  RX_IN : in STD_LOGIC;
            TX_READY : out  STD_LOGIC;
            TX_OUT : out  STD_LOGIC);
 end UART;
@@ -45,15 +42,11 @@ architecture Behavioral of UART is
 	signal BTN : STD_LOGIC;
 	signal TX_START : STD_LOGIC;
 	signal ACTUALIZACION_TX : STD_LOGIC;
-	signal ACTUALIZACION_RX : STD_LOGIC;
 	signal TSR : STD_LOGIC_VECTOR(9 downto 0);
-	signal RSR : STD_LOGIC;
 	signal TX_NBIT : unsigned(4 downto 0);
-	signal RX_NBIT : unsigned(4 downto 0);
 	signal disable_TX : STD_LOGIC;
 	signal enable_desplaza : STD_LOGIC;
 	signal enable_carga_dato : STD_LOGIC;
-	signal enable_envia : STD_LOGIC;
 	signal contador_baudios : unsigned(15 downto 0);
 	
 	-- ESTADOS DE LAS FMS
@@ -144,7 +137,7 @@ architecture Behavioral of UART is
 			END CASE;
 	END PROCESS;
 	
-	proceso_siguiente_estado_tx:PROCESS(actual_tx,TX_START)
+	proceso_siguiente_estado_tx:PROCESS(actual_tx,TX_START,TX_NBIT)
 		BEGIN
 			CASE actual_tx is
 				WHEN idle => 
@@ -168,9 +161,20 @@ architecture Behavioral of UART is
 	END PROCESS;
 -- ############################################
 
+	-- BTN
+-- ############################################
+	PROCESS(clk,RESET)
+		BEGIN
+			IF(RESET = '0') THEN
+				BTN <= '0';
+			ELSIF(clk'event and clk = '1') THEN
+				BTN <= BTN_IN;
+			END IF;
+	END PROCESS;
+
 	-- regTX_Ready
 -- ############################################
-	PROCESS(clk,reset)
+	PROCESS(clk,RESET)
 		BEGIN
 			IF(RESET = '1') THEN
 				TX_READY <= '1';
@@ -203,7 +207,7 @@ architecture Behavioral of UART is
 	PROCESS(clk,RESET)
 		BEGIN
 			IF (RESET = '1') THEN
-				TSR <= '1' & TX_DATA & '0';
+				TSR <= (OTHERS => '0');
 			ELSIF (clk'event and clk = '1') THEN
 				IF (enable_carga_dato = '1') THEN
 					TSR <= '1' & TX_DATA & '0';

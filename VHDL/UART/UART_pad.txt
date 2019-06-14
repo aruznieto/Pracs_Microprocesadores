@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Fri Jun 14 10:37:27 2019
+Fri Jun 14 10:57:16 2019
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -27,7 +27,7 @@ Pinout by Pin Number:
 |A5        |           |IOB      |IO                 |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |A6        |           |         |VCCAUX             |         |           |              |          |         |           |         |2.5      |          |           |                |
 |A7        |           |IOB      |IO                 |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
-|A8        |TX_READY   |IOB      |IO_L32P_0/GCLK6    |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |UNLOCATED |NO         |NONE            |
+|A8        |           |DIFFM    |IO_L32P_0/GCLK6    |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |A9        |           |IOB      |IO                 |UNUSED   |           |1             |          |         |           |         |         |          |           |                |
 |A10       |           |DIFFS    |IO_L31N_1/VREF_1   |UNUSED   |           |1             |          |         |           |         |         |          |           |                |
 |A11       |           |         |VCCAUX             |         |           |              |          |         |           |         |2.5      |          |           |                |
@@ -43,7 +43,7 @@ Pinout by Pin Number:
 |B5        |           |DIFFM    |IO_L25P_0          |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |B6        |           |DIFFM    |IO_L28P_0          |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |B7        |           |DIFFM    |IO_L30P_0          |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
-|B8        |TX_OUT     |IOB      |IO_L32N_0/GCLK7    |OUTPUT   |LVCMOS25*  |0             |12        |SLOW     |NONE**     |         |         |UNLOCATED |NO         |NONE            |
+|B8        |           |DIFFS    |IO_L32N_0/GCLK7    |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |B9        |           |         |GND                |         |           |              |          |         |           |         |         |          |           |                |
 |B10       |           |DIFFM    |IO_L31P_1          |UNUSED   |           |1             |          |         |           |         |         |          |           |                |
 |B11       |           |DIFFS    |IO_L29N_1          |UNUSED   |           |1             |          |         |           |         |         |          |           |                |
@@ -91,7 +91,7 @@ Pinout by Pin Number:
 |E5        |           |         |VCCINT             |         |           |              |          |         |           |         |1.2      |          |           |                |
 |E6        |           |DIFFS    |IO_L27N_0          |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |E7        |           |DIFFS    |IO_L29N_0          |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
-|E8        |           |         |VCCO_0             |         |           |0             |          |         |           |         |2.50     |          |           |                |
+|E8        |           |         |VCCO_0             |         |           |0             |          |         |           |         |any******|          |           |                |
 |E9        |           |         |VCCO_1             |         |           |1             |          |         |           |         |any******|          |           |                |
 |E10       |           |DIFFM    |IO_L30P_1          |UNUSED   |           |1             |          |         |           |         |         |          |           |                |
 |E11       |           |DIFFM    |IO_L28P_1          |UNUSED   |           |1             |          |         |           |         |         |          |           |                |
@@ -106,8 +106,8 @@ Pinout by Pin Number:
 |F4        |           |DIFFS    |IO_L21N_7          |UNUSED   |           |7             |          |         |           |         |         |          |           |                |
 |F5        |           |DIFFM    |IO_L23P_7          |UNUSED   |           |7             |          |         |           |         |         |          |           |                |
 |F6        |           |         |GND                |         |           |              |          |         |           |         |         |          |           |                |
-|F7        |           |         |VCCO_0             |         |           |0             |          |         |           |         |2.50     |          |           |                |
-|F8        |           |         |VCCO_0             |         |           |0             |          |         |           |         |2.50     |          |           |                |
+|F7        |           |         |VCCO_0             |         |           |0             |          |         |           |         |any******|          |           |                |
+|F8        |           |         |VCCO_0             |         |           |0             |          |         |           |         |any******|          |           |                |
 |F9        |           |         |VCCO_1             |         |           |1             |          |         |           |         |any******|          |           |                |
 |F10       |           |         |VCCO_1             |         |           |1             |          |         |           |         |any******|          |           |                |
 |F11       |           |         |GND                |         |           |              |          |         |           |         |         |          |           |                |
@@ -188,8 +188,8 @@ Pinout by Pin Number:
 |L6        |           |         |GND                |         |           |              |          |         |           |         |         |          |           |                |
 |L7        |           |         |VCCO_5             |         |           |5             |          |         |           |         |any******|          |           |                |
 |L8        |           |         |VCCO_5             |         |           |5             |          |         |           |         |any******|          |           |                |
-|L9        |           |         |VCCO_4             |         |           |4             |          |         |           |         |any******|          |           |                |
-|L10       |           |         |VCCO_4             |         |           |4             |          |         |           |         |any******|          |           |                |
+|L9        |           |         |VCCO_4             |         |           |4             |          |         |           |         |2.50     |          |           |                |
+|L10       |           |         |VCCO_4             |         |           |4             |          |         |           |         |2.50     |          |           |                |
 |L11       |           |         |GND                |         |           |              |          |         |           |         |         |          |           |                |
 |L12       |           |DIFFM    |IO_L23P_3/VREF_3   |UNUSED   |           |3             |          |         |           |         |         |          |           |                |
 |L13       |           |DIFFS    |IO_L21N_3          |UNUSED   |           |3             |          |         |           |         |         |          |           |                |
@@ -204,9 +204,9 @@ Pinout by Pin Number:
 |M6        |           |DIFFM    |IO_L28P_5/D7       |UNUSED   |           |5             |          |         |           |         |         |          |           |                |
 |M7        |           |DIFFM    |IO_L30P_5          |UNUSED   |           |5             |          |         |           |         |         |          |           |                |
 |M8        |           |         |VCCO_5             |         |           |5             |          |         |           |         |any******|          |           |                |
-|M9        |           |         |VCCO_4             |         |           |4             |          |         |           |         |any******|          |           |                |
-|M10       |           |DIFFS    |IO_L29N_4          |UNUSED   |           |4             |          |         |           |         |         |          |           |                |
-|M11       |           |DIFFS    |IO_L27N_4/DIN/D0   |UNUSED   |           |4             |          |         |           |         |         |          |           |                |
+|M9        |           |         |VCCO_4             |         |           |4             |          |         |           |         |2.50     |          |           |                |
+|M10       |TX_DATA<3> |IOB      |IO_L29N_4          |INPUT    |LVCMOS25*  |4             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|M11       |TX_DATA<7> |IOB      |IO_L27N_4/DIN/D0   |INPUT    |LVCMOS25*  |4             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
 |M12       |           |         |VCCINT             |         |           |              |          |         |           |         |1.2      |          |           |                |
 |M13       |           |DIFFM    |IO_L21P_3          |UNUSED   |           |3             |          |         |           |         |         |          |           |                |
 |M14       |           |DIFFS    |IO_L19N_3          |UNUSED   |           |3             |          |         |           |         |         |          |           |                |
@@ -220,9 +220,9 @@ Pinout by Pin Number:
 |N6        |           |DIFFS    |IO_L28N_5/D6       |UNUSED   |           |5             |          |         |           |         |         |          |           |                |
 |N7        |           |DIFFS    |IO_L30N_5          |UNUSED   |           |5             |          |         |           |         |         |          |           |                |
 |N8        |           |DIFFM    |IO_L32P_5/GCLK2    |UNUSED   |           |5             |          |         |           |         |         |          |           |                |
-|N9        |           |DIFFS    |IO_L31N_4/INIT_B   |UNUSED   |           |4             |          |         |           |         |         |          |           |                |
-|N10       |           |DIFFM    |IO_L29P_4          |UNUSED   |           |4             |          |         |           |         |         |          |           |                |
-|N11       |           |DIFFM    |IO_L27P_4/D1       |UNUSED   |           |4             |          |         |           |         |         |          |           |                |
+|N9        |reset      |IOB      |IO_L31N_4/INIT_B   |INPUT    |LVCMOS25*  |4             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|N10       |TX_DATA<2> |IOB      |IO_L29P_4          |INPUT    |LVCMOS25*  |4             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|N11       |TX_DATA<6> |IOB      |IO_L27P_4/D1       |INPUT    |LVCMOS25*  |4             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
 |N12       |           |IOB      |IO/VREF_4          |UNUSED   |           |4             |          |         |           |         |         |          |           |                |
 |N13       |           |         |VCCINT             |         |           |              |          |         |           |         |1.2      |          |           |                |
 |N14       |           |DIFFM    |IO_L19P_3          |UNUSED   |           |3             |          |         |           |         |         |          |           |                |
@@ -237,8 +237,8 @@ Pinout by Pin Number:
 |P7        |           |IOB      |IO                 |UNUSED   |           |5             |          |         |           |         |         |          |           |                |
 |P8        |           |DIFFS    |IO_L32N_5/GCLK3    |UNUSED   |           |5             |          |         |           |         |         |          |           |                |
 |P9        |           |DIFFM    |IO_L31P_4/DOUT/BUSY|UNUSED   |           |4             |          |         |           |         |         |          |           |                |
-|P10       |           |DIFFS    |IO_L30N_4/D2       |UNUSED   |           |4             |          |         |           |         |         |          |           |                |
-|P11       |           |DIFFS    |IO_L28N_4          |UNUSED   |           |4             |          |         |           |         |         |          |           |                |
+|P10       |TX_DATA<1> |IOB      |IO_L30N_4/D2       |INPUT    |LVCMOS25*  |4             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|P11       |TX_DATA<5> |IOB      |IO_L28N_4          |INPUT    |LVCMOS25*  |4             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
 |P12       |           |DIFFS    |IO_L25N_4          |UNUSED   |           |4             |          |         |           |         |         |          |           |                |
 |P13       |           |IOB      |IO/VREF_4          |UNUSED   |           |4             |          |         |           |         |         |          |           |                |
 |P14       |           |DIFFM    |IO_L16P_3          |UNUSED   |           |3             |          |         |           |         |         |          |           |                |
@@ -252,9 +252,9 @@ Pinout by Pin Number:
 |R6        |           |DIFFS    |IO_L29N_5          |UNUSED   |           |5             |          |         |           |         |         |          |           |                |
 |R7        |           |DIFFM    |IO_L31P_5/D5       |UNUSED   |           |5             |          |         |           |         |         |          |           |                |
 |R8        |           |         |GND                |         |           |              |          |         |           |         |         |          |           |                |
-|R9        |           |DIFFS    |IO_L32N_4/GCLK1    |UNUSED   |           |4             |          |         |           |         |         |          |           |                |
-|R10       |           |DIFFM    |IO_L30P_4/D3       |UNUSED   |           |4             |          |         |           |         |         |          |           |                |
-|R11       |           |DIFFM    |IO_L28P_4          |UNUSED   |           |4             |          |         |           |         |         |          |           |                |
+|R9        |BTN_IN     |IOB      |IO_L32N_4/GCLK1    |INPUT    |LVCMOS25*  |4             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|R10       |TX_DATA<4> |IOB      |IO_L30P_4/D3       |INPUT    |LVCMOS25*  |4             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|R11       |TX_DATA<0> |IOB      |IO_L28P_4          |INPUT    |LVCMOS25*  |4             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
 |R12       |           |DIFFM    |IO_L25P_4          |UNUSED   |           |4             |          |         |           |         |         |          |           |                |
 |R13       |           |DIFFS    |IO_L01N_4/VRP_4    |UNUSED   |           |4             |          |         |           |         |         |          |           |                |
 |R14       |           |         |DONE               |         |           |              |          |         |           |         |         |          |           |                |
@@ -268,10 +268,10 @@ Pinout by Pin Number:
 |T6        |           |         |VCCAUX             |         |           |              |          |         |           |         |2.5      |          |           |                |
 |T7        |           |DIFFS    |IO_L31N_5/D4       |UNUSED   |           |5             |          |         |           |         |         |          |           |                |
 |T8        |           |IOB      |IO/VREF_5          |UNUSED   |           |5             |          |         |           |         |         |          |           |                |
-|T9        |           |DIFFM    |IO_L32P_4/GCLK0    |UNUSED   |           |4             |          |         |           |         |         |          |           |                |
-|T10       |           |IOB      |IO/VREF_4          |UNUSED   |           |4             |          |         |           |         |         |          |           |                |
+|T9        |clk        |IOB      |IO_L32P_4/GCLK0    |INPUT    |LVCMOS25*  |4             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|T10       |TX_READY   |IOB      |IO/VREF_4          |OUTPUT   |LVCMOS25*  |4             |12        |SLOW     |NONE**     |         |         |UNLOCATED |NO         |NONE            |
 |T11       |           |         |VCCAUX             |         |           |              |          |         |           |         |2.5      |          |           |                |
-|T12       |           |IOB      |IO                 |UNUSED   |           |4             |          |         |           |         |         |          |           |                |
+|T12       |TX_OUT     |IOB      |IO                 |OUTPUT   |LVCMOS25*  |4             |12        |SLOW     |NONE**     |         |         |UNLOCATED |NO         |NONE            |
 |T13       |           |DIFFM    |IO_L01P_4/VRN_4    |UNUSED   |           |4             |          |         |           |         |         |          |           |                |
 |T14       |           |DIFFS    |IO                 |UNUSED   |           |4             |          |         |           |         |         |          |           |                |
 |T15       |           |         |CCLK               |         |           |              |          |         |           |         |         |          |           |                |

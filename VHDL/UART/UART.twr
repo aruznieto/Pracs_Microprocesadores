@@ -37,11 +37,43 @@ INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and
 
 Data Sheet report:
 -----------------
-No constraints were found to generate data for the Data Sheet Report section.
-Use the Advanced Analysis (-a) option or generate global constraints for each
-clock, its pad to setup and clock to pad paths, and a pad to pad constraint.
+All values displayed in nanoseconds (ns)
 
-Analysis completed Fri Jun 14 10:37:30 2019 
+Setup/Hold to clock clk
+------------+------------+------------+------------------+--------+
+            |Max Setup to|Max Hold to |                  | Clock  |
+Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+------------+------------+------------+------------------+--------+
+BTN_IN      |    0.351(R)|    1.195(R)|clk_BUFGP         |   0.000|
+TX_DATA<0>  |    0.862(R)|    0.787(R)|clk_BUFGP         |   0.000|
+TX_DATA<1>  |    1.129(R)|    0.573(R)|clk_BUFGP         |   0.000|
+TX_DATA<2>  |    0.545(R)|    1.040(R)|clk_BUFGP         |   0.000|
+TX_DATA<3>  |    0.934(R)|    0.728(R)|clk_BUFGP         |   0.000|
+TX_DATA<4>  |    0.823(R)|    0.817(R)|clk_BUFGP         |   0.000|
+TX_DATA<5>  |    0.441(R)|    1.122(R)|clk_BUFGP         |   0.000|
+TX_DATA<6>  |    0.488(R)|    1.085(R)|clk_BUFGP         |   0.000|
+TX_DATA<7>  |    0.960(R)|    0.708(R)|clk_BUFGP         |   0.000|
+------------+------------+------------+------------------+--------+
+
+Clock clk to Pad
+------------+------------+------------------+--------+
+            | clk (edge) |                  | Clock  |
+Destination |   to PAD   |Internal Clock(s) | Phase  |
+------------+------------+------------------+--------+
+TX_OUT      |    8.789(R)|clk_BUFGP         |   0.000|
+TX_READY    |    8.401(R)|clk_BUFGP         |   0.000|
+------------+------------+------------------+--------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    6.461|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Fri Jun 14 10:57:19 2019 
 --------------------------------------------------------------------------------
 
 Trace Settings:

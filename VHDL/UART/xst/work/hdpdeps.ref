@@ -1,6 +1,6 @@
 V3 3
-FL D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART.vhd 2019/06/14.10:46:22 P.20131013
-EN work/UART 1560501986 FL D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART.vhd \
+FL D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART.vhd 2019/06/14.10:57:41 P.20131013
+EN work/UART 1560502665 FL D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
-AR work/UART/Behavioral 1560501987 \
-      FL D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART.vhd EN work/UART 1560501986
+AR work/UART/Behavioral 1560502666 \
+      FL D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART.vhd EN work/UART 1560502665
