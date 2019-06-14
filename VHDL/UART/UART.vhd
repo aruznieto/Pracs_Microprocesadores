@@ -46,10 +46,15 @@ architecture Behavioral of UART is
 	signal TX_START : STD_LOGIC;
 	signal ACTUALIZACION_TX : STD_LOGIC;
 	signal ACTUALIZACION_RX : STD_LOGIC;
-	signal TSR : STD_LOGIC;
+	signal TSR : STD_LOGIC_VECTOR(9 downto 0);
 	signal RSR : STD_LOGIC;
-	signal TX_NBIT : STD_LOGIC;
-	signal RX_NBIT : STD_LOGIC;
+	signal TX_NBIT : unsigned(4 downto 0);
+	signal RX_NBIT : unsigned(4 downto 0);
+	signal disable_TX : STD_LOGIC;
+	signal enable_desplaza : STD_LOGIC;
+	signal enable_carga_dato : STD_LOGIC;
+	signal enable_envia : STD_LOGIC;
+	signal contador_baudios : unsigned(15 downto 0);
 	
 	-- ESTADOS DE LAS FMS
 -- ############################################
@@ -58,9 +63,6 @@ architecture Behavioral of UART is
 	
 	type estados_tx is (idle, TX_inicio, TX_datos);
 	signal actual_tx, siguiente_tx :estados_tx;
-	
-	type estados_rx is (idle, RX_inicio, RX_datos, RX_fin);
-	signal actual_rx, siguiente_rx :estados_rx;
 -- ############################################
 
 	BEGIN
@@ -126,14 +128,23 @@ architecture Behavioral of UART is
 		
 	proceso_salida_tx:PROCESS(actual_tx)
 		BEGIN
-			CASE actual_btn is
-				WHEN idle => TX_START <= '0';
-				WHEN TX_inicio => TX_START <= '1';
-				WHEN TX_fin => TX_START <= '0';
+			CASE actual_tx is
+				WHEN idle => 
+					disable_TX <= '0';
+					enable_desplaza <= '0';
+					enable_carga_dato <= '0';
+				WHEN TX_inicio => 
+					disable_TX <= '1';
+					enable_desplaza <= '0';
+					enable_carga_dato <= '1';
+				WHEN TX_datos => 
+					disable_TX <= '1';
+					enable_desplaza <= '1';
+					enable_carga_dato <= '0';
 			END CASE;
 	END PROCESS;
 	
-	proceso_siguiente_estado_tx:PROCESS(actual_tx,BTN)
+	proceso_siguiente_estado_tx:PROCESS(actual_tx,TX_START)
 		BEGIN
 			CASE actual_tx is
 				WHEN idle => 
@@ -144,25 +155,95 @@ architecture Behavioral of UART is
 					END IF;
 					
 				WHEN TX_inicio =>
-					IF(BTN = '1') THEN
-						siguiente_tx <= uno;
-					ELSE
-						siguiente_tx <= cero;
-					END IF;
+						siguiente_tx <= TX_datos;
 					
 				WHEN TX_datos =>
-					IF(BTN = '1') THEN
-						siguiente_tx <= uno;
+					IF(TX_NBIT = 9) THEN
+						siguiente_tx <= idle;
 					ELSE
-						siguiente_tx <= cero;
+						siguiente_tx <= TX_datos;
 					END IF;
 					
 			END CASE;
 	END PROCESS;
 -- ############################################
 
-	-- FMS RX
+	-- regTX_Ready
 -- ############################################
+	PROCESS(clk,reset)
+		BEGIN
+			IF(RESET = '1') THEN
+				TX_READY <= '1';
+			ELSIF(clk'event and clk = '1') THEN
+				IF(disable_TX = '1') THEN
+					TX_READY <= '0';
+				ELSE 
+					TX_READY <= '1';
+				END IF;
+			END IF;
+	END PROCESS;
+-- ############################################
+
+	-- Contador de transmisión
+-- ############################################
+	PROCESS(clk,RESET)
+		BEGIN
+			IF(RESET = '1') THEN
+				TX_NBIT <= (OTHERS => '0');
+			ELSIF(clk'event and clk = '1') THEN
+				IF(ACTUALIZACION_TX = '1') THEN
+					TX_NBIT <= TX_NBIT + 1;
+				END IF;
+			END IF;
+	END PROCESS;
+-- ############################################
+
+	-- Desplazamiento
+-- ############################################
+	PROCESS(clk,RESET)
+		BEGIN
+			IF (RESET = '1') THEN
+				TSR <= '1' & TX_DATA & '0';
+			ELSIF (clk'event and clk = '1') THEN
+				IF (enable_carga_dato = '1') THEN
+					TSR <= '1' & TX_DATA & '0';
+				ELSIF (enable_desplaza = '1') THEN
+					IF (ACTUALIZACION_TX = '1') THEN
+						TSR <= TSR(0) & TSR(9 downto 1);
+					END IF;
+				END IF;
+			END IF;
+	END PROCESS;
+	
+	TX_OUT <= TSR(0);
+-- ############################################
+
+	-- Baud rate generator
+-- ############################################
+	PROCESS(clk,RESET)
+		BEGIN
+			IF (RESET = '1') THEN
+				contador_baudios <= (OTHERS => '0'); -- 1/BAUDIOS y RESULTADO ENTRE 20ns (50MHz)
+			ELSIF (clk'event and clk = '1') THEN
+				IF (contador_baudios = 5208) THEN
+					contador_baudios <= (OTHERS => '0');
+				ELSE
+					contador_baudios <= contador_baudios + 1;
+				END IF;
+			END IF;	
+	END PROCESS;
+-- ############################################
+
+	-- ACTUALIZACION_TX
+-- ############################################
+	PROCESS(contador_baudios)
+		BEGIN
+			IF (contador_baudios = 0) THEN
+				ACTUALIZACION_TX <= '1';
+			ELSE
+				ACTUALIZACION_TX <= '0';
+			END IF;
+	END PROCESS;
 -- ############################################
 end Behavioral;
 

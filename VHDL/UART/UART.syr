@@ -68,7 +68,7 @@ Automatic Register Balancing       : No
 
 ---- Target Options
 Add IO Buffers                     : YES
-Global Maximum Fanout              : 500
+Global Maximum Fanout              : 100000
 Add Generic Clock Buffer(BUFG)     : 8
 Register Duplication               : YES
 Slice Packing                      : YES
@@ -105,19 +105,23 @@ Slice Utilization Ratio Delta      : 5
 *                          HDL Compilation                              *
 =========================================================================
 Compiling vhdl file "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART.vhd" in Library work.
-Entity <UART> compiled.
-Entity <UART> (Architecture <Behavioral>) compiled.
+Entity <uart> compiled.
+Entity <uart> (Architecture <behavioral>) compiled.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
 =========================================================================
-Analyzing hierarchy for entity <UART> in library <work> (architecture <Behavioral>).
+Analyzing hierarchy for entity <UART> in library <work> (architecture <behavioral>).
 
 
 =========================================================================
 *                            HDL Analysis                               *
 =========================================================================
-Analyzing Entity <UART> in library <work> (Architecture <Behavioral>).
+Analyzing Entity <UART> in library <work> (Architecture <behavioral>).
+WARNING:Xst:819 - "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART.vhd" line 150: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <TX_NBIT>
+WARNING:Xst:819 - "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART.vhd" line 210: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <TX_DATA>
 Entity <UART> analyzed. Unit <UART> generated.
 
 
@@ -129,23 +133,55 @@ Performing bidirectional port resolution...
 
 Synthesizing Unit <UART>.
     Related source file is "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART.vhd".
-WARNING:Xst:647 - Input <TX_DATA> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:1306 - Output <TX_READY> is never assigned.
 WARNING:Xst:1306 - Output <RX_DATA> is never assigned.
 WARNING:Xst:647 - Input <RX_IN> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:1306 - Output <TX_OUT> is never assigned.
 WARNING:Xst:647 - Input <BTN_IN> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:1306 - Output <RX_NEWDATA> is never assigned.
-WARNING:Xst:646 - Signal <TX_START> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <TX_NBIT> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <TSR> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <siguiente_rx> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <enable_envia> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <actual_rx> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <RX_NBIT> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <RSR> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:653 - Signal <BTN> is used but never assigned. This sourceless signal will be automatically connected to value 0.
-WARNING:Xst:1780 - Signal <ACTUALIZACION_TX> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <ACTUALIZACION_RX> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-    Using one-hot encoding for signal <actual_btn>.
-    Found 3-bit register for signal <actual_btn>.
+INFO:Xst:1799 - State flanco is never reached in FSM <actual_btn>.
+INFO:Xst:1799 - State uno is never reached in FSM <actual_btn>.
+    Found finite state machine <FSM_0> for signal <actual_btn>.
+    -----------------------------------------------------------------------
+    | States             | 1                                              |
+    | Transitions        | 1                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 1                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | reset                     (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | cero                                           |
+    | Power Up State     | cero                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_1> for signal <actual_tx>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | reset                     (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | idle                                           |
+    | Power Up State     | idle                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <TX_READY>.
+    Found 16-bit up counter for signal <contador_baudios>.
+    Found 10-bit register for signal <TSR>.
+    Found 5-bit up counter for signal <TX_NBIT>.
+    Summary:
+	inferred   2 Finite State Machine(s).
+	inferred   2 Counter(s).
+	inferred   1 D-type flip-flop(s).
 Unit <UART> synthesized.
 
 
@@ -153,8 +189,12 @@ Unit <UART> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Registers                                            : 1
- 3-bit register                                        : 1
+# Counters                                             : 2
+ 16-bit up counter                                     : 1
+ 5-bit up counter                                      : 1
+# Registers                                            : 2
+ 1-bit register                                        : 1
+ 10-bit register                                       : 1
 
 =========================================================================
 
@@ -162,24 +202,69 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <actual_tx/FSM> on signal <actual_tx[1:2]> with user encoding.
+-----------------------
+ State     | Encoding
+-----------------------
+ idle      | 00
+ tx_inicio | 01
+ tx_datos  | 10
+-----------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <actual_btn/FSM> on signal <actual_btn[1:2]> with user encoding.
+--------------------
+ State  | Encoding
+--------------------
+ cero   | 00
+ flanco | unreached
+ uno    | unreached
+--------------------
+WARNING:Xst:1293 - FF/Latch <FFd1> has a constant value of 0 in block <FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <FFd2> has a constant value of 0 in block <FSM>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <TX_READY> (without init value) has a constant value of 1 in block <UART>. This FF/Latch will be trimmed during the optimization process.
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Registers                                            : 3
- Flip-Flops                                            : 3
+# FSMs                                                 : 2
+# Counters                                             : 2
+ 16-bit up counter                                     : 1
+ 5-bit up counter                                      : 1
+# Registers                                            : 1
+ Flip-Flops                                            : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-INFO:Xst:2261 - The FF/Latch <actual_btn_1> in Unit <UART> is equivalent to the following FF/Latch, which will be removed : <actual_btn_2> 
-WARNING:Xst:2677 - Node <actual_btn_1> of sequential type is unconnected in block <UART>.
-WARNING:Xst:2677 - Node <actual_btn_0> of sequential type is unconnected in block <UART>.
+WARNING:Xst:1293 - FF/Latch <actual_tx_FSM_FFd2> has a constant value of 0 in block <UART>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <TX_READY> (without init value) has a constant value of 1 in block <UART>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <actual_tx_FSM_FFd1> has a constant value of 0 in block <UART>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <UART> ...
+WARNING:Xst:1710 - FF/Latch <TSR_0> (without init value) has a constant value of 0 in block <UART>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <TSR_9> is unconnected in block <UART>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <TSR_8> is unconnected in block <UART>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <TSR_7> is unconnected in block <UART>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <TSR_6> is unconnected in block <UART>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <TSR_5> is unconnected in block <UART>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <TSR_4> is unconnected in block <UART>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <TSR_3> is unconnected in block <UART>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <TSR_2> is unconnected in block <UART>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <TSR_1> is unconnected in block <UART>.
+WARNING:Xst:1710 - FF/Latch <TSR_0> (without init value) has a constant value of 0 in block <UART>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <TSR_9> is unconnected in block <UART>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <TSR_8> is unconnected in block <UART>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <TSR_7> is unconnected in block <UART>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <TSR_6> is unconnected in block <UART>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <TSR_5> is unconnected in block <UART>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <TSR_4> is unconnected in block <UART>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <TSR_3> is unconnected in block <UART>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <TSR_2> is unconnected in block <UART>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <TSR_1> is unconnected in block <UART>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -218,6 +303,11 @@ Design Statistics
 # IOs                              : 30
 
 Cell Usage :
+# BELS                             : 2
+#      GND                         : 1
+#      VCC                         : 1
+# IO Buffers                       : 2
+#      OBUF                        : 2
 =========================================================================
 
 Device utilization summary:
@@ -227,7 +317,7 @@ Selected Device : 3s400ft256-4
 
  Number of Slices:                        0  out of   3584     0%  
  Number of IOs:                          30
- Number of bonded IOBs:                   0  out of    173     0%  
+ Number of bonded IOBs:                   2  out of    173     1%  
 
 ---------------------------
 Partition Resource Summary:
@@ -270,13 +360,13 @@ All values displayed in nanoseconds (ns)
 
 
 Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 4.67 secs
+Total CPU time to Xst completion: 4.74 secs
  
 --> 
 
-Total memory usage is 4534312 kilobytes
+Total memory usage is 4550476 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   17 (   0 filtered)
-Number of infos    :    1 (   0 filtered)
+Number of warnings :   39 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
 
