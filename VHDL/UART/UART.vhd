@@ -35,6 +35,7 @@ entity UART is
            TX_DATA : in  STD_LOGIC_VECTOR(7 downto 0);
            BTN_IN : in  STD_LOGIC;
            TX_READY : out  STD_LOGIC;
+			  TSR : out STD_LOGIC_VECTOR(9 downto 0);
            TX_OUT : out  STD_LOGIC);
 end UART;
 
@@ -42,11 +43,12 @@ architecture Behavioral of UART is
 	signal BTN : STD_LOGIC;
 	signal TX_START : STD_LOGIC;
 	signal ACTUALIZACION_TX : STD_LOGIC;
-	signal TSR : STD_LOGIC_VECTOR(9 downto 0);
-	signal TX_NBIT : unsigned(4 downto 0);
+	signal TX_NBIT : unsigned(3 downto 0);
+	signal registro : STD_LOGIC_VECTOR(9 downto 0);
+	signal reinicia : STD_LOGIC;
 	signal disable_TX : STD_LOGIC;
-	signal enable_desplaza : STD_LOGIC;
-	signal enable_carga_dato : STD_LOGIC;
+	signal enable_load : STD_LOGIC;
+	signal enable_TX_Ready : STD_LOGIC;
 	signal contador_baudios : unsigned(15 downto 0);
 	
 	-- ESTADOS DE LAS FMS
@@ -123,17 +125,20 @@ architecture Behavioral of UART is
 		BEGIN
 			CASE actual_tx is
 				WHEN idle => 
+					reinicia <= '1';
 					disable_TX <= '0';
-					enable_desplaza <= '0';
-					enable_carga_dato <= '0';
+					enable_load <= '0';
+					enable_TX_Ready <= '1';
 				WHEN TX_inicio => 
+					reinicia <= '0';
 					disable_TX <= '1';
-					enable_desplaza <= '0';
-					enable_carga_dato <= '1';
+					enable_load <= '1';
+					enable_TX_Ready <= '0';
 				WHEN TX_datos => 
+					reinicia <= '0';
 					disable_TX <= '1';
-					enable_desplaza <= '1';
-					enable_carga_dato <= '0';
+					enable_load <= '0';
+					enable_TX_Ready <= '0';
 			END CASE;
 	END PROCESS;
 	
@@ -151,7 +156,7 @@ architecture Behavioral of UART is
 						siguiente_tx <= TX_datos;
 					
 				WHEN TX_datos =>
-					IF(TX_NBIT = 9) THEN
+					IF(TX_NBIT = 10) THEN
 						siguiente_tx <= idle;
 					ELSE
 						siguiente_tx <= TX_datos;
@@ -179,10 +184,10 @@ architecture Behavioral of UART is
 			IF(RESET = '1') THEN
 				TX_READY <= '1';
 			ELSIF(clk'event and clk = '1') THEN
-				IF(disable_TX = '1') THEN
-					TX_READY <= '0';
-				ELSE 
+				IF(enable_TX_Ready = '1') THEN
 					TX_READY <= '1';
+				ELSE 
+					TX_READY <= '0';
 				END IF;
 			END IF;
 	END PROCESS;
@@ -195,8 +200,14 @@ architecture Behavioral of UART is
 			IF(RESET = '1') THEN
 				TX_NBIT <= (OTHERS => '0');
 			ELSIF(clk'event and clk = '1') THEN
-				IF(ACTUALIZACION_TX = '1') THEN
-					TX_NBIT <= TX_NBIT + 1;
+				IF (reinicia = '1') THEN
+				TX_NBIT <= (OTHERS => '0');
+				ELSIF (disable_TX = '1') THEN
+					IF (TX_NBIT = 10) THEN
+						TX_NBIT <= (OTHERS => '0');
+					ELSIF(ACTUALIZACION_TX = '1') THEN
+						TX_NBIT <= TX_NBIT + 1;
+					END IF;
 				END IF;
 			END IF;
 	END PROCESS;
@@ -207,19 +218,22 @@ architecture Behavioral of UART is
 	PROCESS(clk,RESET)
 		BEGIN
 			IF (RESET = '1') THEN
-				TSR <= (OTHERS => '0');
+				registro <= (OTHERS => '1');
 			ELSIF (clk'event and clk = '1') THEN
-				IF (enable_carga_dato = '1') THEN
-					TSR <= '1' & TX_DATA & '0';
-				ELSIF (enable_desplaza = '1') THEN
-					IF (ACTUALIZACION_TX = '1') THEN
-						TSR <= TSR(0) & TSR(9 downto 1);
+				IF (reinicia = '1') THEN
+					registro <= (OTHERS => '1');
+				ELSIF (disable_TX = '1') THEN
+					IF(enable_load = '1') THEN
+						registro <= '1' & TX_DATA & '0';
+					ELSIF (ACTUALIZACION_TX = '1') THEN
+						registro <= '1' & registro(9 downto 1);
 					END IF;
 				END IF;
 			END IF;
 	END PROCESS;
 	
-	TX_OUT <= TSR(0);
+	TSR <= registro;
+	TX_OUT <= registro(0);
 -- ############################################
 
 	-- Baud rate generator
@@ -229,10 +243,14 @@ architecture Behavioral of UART is
 			IF (RESET = '1') THEN
 				contador_baudios <= (OTHERS => '0'); -- 1/BAUDIOS y RESULTADO ENTRE 20ns (50MHz)
 			ELSIF (clk'event and clk = '1') THEN
-				IF (contador_baudios = 5208) THEN
+				IF (reinicia = '1') THEN
 					contador_baudios <= (OTHERS => '0');
-				ELSE
-					contador_baudios <= contador_baudios + 1;
+				ELSIF (disable_TX = '1') THEN
+					IF (contador_baudios = 5208) THEN
+						contador_baudios <= (OTHERS => '0');
+					ELSE
+						contador_baudios <= contador_baudios + 1;
+					END IF;
 				END IF;
 			END IF;	
 	END PROCESS;
@@ -242,7 +260,7 @@ architecture Behavioral of UART is
 -- ############################################
 	PROCESS(contador_baudios)
 		BEGIN
-			IF (contador_baudios = 0) THEN
+			IF (contador_baudios = 5208) THEN
 				ACTUALIZACION_TX <= '1';
 			ELSE
 				ACTUALIZACION_TX <= '0';

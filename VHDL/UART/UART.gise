@@ -85,6 +85,10 @@
     <transform xil_pn:end_ts="1560502928" xil_pn:in_ck="-2608715016272646643" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1560502928">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="UART.vhd"/>
       <outfile xil_pn:name="tb_uart.vhd"/>
     </transform>
@@ -103,13 +107,21 @@
     <transform xil_pn:end_ts="1560502928" xil_pn:in_ck="-2608715016272646643" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1560502928">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="UART.vhd"/>
       <outfile xil_pn:name="tb_uart.vhd"/>
     </transform>
     <transform xil_pn:end_ts="1560502932" xil_pn:in_ck="-2608715016272646643" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-3217900679276806229" xil_pn:start_ts="1560502928">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
@@ -121,6 +133,7 @@
     <transform xil_pn:end_ts="1560502933" xil_pn:in_ck="4019507539728633024" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-8925767333071432296" xil_pn:start_ts="1560502932">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
@@ -155,8 +168,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1560502671" xil_pn:in_ck="3709823575756" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="-2102788824159913061" xil_pn:start_ts="1560502663">
+    <transform xil_pn:end_ts="1561797108" xil_pn:in_ck="3709823575756" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="-2102788824159913061" xil_pn:start_ts="1561797100">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="UART.lso"/>
       <outfile xil_pn:name="UART.ngc"/>
