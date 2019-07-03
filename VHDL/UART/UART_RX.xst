@@ -1,0 +1,5 @@
+set -tmpdir "D:/GIT/Pracs_Microprocesadores/VHDL/UART/xst/projnav.tmp"
+set -xsthdpdir "D:/GIT/Pracs_Microprocesadores/VHDL/UART/xst"
+elaborate
+-ifn UART_RX.prj
+-ifmt mixed

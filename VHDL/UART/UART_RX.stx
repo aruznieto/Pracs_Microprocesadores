@@ -1,0 +1,37 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to D:/GIT/Pracs_Microprocesadores/VHDL/UART/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Parameter xsthdpdir set to D:/GIT/Pracs_Microprocesadores/VHDL/UART/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART_RX.vhd" in Library work.
+Entity <uart_rx> compiled.
+ERROR:HDLParsers:808 - "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART_RX.vhd" Line 148. = can not have such operands in this context.
+ERROR:HDLParsers:1401 - "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART_RX.vhd" Line 149. Object RX_DATA of mode OUT can not be read.
+ERROR:HDLParsers:821 - "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART_RX.vhd" Line 151. Wrong index type for registro.
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.19 secs
+ 
+--> 
+
+Total memory usage is 4476700 kilobytes
+
+Number of errors   :    3 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

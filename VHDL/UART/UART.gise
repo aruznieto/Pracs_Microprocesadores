@@ -22,6 +22,7 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="UART.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_LSO" xil_pn:name=".lso"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="UART.bld"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="UART.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="UART.lso"/>
@@ -41,6 +42,9 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_UNROUTES" xil_pn:name="UART.unroutes" xil_pn:subbranch="Par"/>
     <file xil_pn:fileType="FILE_XPI" xil_pn:name="UART.xpi"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="UART.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="UART_RX.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="UART_RX.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="UART_RX.xst"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="UART_envsettings.html"/>
     <file xil_pn:fileType="FILE_NCD" xil_pn:name="UART_guide.ncd" xil_pn:origination="imported"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="UART_map.map" xil_pn:subbranch="Map"/>
@@ -87,6 +91,7 @@
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="UART.vhd"/>
@@ -172,6 +177,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="UART.lso"/>
       <outfile xil_pn:name="UART.ngc"/>
       <outfile xil_pn:name="UART.ngr"/>
@@ -193,6 +201,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="UART.bld"/>
       <outfile xil_pn:name="UART.ngd"/>
