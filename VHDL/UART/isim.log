@@ -9,41 +9,4 @@ Time resolution is 1 ps
 Simulator is doing circuit initialization process.
 at 0 ps, Instance /tb_uart/uut/ : Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
 Finished circuit initialization process.
-at 10 ns(1), Instance /tb_uart/uut/ : Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-at 10 ns(2), Instance /tb_uart/uut/ : Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-at 30 ns(1), Instance /tb_uart/uut/ : Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-at 50 ns(1), Instance /tb_uart/uut/ : Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-at 70 ns(1), Instance /tb_uart/uut/ : Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-at 90 ns(1), Instance /tb_uart/uut/ : Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
-# run 120.00us
+# run 100ms

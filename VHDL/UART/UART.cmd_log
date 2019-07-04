@@ -33,3 +33,4 @@ trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml UART.twx UART.ncd -o UART.twr 
 xst -intstyle ise -ifn "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART.xst" -ofn "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART.syr" 
 xst -intstyle ise -ifn "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART.xst" -ofn "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART.syr" 
 xst -intstyle ise -ifn "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART.xst" -ofn "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART.syr" 
+xst -intstyle ise -ifn "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART.xst" -ofn "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART.syr" 

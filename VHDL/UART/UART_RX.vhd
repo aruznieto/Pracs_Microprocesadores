@@ -73,18 +73,22 @@ BEGIN
 					reinicia <= '1';
 					enable_RX <= '0';
 					enable_rxnewdata <= '0';
+					enable_RX_DATA <= '0';
 				WHEN RX_inicio => 
 					reinicia <= '0';
 					enable_RX <= '1';
 					enable_rxnewdata <= '0';
+					enable_RX_DATA <= '0';
 				WHEN RX_datos =>
 					reinicia <= '0';
 					enable_RX <= '1';
 					enable_rxnewdata <= '0';
+					enable_RX_DATA <= '1';
 				WHEN RX_fin => 
 					reinicia <= '0';
 					enable_RX <= '1';
 					enable_rxnewdata <= '1';
+					enable_RX_DATA <= '0';
 			END CASE;
 	END PROCESS;
 	
@@ -145,10 +149,8 @@ BEGIN
 				IF (reinicia = '1') THEN
 					registro <= (OTHERS => '1');
 				ELSIF (enable_RX = '1') THEN
-					IF(enable_load = '1') THEN
-						registro <= '1' & RX_DATA & '0';
-					ELSIF (ACTUALIZACION_RX = '1') THEN
-						registro(RX_NBIT) <= RX_IN;
+					IF (ACTUALIZACION_RX = '1') THEN
+						registro <= RX_IN & registro(8 downto 1);
 					END IF;
 				END IF;
 			END IF;
@@ -157,7 +159,7 @@ BEGIN
 	RSR <= registro(8 downto 1);
 -- ############################################
 
-	-- regRX
+	-- regRX (RSR to RX_DATA)
 -- ############################################
 	PROCESS(clk)
 		BEGIN
@@ -166,8 +168,7 @@ BEGIN
 					RX_DATA <= RSR;
 				END IF;
 			END IF;
-		END PROCESS;
-				
+		END PROCESS;	
 -- ############################################
 
 	-- regRX_newdata
