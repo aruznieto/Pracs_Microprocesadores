@@ -72,23 +72,15 @@ BEGIN
 				WHEN idle => 
 					reinicia <= '1';
 					enable_RX <= '0';
-					enable_rxnewdata <= '0';
-					enable_RX_DATA <= '0';
 				WHEN RX_inicio => 
 					reinicia <= '0';
 					enable_RX <= '1';
-					enable_rxnewdata <= '0';
-					enable_RX_DATA <= '0';
 				WHEN RX_datos =>
 					reinicia <= '0';
 					enable_RX <= '1';
-					enable_rxnewdata <= '0';
-					enable_RX_DATA <= '1';
 				WHEN RX_fin => 
 					reinicia <= '0';
 					enable_RX <= '1';
-					enable_rxnewdata <= '1';
-					enable_RX_DATA <= '0';
 			END CASE;
 	END PROCESS;
 	
@@ -164,7 +156,7 @@ BEGIN
 	PROCESS(clk)
 		BEGIN
 			IF(clk'event and clk = '1') THEN
-				IF(enable_rxnewdata = '1') THEN
+				IF(enable_rx = '1') THEN
 					RX_DATA <= RSR;
 				END IF;
 			END IF;
@@ -178,7 +170,7 @@ BEGIN
 			IF (RESET='1') THEN
 				RX_NEWDATA <= '0';
 			ELSIF(clk'event and clk = '1') THEN
-				IF(enable_rxnewdata = '1') THEN
+				IF(enable_rx = '1') THEN
 					RX_NEWDATA <= '1';
 				ELSE 
 					RX_NEWDATA <= '0';

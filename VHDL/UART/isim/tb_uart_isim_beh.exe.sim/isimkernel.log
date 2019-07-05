@@ -2,14 +2,14 @@ Command line:
    tb_uart_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  61049
+     -socket  52369
 
-Thu Jul 04 11:03:46 2019
+Fri Jul 05 11:40:36 2019
 
 
- Elaboration Time: 0.09375 sec
+ Elaboration Time: 0.109375 sec
 
- Current Memory Usage: 5164.43 Meg
+ Current Memory Usage: 5163.94 Meg
 
  Total Signals          : 27
  Total Nets             : 64
@@ -20,9 +20,9 @@ Thu Jul 04 11:03:46 2019
  Total Traceable Variables  : 14
  Total Scalar Nets and Variables : 548
 
- Total Simulation Time: 8.5625 sec
+ Total Simulation Time: 1.39063 sec
 
- Current Memory Usage: 5007.14 Meg
+ Current Memory Usage: 4692.08 Meg
 
-Thu Jul 04 11:05:19 2019
+Fri Jul 05 12:01:28 2019
 

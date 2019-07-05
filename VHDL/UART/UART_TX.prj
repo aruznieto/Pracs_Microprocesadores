@@ -1,2 +1,1 @@
 vhdl work "UART_TX.vhd"
-vhdl work "tb_uart.vhd"

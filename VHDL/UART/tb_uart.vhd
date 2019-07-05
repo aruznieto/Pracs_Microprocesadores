@@ -39,7 +39,7 @@ ARCHITECTURE behavior OF tb_uart IS
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT UART
+    COMPONENT UART_TX
     PORT(
          clk : IN  std_logic;
          reset : IN  std_logic;
@@ -67,7 +67,7 @@ ARCHITECTURE behavior OF tb_uart IS
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: UART PORT MAP (
+   uut: UART_TX PORT MAP (
           clk => clk,
           reset => reset,
           TX_DATA => TX_DATA,
@@ -90,19 +90,37 @@ BEGIN
    stim_proc: process
    begin		
       -- hold reset state for 100 ns.
+			RESET <= '0';
+			BTN_IN <= '0';
+			TX_DATA <= "10010010";
+			
       wait for 100 ns;	
 			RESET <= '1';
 		wait for 100 ns;	
 			RESET <= '0';
 		
-		wait for 100 ns;
+		wait for 1000 ns;
 			BTN_IN <= '1';
 		
 		wait for 100 ns;
 			BTN_IN <= '0';
 		
+		wait for 10 ms;			
+		TX_DATA <= "01001110";
+			
+      wait for 100 ns;	
+			RESET <= '1';
+		wait for 100 ns;	
+			RESET <= '0';
+		
+		wait for 1000 ns;
+			BTN_IN <= '1';
+		
 		wait for 100 ns;
-			TX_DATA <= "10010010";
+			BTN_IN <= '0';
+		
+			
+
 		
 
       -- insert stimulus here 
