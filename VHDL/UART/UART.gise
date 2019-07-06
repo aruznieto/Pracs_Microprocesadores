@@ -109,7 +109,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1562426258" xil_pn:in_ck="4935693347159124578" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1562426258">
+    <transform xil_pn:end_ts="1562428757" xil_pn:in_ck="4935693347159124578" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1562428757">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="UART_RX.vhd"/>
@@ -129,26 +129,17 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1562425848" xil_pn:in_ck="4935693347159124578" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1562425848">
+    <transform xil_pn:end_ts="1562428757" xil_pn:in_ck="4935693347159124578" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1562428757">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="UART_RX.vhd"/>
       <outfile xil_pn:name="UART_TX.vhd"/>
       <outfile xil_pn:name="tb_uart_rx.vhd"/>
       <outfile xil_pn:name="tb_uart_tx.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1562425852" xil_pn:in_ck="4935693347159124578" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-8811318512238907971" xil_pn:start_ts="1562425848">
+    <transform xil_pn:end_ts="1562428762" xil_pn:in_ck="4935693347159124578" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-8811318512238907971" xil_pn:start_ts="1562428757">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
@@ -156,12 +147,9 @@
       <outfile xil_pn:name="tb_uart_rx_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1562425852" xil_pn:in_ck="6464740342268314057" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-4730767352004548182" xil_pn:start_ts="1562425852">
+    <transform xil_pn:end_ts="1562428763" xil_pn:in_ck="6464740342268314057" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-4730767352004548182" xil_pn:start_ts="1562428762">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="tb_uart_rx_isim_beh.wdb"/>
@@ -198,6 +186,8 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name=".lso"/>
       <outfile xil_pn:name="UART_RX.lso"/>
       <outfile xil_pn:name="UART_RX.ngc"/>

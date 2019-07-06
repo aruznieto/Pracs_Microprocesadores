@@ -43,6 +43,7 @@ architecture Behavioral of UART_RX is
 	signal RX_NBIT : unsigned(3 downto 0);
 	signal reinicia : STD_LOGIC;
 	signal enable_RX : STD_LOGIC;
+	signal enable_rxnewdata : STD_LOGIC;
 	signal RSR : STD_LOGIC_VECTOR(7 downto 0);
 	signal contador_baudios : unsigned(15 downto 0);
 
@@ -70,15 +71,19 @@ BEGIN
 				WHEN idle => 
 					reinicia <= '1';
 					enable_RX <= '0';
+					enable_rxnewdata <= '0';
 				WHEN RX_inicio => 
 					reinicia <= '0';
 					enable_RX <= '0';
+					enable_rxnewdata <= '0';
 				WHEN RX_datos =>
 					reinicia <= '0';
 					enable_RX <= '1';
+					enable_rxnewdata <= '0';
 				WHEN RX_fin => 
 					reinicia <= '0';
 					enable_RX <= '1';
+					enable_rxnewdata <= '1';
 			END CASE;
 	END PROCESS;
 	
@@ -168,7 +173,7 @@ BEGIN
 			IF (RESET='1') THEN
 				RX_NEWDATA <= '0';
 			ELSIF(clk'event and clk = '1') THEN
-				IF(enable_RX = '1') THEN
+				IF(enable_rxnewdata = '1') THEN
 					RX_NEWDATA <= '1';
 				ELSE 
 					RX_NEWDATA <= '0';
