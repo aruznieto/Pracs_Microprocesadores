@@ -1,6 +1,6 @@
-AR uart_rx behavioral D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART_RX.vhd sub00/vhpl03 1562236204
+AR uart_rx behavioral D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART_RX.vhd sub00/vhpl03 1562402907
 AR uart behavioral D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART.vhd sub00/vhpl01 1562231003
 AR uart_tx behavioral D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART_TX.vhd sub00/vhpl05 1562317816
 EN uart NULL D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART.vhd sub00/vhpl00 1562231002
-EN uart_rx NULL D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART_RX.vhd sub00/vhpl02 1562236203
+EN uart_rx NULL D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART_RX.vhd sub00/vhpl02 1562402906
 EN uart_tx NULL D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART_TX.vhd sub00/vhpl04 1562317815

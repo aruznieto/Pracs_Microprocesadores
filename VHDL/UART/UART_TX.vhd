@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: 	UPCT - SDBM
+-- Engineer:	Andres Ruz Nieto y Diego Ismael Antolinos Garcia
 -- 
 -- Create Date:    10:12:34 06/13/2019 
 -- Design Name: 

@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: 	UPCT - SDBM
+-- Engineer:	Andres Ruz Nieto y Diego Ismael Antolinos Garcia
 -- 
 -- Create Date:    15:39:23 07/03/2019 
 -- Design Name: 
@@ -38,13 +38,11 @@ entity UART_RX is
 end UART_RX;
 
 architecture Behavioral of UART_RX is
-	signal registro : STD_LOGIC_VECTOR(9 downto 0);
+	signal registro : STD_LOGIC_VECTOR(8 downto 0);
 	signal ACTUALIZACION_RX : STD_LOGIC;
 	signal RX_NBIT : unsigned(3 downto 0);
 	signal reinicia : STD_LOGIC;
 	signal enable_RX : STD_LOGIC;
-	signal enable_RX_DATA : STD_LOGIC;
-	signal enable_rxnewdata : STD_LOGIC;
 	signal RSR : STD_LOGIC_VECTOR(7 downto 0);
 	signal contador_baudios : unsigned(15 downto 0);
 
@@ -84,7 +82,7 @@ BEGIN
 			END CASE;
 	END PROCESS;
 	
-	proceso_siguiente_estado_rx:PROCESS(actual_rx,RX_NBIT)
+	proceso_siguiente_estado_rx:PROCESS(actual_rx,RX_IN,RX_NBIT)
 		BEGIN
 			CASE actual_rx is
 				WHEN idle => 
@@ -156,7 +154,7 @@ BEGIN
 	PROCESS(clk)
 		BEGIN
 			IF(clk'event and clk = '1') THEN
-				IF(enable_rx = '1') THEN
+				IF(enable_RX = '1') THEN
 					RX_DATA <= RSR;
 				END IF;
 			END IF;
@@ -170,7 +168,7 @@ BEGIN
 			IF (RESET='1') THEN
 				RX_NEWDATA <= '0';
 			ELSIF(clk'event and clk = '1') THEN
-				IF(enable_rx = '1') THEN
+				IF(enable_RX = '1') THEN
 					RX_NEWDATA <= '1';
 				ELSE 
 					RX_NEWDATA <= '0';
