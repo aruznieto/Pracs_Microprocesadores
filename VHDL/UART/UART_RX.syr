@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.67 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.67 secs
  
 --> Reading design: UART_RX.prj
 
@@ -250,11 +250,12 @@ Design Statistics
 # IOs                              : 12
 
 Cell Usage :
-# BELS                             : 88
+# BELS                             : 90
 #      GND                         : 1
 #      INV                         : 1
 #      LUT1                        : 15
 #      LUT2                        : 1
+#      LUT2_L                      : 2
 #      LUT3                        : 10
 #      LUT4                        : 26
 #      LUT4_D                      : 1
@@ -279,9 +280,9 @@ Device utilization summary:
 
 Selected Device : 3s400ft256-4 
 
- Number of Slices:                       33  out of   3584     0%  
+ Number of Slices:                       34  out of   3584     0%  
  Number of Slice Flip Flops:             39  out of   7168     0%  
- Number of 4 input LUTs:                 55  out of   7168     0%  
+ Number of 4 input LUTs:                 57  out of   7168     0%  
  Number of IOs:                          12
  Number of bonded IOBs:                  12  out of    173     6%  
  Number of GCLKs:                         1  out of      8    12%  
@@ -323,7 +324,7 @@ Timing Summary:
 Speed Grade: -4
 
    Minimum period: 7.755ns (Maximum Frequency: 128.949MHz)
-   Minimum input arrival time before clock: 2.520ns
+   Minimum input arrival time before clock: 2.791ns
    Maximum output required time after clock: 7.165ns
    Maximum combinational path delay: No path found
 
@@ -334,7 +335,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 7.755ns (frequency: 128.949MHz)
-  Total number of paths / destination ports: 738 / 59
+  Total number of paths / destination ports: 761 / 75
 -------------------------------------------------------------------------
 Delay:               7.755ns (Levels of Logic = 3)
   Source:            contador_baudios_3 (FF)
@@ -359,7 +360,7 @@ Delay:               7.755ns (Levels of Logic = 3)
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
   Total number of paths / destination ports: 2 / 2
 -------------------------------------------------------------------------
-Offset:              2.520ns (Levels of Logic = 2)
+Offset:              2.791ns (Levels of Logic = 2)
   Source:            RX_IN (PAD)
   Destination:       registro_8 (FF)
   Destination Clock: clk rising
@@ -368,12 +369,12 @@ Offset:              2.520ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             2   0.821   0.945  RX_IN_IBUF (RX_IN_IBUF)
-     LUT4:I2->O            1   0.551   0.000  actual_rx_FSM_FFd2-In1 (actual_rx_FSM_FFd2-In)
-     FDC:D                     0.203          actual_rx_FSM_FFd2
+     IBUF:I->O             2   0.821   1.216  RX_IN_IBUF (RX_IN_IBUF)
+     LUT3:I0->O            1   0.551   0.000  registro_mux0000<0>1 (registro_mux0000<0>)
+     FDPE:D                    0.203          registro_8
     ----------------------------------------
-    Total                      2.520ns (1.575ns logic, 0.945ns route)
-                                       (62.5% logic, 37.5% route)
+    Total                      2.791ns (1.575ns logic, 1.216ns route)
+                                       (56.4% logic, 43.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -397,12 +398,12 @@ Offset:              7.165ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 6.58 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.41 secs
  
 --> 
 
-Total memory usage is 4521488 kilobytes
+Total memory usage is 4521460 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    3 (   0 filtered)

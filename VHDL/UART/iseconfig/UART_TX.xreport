@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2019-07-06T10:55:09</DateModified>
+  <DateModified>2019-07-06T17:00:48</DateModified>
   <ModuleName>UART_RX</ModuleName>
   <SummaryTimeStamp>2019-07-06T10:48:33</SummaryTimeStamp>
   <SavedFilePath>D:/GIT/Pracs_Microprocesadores/VHDL/UART/iseconfig/UART_TX.xreport</SavedFilePath>

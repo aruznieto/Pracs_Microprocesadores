@@ -60,7 +60,7 @@ ARCHITECTURE behavior OF tb_uart_rx IS
    signal RX_NEWDATA : std_logic;
 
    -- Clock period definitions
-   constant clk_period : time := 10 ns;
+   constant clk_period : time := 20 ns;
  
 BEGIN
  
@@ -92,11 +92,23 @@ BEGIN
       wait for clk_period*10;
 
       -- insert stimulus here 
+		RX_IN <= '1';
+		RESET <= '1';
 		wait for 100 ns;	
 			RESET <= '1';
 		wait for 100 ns;	
 			RESET <= '0';
 		wait for 100 ns;
+		
+		RX_IN <= '0';
+		wait for 1 ms;
+		RX_IN <= '1';
+		wait for 1 ms;
+		RX_IN <= '0';
+		wait for 1 ms;
+		RX_IN <= '1';
+		wait for 1 ms;
+		RX_IN <= '0';
 
       wait;
    end process;

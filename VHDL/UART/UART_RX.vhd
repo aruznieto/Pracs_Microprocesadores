@@ -72,7 +72,7 @@ BEGIN
 					enable_RX <= '0';
 				WHEN RX_inicio => 
 					reinicia <= '0';
-					enable_RX <= '1';
+					enable_RX <= '0';
 				WHEN RX_datos =>
 					reinicia <= '0';
 					enable_RX <= '1';
