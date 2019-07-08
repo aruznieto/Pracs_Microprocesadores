@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.67 secs
+Total CPU time to Xst completion: 0.12 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.67 secs
+Total CPU time to Xst completion: 0.12 secs
  
 --> Reading design: UART_RX.prj
 
@@ -135,7 +135,7 @@ WARNING:Xst:646 - Signal <registro<0>> is assigned but never used. This unconnec
     | States             | 4                                              |
     | Transitions        | 6                                              |
     | Inputs             | 2                                              |
-    | Outputs            | 2                                              |
+    | Outputs            | 3                                              |
     | Clock              | clk                       (rising_edge)        |
     | Reset              | RESET                     (positive)           |
     | Reset type         | asynchronous                                   |
@@ -147,10 +147,10 @@ WARNING:Xst:646 - Signal <registro<0>> is assigned but never used. This unconnec
     Found 8-bit register for signal <RX_DATA>.
     Found 1-bit register for signal <RX_NEWDATA>.
     Found 16-bit register for signal <contador_baudios>.
-    Found 16-bit adder for signal <contador_baudios$addsub0000> created at line 193.
+    Found 16-bit adder for signal <contador_baudios$addsub0000> created at line 198.
     Found 9-bit register for signal <registro>.
     Found 4-bit register for signal <RX_NBIT>.
-    Found 4-bit adder for signal <RX_NBIT$addsub0000> created at line 125.
+    Found 4-bit adder for signal <RX_NBIT$addsub0000> created at line 130.
     Summary:
 	inferred   1 Finite State Machine(s).
 	inferred  38 D-type flip-flop(s).
@@ -250,11 +250,11 @@ Design Statistics
 # IOs                              : 12
 
 Cell Usage :
-# BELS                             : 90
+# BELS                             : 91
 #      GND                         : 1
 #      INV                         : 1
 #      LUT1                        : 15
-#      LUT2                        : 1
+#      LUT2                        : 2
 #      LUT2_L                      : 2
 #      LUT3                        : 10
 #      LUT4                        : 26
@@ -282,7 +282,7 @@ Selected Device : 3s400ft256-4
 
  Number of Slices:                       34  out of   3584     0%  
  Number of Slice Flip Flops:             39  out of   7168     0%  
- Number of 4 input LUTs:                 57  out of   7168     0%  
+ Number of 4 input LUTs:                 58  out of   7168     0%  
  Number of IOs:                          12
  Number of bonded IOBs:                  12  out of    173     6%  
  Number of GCLKs:                         1  out of      8    12%  
@@ -335,7 +335,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 7.755ns (frequency: 128.949MHz)
-  Total number of paths / destination ports: 761 / 75
+  Total number of paths / destination ports: 762 / 75
 -------------------------------------------------------------------------
 Delay:               7.755ns (Levels of Logic = 3)
   Source:            contador_baudios_3 (FF)
@@ -398,12 +398,12 @@ Offset:              7.165ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 6.41 secs
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 4.96 secs
  
 --> 
 
-Total memory usage is 4521460 kilobytes
+Total memory usage is 4521536 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    3 (   0 filtered)

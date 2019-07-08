@@ -9,34 +9,34 @@ Target Device  : xc3s400
 Target Package : ft256
 Target Speed   : -4
 Mapper Version : spartan3 -- $Revision: 1.55 $
-Mapped Date    : Fri Jun 14 10:57:09 2019
+Mapped Date    : Mon Jul 08 10:29:07 2019
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:    0
 Logic Utilization:
-  Number of Slice Flip Flops:            37 out of   7,168    1%
-  Number of 4 input LUTs:                47 out of   7,168    1%
+  Number of Slice Flip Flops:            74 out of   7,168    1%
+  Number of 4 input LUTs:                87 out of   7,168    1%
 Logic Distribution:
-  Number of occupied Slices:             35 out of   3,584    1%
-    Number of Slices containing only related logic:      35 out of      35 100%
-    Number of Slices containing unrelated logic:          0 out of      35   0%
+  Number of occupied Slices:             69 out of   3,584    1%
+    Number of Slices containing only related logic:      69 out of      69 100%
+    Number of Slices containing unrelated logic:          0 out of      69   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:          62 out of   7,168    1%
-    Number used as logic:                47
-    Number used as a route-thru:         15
+  Total Number of 4 input LUTs:         117 out of   7,168    1%
+    Number used as logic:                87
+    Number used as a route-thru:         30
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
 
-  Number of bonded IOBs:                 13 out of     173    7%
+  Number of bonded IOBs:                 33 out of     173   19%
   Number of BUFGMUXs:                     1 out of       8   12%
 
-Average Fanout of Non-Clock Nets:                2.57
+Average Fanout of Non-Clock Nets:                3.25
 
-Peak Memory Usage:  4417 MB
-Total REAL time to MAP completion:  1 secs 
+Peak Memory Usage:  4395 MB
+Total REAL time to MAP completion:  2 secs 
 Total CPU time to MAP completion:   1 secs 
 
 NOTES:
@@ -109,6 +109,26 @@ Section 6 - IOB Properties
 |                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | BTN_IN                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| RX_DATA<0>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RX_DATA<1>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RX_DATA<2>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RX_DATA<3>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RX_DATA<4>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RX_DATA<5>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RX_DATA<6>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RX_DATA<7>                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| RX_IN                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| RX_NEWDATA                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| TSR<0>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| TSR<1>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| TSR<2>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| TSR<3>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| TSR<4>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| TSR<5>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| TSR<6>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| TSR<7>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| TSR<8>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| TSR<9>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | TX_DATA<0>                         | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
 | TX_DATA<1>                         | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
 | TX_DATA<2>                         | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |

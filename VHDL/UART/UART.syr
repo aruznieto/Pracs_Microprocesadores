@@ -128,6 +128,7 @@ Performing bidirectional port resolution...
 
 Synthesizing Unit <UART>.
     Related source file is "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART.vhd".
+WARNING:Xst:646 - Signal <registrorx<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
     Found finite state machine <FSM_0> for signal <actual_btn>.
     -----------------------------------------------------------------------
     | States             | 3                                              |
@@ -142,7 +143,21 @@ Synthesizing Unit <UART>.
     | Encoding           | automatic                                      |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found finite state machine <FSM_1> for signal <actual_tx>.
+    Found finite state machine <FSM_1> for signal <actual_rx>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | reset                     (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | idle                                           |
+    | Power Up State     | idle                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_2> for signal <actual_tx>.
     -----------------------------------------------------------------------
     | States             | 3                                              |
     | Transitions        | 5                                              |
@@ -157,16 +172,23 @@ Synthesizing Unit <UART>.
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
     Found 1-bit register for signal <TX_READY>.
+    Found 8-bit register for signal <RX_DATA>.
+    Found 1-bit register for signal <RX_NEWDATA>.
     Found 1-bit register for signal <BTN>.
     Found 16-bit register for signal <contador_baudios>.
-    Found 16-bit adder for signal <contador_baudios$addsub0000> created at line 252.
+    Found 16-bit adder for signal <contador_baudios$addsub0000> created at line 327.
+    Found 16-bit register for signal <contador_baudiosrx>.
+    Found 16-bit adder for signal <contador_baudiosrx$addsub0000> created at line 431.
     Found 10-bit register for signal <registro>.
+    Found 9-bit register for signal <registrorx>.
+    Found 4-bit register for signal <RX_NBIT>.
+    Found 4-bit adder for signal <RX_NBIT$addsub0000> created at line 363.
     Found 4-bit register for signal <TX_NBIT>.
-    Found 4-bit adder for signal <TX_NBIT$addsub0000> created at line 209.
+    Found 4-bit adder for signal <TX_NBIT$addsub0000> created at line 284.
     Summary:
-	inferred   2 Finite State Machine(s).
-	inferred  32 D-type flip-flop(s).
-	inferred   2 Adder/Subtractor(s).
+	inferred   3 Finite State Machine(s).
+	inferred  70 D-type flip-flop(s).
+	inferred   4 Adder/Subtractor(s).
 Unit <UART> synthesized.
 
 
@@ -174,14 +196,16 @@ Unit <UART> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 2
- 16-bit adder                                          : 1
- 4-bit adder                                           : 1
-# Registers                                            : 5
- 1-bit register                                        : 2
+# Adders/Subtractors                                   : 4
+ 16-bit adder                                          : 2
+ 4-bit adder                                           : 2
+# Registers                                            : 10
+ 1-bit register                                        : 3
  10-bit register                                       : 1
- 16-bit register                                       : 1
- 4-bit register                                        : 1
+ 16-bit register                                       : 2
+ 4-bit register                                        : 2
+ 8-bit register                                        : 1
+ 9-bit register                                        : 1
 
 =========================================================================
 
@@ -189,7 +213,7 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-Analyzing FSM <FSM_1> for best encoding.
+Analyzing FSM <FSM_2> for best encoding.
 Optimizing FSM <actual_tx/FSM> on signal <actual_tx[1:2]> with user encoding.
 -----------------------
  State     | Encoding
@@ -197,6 +221,16 @@ Optimizing FSM <actual_tx/FSM> on signal <actual_tx[1:2]> with user encoding.
  idle      | 00
  tx_inicio | 01
  tx_datos  | 10
+-----------------------
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <actual_rx/FSM> on signal <actual_rx[1:2]> with gray encoding.
+-----------------------
+ State     | Encoding
+-----------------------
+ idle      | 00
+ rx_inicio | 01
+ rx_datos  | 11
+ rx_fin    | 10
 -----------------------
 Analyzing FSM <FSM_0> for best encoding.
 Optimizing FSM <actual_btn/FSM> on signal <actual_btn[1:3]> with one-hot encoding.
@@ -208,17 +242,19 @@ Optimizing FSM <actual_btn/FSM> on signal <actual_btn[1:3]> with one-hot encodin
  uno    | 100
 --------------------
 WARNING:Xst:1710 - FF/Latch <registro_9> (without init value) has a constant value of 1 in block <UART>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <registrorx_0> of sequential type is unconnected in block <UART>.
+WARNING:Xst:2677 - Node <registrorx_0> of sequential type is unconnected in block <UART>.
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# FSMs                                                 : 2
-# Adders/Subtractors                                   : 2
- 16-bit adder                                          : 1
- 4-bit adder                                           : 1
-# Registers                                            : 32
- Flip-Flops                                            : 32
+# FSMs                                                 : 3
+# Adders/Subtractors                                   : 4
+ 16-bit adder                                          : 2
+ 4-bit adder                                           : 2
+# Registers                                            : 69
+ Flip-Flops                                            : 69
 
 =========================================================================
 
@@ -231,7 +267,7 @@ Optimizing unit <UART> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block UART, actual ratio is 0.
+Found area constraint ratio of 100 (+ 5) on block UART, actual ratio is 1.
 
 Final Macro Processing ...
 
@@ -239,8 +275,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 35
- Flip-Flops                                            : 35
+# Registers                                            : 74
+ Flip-Flops                                            : 74
 
 =========================================================================
 
@@ -266,31 +302,33 @@ Optimization Goal                  : Speed
 Keep Hierarchy                     : No
 
 Design Statistics
-# IOs                              : 23
+# IOs                              : 33
 
 Cell Usage :
-# BELS                             : 94
+# BELS                             : 182
 #      GND                         : 1
 #      INV                         : 3
-#      LUT1                        : 15
-#      LUT2                        : 3
-#      LUT2_L                      : 1
-#      LUT3                        : 5
-#      LUT4                        : 32
+#      LUT1                        : 30
+#      LUT2                        : 5
+#      LUT2_L                      : 3
+#      LUT3                        : 15
+#      LUT4                        : 58
 #      LUT4_D                      : 2
-#      MUXCY                       : 15
+#      LUT4_L                      : 2
+#      MUXCY                       : 30
 #      VCC                         : 1
-#      XORCY                       : 16
-# FlipFlops/Latches                : 35
-#      FDC                         : 4
-#      FDCE                        : 20
+#      XORCY                       : 32
+# FlipFlops/Latches                : 74
+#      FDC                         : 7
+#      FDCE                        : 40
+#      FDE                         : 8
 #      FDP                         : 2
-#      FDPE                        : 9
+#      FDPE                        : 17
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 22
-#      IBUF                        : 10
-#      OBUF                        : 12
+# IO Buffers                       : 32
+#      IBUF                        : 11
+#      OBUF                        : 21
 =========================================================================
 
 Device utilization summary:
@@ -298,11 +336,11 @@ Device utilization summary:
 
 Selected Device : 3s400ft256-4 
 
- Number of Slices:                       32  out of   3584     0%  
- Number of Slice Flip Flops:             35  out of   7168     0%  
- Number of 4 input LUTs:                 61  out of   7168     0%  
- Number of IOs:                          23
- Number of bonded IOBs:                  23  out of    173    13%  
+ Number of Slices:                       64  out of   3584     1%  
+ Number of Slice Flip Flops:             74  out of   7168     1%  
+ Number of 4 input LUTs:                118  out of   7168     1%  
+ Number of IOs:                          33
+ Number of bonded IOBs:                  33  out of    173    19%  
  Number of GCLKs:                         1  out of      8    12%  
 
 ---------------------------
@@ -326,7 +364,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 35    |
+clk                                | BUFGP                  | 74    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -334,16 +372,15 @@ Asynchronous Control Signals Information:
 -----------------------------------+------------------------+-------+
 Control Signal                     | Buffer(FF name)        | Load  |
 -----------------------------------+------------------------+-------+
-reset                              | IBUF                   | 34    |
-reset_inv(reset_inv1_INV_0:O)      | NONE(BTN)              | 1     |
+reset                              | IBUF                   | 66    |
 -----------------------------------+------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 7.619ns (Maximum Frequency: 131.251MHz)
-   Minimum input arrival time before clock: 2.571ns
+   Minimum period: 7.796ns (Maximum Frequency: 128.271MHz)
+   Minimum input arrival time before clock: 2.791ns
    Maximum output required time after clock: 7.241ns
    Maximum combinational path delay: No path found
 
@@ -353,51 +390,51 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 7.619ns (frequency: 131.251MHz)
-  Total number of paths / destination ports: 739 / 47
+  Clock period: 7.796ns (frequency: 128.271MHz)
+  Total number of paths / destination ports: 1501 / 122
 -------------------------------------------------------------------------
-Delay:               7.619ns (Levels of Logic = 3)
-  Source:            contador_baudios_4 (FF)
-  Destination:       TX_NBIT_0 (FF)
+Delay:               7.796ns (Levels of Logic = 3)
+  Source:            contador_baudios_3 (FF)
+  Destination:       registro_0 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: contador_baudios_4 to TX_NBIT_0
+  Data Path: contador_baudios_3 to registro_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             2   0.720   1.216  contador_baudios_4 (contador_baudios_4)
-     LUT4:I0->O            1   0.551   1.140  ACTUALIZACION_TX_cmp_eq000010 (ACTUALIZACION_TX_cmp_eq000010)
-     LUT4_D:I0->O         17   0.551   1.371  ACTUALIZACION_TX_cmp_eq000071 (ACTUALIZACION_TX)
-     LUT4:I3->O            4   0.551   0.917  TX_NBIT_not00021 (TX_NBIT_not0002)
-     FDCE:CE                   0.602          TX_NBIT_0
+     FDCE:C->Q             2   0.720   1.216  contador_baudios_3 (contador_baudios_3)
+     LUT4:I0->O            1   0.551   0.996  ACTUALIZACION_TX_cmp_eq000022 (ACTUALIZACION_TX_cmp_eq000022)
+     LUT4:I1->O           18   0.551   1.485  ACTUALIZACION_TX_cmp_eq000071 (ACTUALIZACION_TX)
+     LUT3:I2->O            9   0.551   1.124  registro_not00011 (registro_not0001)
+     FDPE:CE                   0.602          registro_0
     ----------------------------------------
-    Total                      7.619ns (2.975ns logic, 4.644ns route)
-                                       (39.0% logic, 61.0% route)
+    Total                      7.796ns (2.975ns logic, 4.821ns route)
+                                       (38.2% logic, 61.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 9 / 9
+  Total number of paths / destination ports: 11 / 11
 -------------------------------------------------------------------------
-Offset:              2.571ns (Levels of Logic = 2)
-  Source:            TX_DATA<0> (PAD)
-  Destination:       registro_1 (FF)
+Offset:              2.791ns (Levels of Logic = 2)
+  Source:            RX_IN (PAD)
+  Destination:       registrorx_8 (FF)
   Destination Clock: clk rising
 
-  Data Path: TX_DATA<0> to registro_1
+  Data Path: RX_IN to registrorx_8
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   0.821   0.996  TX_DATA_0_IBUF (TX_DATA_0_IBUF)
-     LUT4:I1->O            1   0.551   0.000  registro_mux0000<8>1 (registro_mux0000<8>)
-     FDPE:D                    0.203          registro_1
+     IBUF:I->O             2   0.821   1.216  RX_IN_IBUF (RX_IN_IBUF)
+     LUT3:I0->O            1   0.551   0.000  registrorx_mux0000<0>1 (registrorx_mux0000<0>)
+     FDPE:D                    0.203          registrorx_8
     ----------------------------------------
-    Total                      2.571ns (1.575ns logic, 0.996ns route)
-                                       (61.3% logic, 38.7% route)
+    Total                      2.791ns (1.575ns logic, 1.216ns route)
+                                       (56.4% logic, 43.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 11 / 11
+  Total number of paths / destination ports: 20 / 20
 -------------------------------------------------------------------------
 Offset:              7.241ns (Levels of Logic = 1)
   Source:            registro_0 (FF)
@@ -418,13 +455,13 @@ Offset:              7.241ns (Levels of Logic = 1)
 
 
 Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 6.08 secs
+Total CPU time to Xst completion: 5.50 secs
  
 --> 
 
-Total memory usage is 4521548 kilobytes
+Total memory usage is 4521504 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    2 (   0 filtered)
+Number of warnings :    5 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

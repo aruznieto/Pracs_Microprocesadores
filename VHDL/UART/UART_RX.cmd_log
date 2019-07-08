@@ -4,3 +4,6 @@ xst -intstyle ise -ifn "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART_RX.xst" -o
 xst -intstyle ise -ifn "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART_RX.xst" -ofn "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART_RX.syr" 
 xst -intstyle ise -ifn "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART_RX.xst" -ofn "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART_RX.syr" 
 xst -intstyle ise -ifn "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART_RX.xst" -ofn "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART_RX.syr" 
+xst -intstyle ise -ifn "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART_RX.xst" -ofn "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART_RX.syr" 
+xst -intstyle ise -ifn "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART_RX.xst" -ofn "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART_RX.syr" 
+xst -intstyle ise -ifn "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART_RX.xst" -ofn "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART_RX.syr" 

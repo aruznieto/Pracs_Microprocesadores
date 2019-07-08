@@ -2,15 +2,15 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   10:50:46 07/06/2019
+-- Create Date:   10:29:49 07/08/2019
 -- Design Name:   
--- Module Name:   D:/GIT/Pracs_Microprocesadores/VHDL/UART/tb_uart_rx.vhd
+-- Module Name:   D:/GIT/Pracs_Microprocesadores/VHDL/UART/tb_uart.vhd
 -- Project Name:  UART
 -- Target Device:  
 -- Tool versions:  
 -- Description:   
 -- 
--- VHDL Test Bench Created by ISE for module: UART_RX
+-- VHDL Test Bench Created by ISE for module: UART
 -- 
 -- Dependencies:
 -- 
@@ -32,18 +32,23 @@ USE ieee.std_logic_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
  
-ENTITY tb_uart_rx IS
-END tb_uart_rx;
+ENTITY tb_uart IS
+END tb_uart;
  
-ARCHITECTURE behavior OF tb_uart_rx IS 
+ARCHITECTURE behavior OF tb_uart IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT UART_RX
+    COMPONENT UART
     PORT(
-         RX_IN : IN  std_logic;
          clk : IN  std_logic;
-         RESET : IN  std_logic;
+         reset : IN  std_logic;
+         TX_DATA : IN  std_logic_vector(7 downto 0);
+         BTN_IN : IN  std_logic;
+         TX_READY : OUT  std_logic;
+         TSR : OUT  std_logic_vector(9 downto 0);
+         TX_OUT : OUT  std_logic;
+         RX_IN : IN  std_logic;
          RX_DATA : OUT  std_logic_vector(7 downto 0);
          RX_NEWDATA : OUT  std_logic
         );
@@ -51,11 +56,16 @@ ARCHITECTURE behavior OF tb_uart_rx IS
     
 
    --Inputs
-   signal RX_IN : std_logic := '0';
    signal clk : std_logic := '0';
-   signal RESET : std_logic := '0';
+   signal reset : std_logic := '0';
+   signal TX_DATA : std_logic_vector(7 downto 0) := (others => '0');
+   signal BTN_IN : std_logic := '0';
+   signal RX_IN : std_logic := '0';
 
  	--Outputs
+   signal TX_READY : std_logic;
+   signal TSR : std_logic_vector(9 downto 0);
+   signal TX_OUT : std_logic;
    signal RX_DATA : std_logic_vector(7 downto 0);
    signal RX_NEWDATA : std_logic;
 
@@ -65,10 +75,15 @@ ARCHITECTURE behavior OF tb_uart_rx IS
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: UART_RX PORT MAP (
-          RX_IN => RX_IN,
+   uut: UART PORT MAP (
           clk => clk,
-          RESET => RESET,
+          reset => reset,
+          TX_DATA => TX_DATA,
+          BTN_IN => BTN_IN,
+          TX_READY => TX_READY,
+          TSR => TSR,
+          TX_OUT => TX_OUT,
+          RX_IN => RX_IN,
           RX_DATA => RX_DATA,
           RX_NEWDATA => RX_NEWDATA
         );
@@ -92,7 +107,37 @@ BEGIN
       wait for clk_period*10;
 
       -- insert stimulus here 
-		RX_IN <= '1';
+		
+		RESET <= '0';
+		BTN_IN <= '0';
+		TX_DATA <= "10010010";
+			
+      wait for 100 ns;	
+			RESET <= '1';
+		wait for 100 ns;	
+			RESET <= '0';
+		
+		wait for 1000 ns;
+			BTN_IN <= '1';
+		
+		wait for 100 ns;
+			BTN_IN <= '0';
+		
+		wait for 10 ms;			
+		TX_DATA <= "01001110";
+			
+      wait for 100 ns;	
+			RESET <= '1';
+		wait for 100 ns;	
+			RESET <= '0';
+		
+		wait for 1000 ns;
+			BTN_IN <= '1';
+		
+		wait for 100 ns;
+			BTN_IN <= '0';
+			
+					RX_IN <= '1';
 		RESET <= '1';
 		wait for 100 ns;	
 			RESET <= '1';
@@ -117,7 +162,7 @@ BEGIN
 		RX_IN <= '1';
 		
 		wait for 1 ms;
-				RX_IN <= '0';
+		RX_IN <= '0';
 		wait for 100 us;
 		RX_IN <= '1';
 		wait for 100 us;

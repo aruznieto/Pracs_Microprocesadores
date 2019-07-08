@@ -74,7 +74,7 @@ BEGIN
 					enable_rxnewdata <= '0';
 				WHEN RX_inicio => 
 					reinicia <= '0';
-					enable_RX <= '0';
+					enable_RX <= '1';
 					enable_rxnewdata <= '0';
 				WHEN RX_datos =>
 					reinicia <= '0';
@@ -82,7 +82,7 @@ BEGIN
 					enable_rxnewdata <= '0';
 				WHEN RX_fin => 
 					reinicia <= '0';
-					enable_RX <= '1';
+					enable_RX <= '0';
 					enable_rxnewdata <= '1';
 			END CASE;
 	END PROCESS;

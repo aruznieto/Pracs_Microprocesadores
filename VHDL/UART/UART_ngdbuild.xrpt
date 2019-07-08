@@ -5,14 +5,14 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="NgdBuild" timeStamp="Fri Jun 14 10:57:07 2019">
+  <application stringID="NgdBuild" timeStamp="Mon Jul 08 10:29:04 2019">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
         <column stringID="value"/>
         <row stringID="row" value="0">
           <item stringID="variable" value="Path"/>
-          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\\lib\nt64;C:\Xilinx\14.7\ISE_DS\ISE\\bin\nt64;C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64;C:\Xilinx\14.7\ISE_DS\ISE\lib\nt64;C:\Xilinx\14.7\ISE_DS\ISE\..\..\..\DocNav;C:\Xilinx\14.7\ISE_DS\PlanAhead\bin;C:\Xilinx\14.7\ISE_DS\EDK\bin\nt64;C:\Xilinx\14.7\ISE_DS\EDK\lib\nt64;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\powerpc-eabi\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnuwin\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\arm\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_be\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_le\bin;C:\Xilinx\14.7\ISE_DS\common\bin\nt64;C:\Xilinx\14.7\ISE_DS\common\lib\nt64;C:\texlive\2019\bin\win32;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\AutoFirma\AutoFirma;C:\Program Files\MATLAB\R2018a\runtime\win64;C:\Program Files\MATLAB\R2018a\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Cadence\OrCAD_16.6\tools\PSpice;C:\Cadence\OrCAD_16.6\tools\Capture;C:\Cadence\OrCAD_16.6\tools\bin;C:\Cadence\OrCAD_16.6\OpenAccess\bin\win32\opt;C:\Cadence\OrCAD_16.6\tools\fet\bin;C:\Cadence\OrCAD_16.6\tools\pcb\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\Calibre2\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\LyX 2.3\Perl\bin;C:\Program Files (x86)\Microchip\MPLAB C32 Suite\bin;C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin;C:\Program Files\MiKTeX 2.9\miktex\bin\x64\;C:\Users\andre\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\andre\AppData\Local\Programs\Python\Python37-32\;C:\Users\andre\AppData\Local\Microsoft\WindowsApps;C:\Users\andre\AppData\Local\Programs\Microsoft VS Code\bin"/>
+          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\\lib\nt64;C:\Xilinx\14.7\ISE_DS\ISE\\bin\nt64;C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64;C:\Xilinx\14.7\ISE_DS\ISE\lib\nt64;C:\Xilinx\14.7\ISE_DS\ISE\..\..\..\DocNav;C:\Xilinx\14.7\ISE_DS\PlanAhead\bin;C:\Xilinx\14.7\ISE_DS\EDK\bin\nt64;C:\Xilinx\14.7\ISE_DS\EDK\lib\nt64;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\powerpc-eabi\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnuwin\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\arm\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_be\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_le\bin;C:\Xilinx\14.7\ISE_DS\common\bin\nt64;C:\Xilinx\14.7\ISE_DS\common\lib\nt64;C:\texlive\2019\bin\win32;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\AutoFirma\AutoFirma;C:\Program Files\MATLAB\R2018a\runtime\win64;C:\Program Files\MATLAB\R2018a\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Cadence\OrCAD_16.6\tools\PSpice;C:\Cadence\OrCAD_16.6\tools\Capture;C:\Cadence\OrCAD_16.6\tools\bin;C:\Cadence\OrCAD_16.6\OpenAccess\bin\win32\opt;C:\Cadence\OrCAD_16.6\tools\fet\bin;C:\Cadence\OrCAD_16.6\tools\pcb\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\Calibre2\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\LyX 2.3\Perl\bin;C:\Program Files (x86)\Microchip\MPLAB C32 Suite\bin;C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin;C:\Program Files\MiKTeX 2.9\miktex\bin\x64\;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\;C:\Users\andre\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\andre\AppData\Local\Programs\Python\Python37-32\;C:\Users\andre\AppData\Local\Microsoft\WindowsApps;C:\Users\andre\AppData\Local\Programs\Microsoft VS Code\bin"/>
         </row>
         <row stringID="row" value="1">
           <item stringID="variable" value="PATHEXT"/>
@@ -54,6 +54,7 @@
         <item DEFAULT="None" label="-intstyle" stringID="NGDBUILD_intstyle" value="ise"/>
         <item DEFAULT="None" label="-dd" stringID="NGDBUILD_output_dir" value="_ngo"/>
         <item DEFAULT="None" label="-p" stringID="NGDBUILD_partname" value="xc3s400-ft256-4"/>
+        <item DEFAULT="None" label="-uc" stringID="NGDBUILD_ucf_file" value="UART_Spartan3.ucf"/>
       </section>
     </task>
     <task stringID="NGDBUILD_REPORT">
@@ -66,44 +67,48 @@
       </section>
       <section stringID="NGDBUILD_PRE_UNISIM_SUMMARY">
         <item dataType="int" stringID="NGDBUILD_NUM_BUFGP" value="1"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_FDC" value="20"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_FDCE" value="15"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_FDC" value="7"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_FDCE" value="40"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_FDE" value="8"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FDP" value="2"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_FDPE" value="17"/>
         <item dataType="int" stringID="NGDBUILD_NUM_GND" value="1"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_IBUF" value="10"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_INV" value="4"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT1" value="15"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT2" value="21"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT3" value="12"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT3_D" value="2"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT3_L" value="1"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT4" value="10"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_MUXCY" value="15"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_MUXF5" value="1"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_OBUF" value="2"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_IBUF" value="11"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_INV" value="3"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT1" value="30"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT2" value="5"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT2_L" value="3"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT3" value="15"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT4" value="58"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT4_D" value="2"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT4_L" value="2"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_MUXCY" value="30"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_OBUF" value="21"/>
         <item dataType="int" stringID="NGDBUILD_NUM_VCC" value="1"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_XORCY" value="16"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_XORCY" value="32"/>
       </section>
       <section stringID="NGDBUILD_POST_UNISIM_SUMMARY">
         <item dataType="int" stringID="NGDBUILD_NUM_BUFG" value="1"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_FDC" value="20"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_FDCE" value="15"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_FDC" value="7"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_FDCE" value="40"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_FDE" value="8"/>
         <item dataType="int" stringID="NGDBUILD_NUM_FDP" value="2"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_FDPE" value="17"/>
         <item dataType="int" stringID="NGDBUILD_NUM_GND" value="1"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_IBUF" value="10"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_IBUF" value="11"/>
         <item dataType="int" stringID="NGDBUILD_NUM_IBUFG" value="1"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_INV" value="4"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT1" value="15"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT2" value="21"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT3" value="12"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT3_D" value="2"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT3_L" value="1"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT4" value="10"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_MUXCY" value="15"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_MUXF5" value="1"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_OBUF" value="2"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_INV" value="3"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT1" value="30"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT2" value="5"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT2_L" value="3"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT3" value="15"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT4" value="58"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT4_D" value="2"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT4_L" value="2"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_MUXCY" value="30"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_OBUF" value="21"/>
         <item dataType="int" stringID="NGDBUILD_NUM_VCC" value="1"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_XORCY" value="16"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_XORCY" value="32"/>
       </section>
       <section stringID="NGDBUILD_CORE_GENERATION_SUMMARY">
         <section stringID="NGDBUILD_CORE_INSTANCES"/>
