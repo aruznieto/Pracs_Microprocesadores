@@ -86,38 +86,46 @@ BEGIN
    -- Stimulus process
    stim_proc: process
    begin		
-      -- hold reset state for 100 ns.
-      wait for 100 ns;	
-
-      wait for clk_period*10;
 
       -- insert stimulus here 
 		RX_IN <= '1';
 		RESET <= '1';
 		wait for 100 ns;	
-			RESET <= '1';
-		wait for 100 ns;	
 			RESET <= '0';
-		wait for 100 ns;
-		
-		RX_IN <= '0';
-		wait for 100 us;
-		RX_IN <= '1';
-		wait for 100 us;
-		RX_IN <= '0';
-		wait for 100 us;
-		RX_IN <= '1';
-		wait for 100 us;
-		RX_IN <= '0';
-		wait for 100 us;
-		RX_IN <= '1';
-		wait for 100 us;
-		RX_IN <= '1';
-		wait for 100 us;
-		RX_IN <= '1';
-		
 		wait for 1 ms;
-				RX_IN <= '0';
+		
+		RX_IN <= '0';
+		wait for 104 us;
+		
+		RX_IN <= '0';
+		wait for 104 us;
+		
+		RX_IN <= '0';
+		wait for 104 us;
+		
+		RX_IN <= '1';
+		wait for 104 us;
+		
+		RX_IN <= '0';
+		wait for 104 us;
+		
+		RX_IN <= '1';
+		wait for 104 us;
+		
+		RX_IN <= '1';
+		wait for 104 us;
+		
+		RX_IN <= '1';
+		wait for 104 us;
+		
+		RX_IN <= '1';
+		wait for 104 us;
+		
+		RX_IN <= '1';
+		wait for 50 ms;
+		
+		
+		RX_IN <= '0';
 		wait for 100 us;
 		RX_IN <= '1';
 		wait for 100 us;

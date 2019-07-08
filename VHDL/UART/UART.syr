@@ -104,8 +104,9 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART.vhd" in Library work.
-Architecture behavioral of Entity uart is up to date.
+Compiling vhdl file "C:/Users/detcp/Desktop/UART/UART.vhd" in Library work.
+Entity <uart> compiled.
+Entity <uart> (Architecture <behavioral>) compiled.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -127,8 +128,7 @@ Entity <UART> analyzed. Unit <UART> generated.
 Performing bidirectional port resolution...
 
 Synthesizing Unit <UART>.
-    Related source file is "D:/GIT/Pracs_Microprocesadores/VHDL/UART/UART.vhd".
-WARNING:Xst:646 - Signal <registrorx<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Related source file is "C:/Users/detcp/Desktop/UART/UART.vhd".
     Found finite state machine <FSM_0> for signal <actual_btn>.
     -----------------------------------------------------------------------
     | States             | 3                                              |
@@ -242,8 +242,6 @@ Optimizing FSM <actual_btn/FSM> on signal <actual_btn[1:3]> with one-hot encodin
  uno    | 100
 --------------------
 WARNING:Xst:1710 - FF/Latch <registro_9> (without init value) has a constant value of 1 in block <UART>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <registrorx_0> of sequential type is unconnected in block <UART>.
-WARNING:Xst:2677 - Node <registrorx_0> of sequential type is unconnected in block <UART>.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -253,8 +251,8 @@ Macro Statistics
 # Adders/Subtractors                                   : 4
  16-bit adder                                          : 2
  4-bit adder                                           : 2
-# Registers                                            : 69
- Flip-Flops                                            : 69
+# Registers                                            : 70
+ Flip-Flops                                            : 70
 
 =========================================================================
 
@@ -275,8 +273,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 74
- Flip-Flops                                            : 74
+# Registers                                            : 75
+ Flip-Flops                                            : 75
 
 =========================================================================
 
@@ -305,25 +303,25 @@ Design Statistics
 # IOs                              : 33
 
 Cell Usage :
-# BELS                             : 182
+# BELS                             : 183
 #      GND                         : 1
 #      INV                         : 3
 #      LUT1                        : 30
 #      LUT2                        : 5
 #      LUT2_L                      : 3
-#      LUT3                        : 15
-#      LUT4                        : 58
+#      LUT3                        : 17
+#      LUT4                        : 57
 #      LUT4_D                      : 2
 #      LUT4_L                      : 2
 #      MUXCY                       : 30
 #      VCC                         : 1
 #      XORCY                       : 32
-# FlipFlops/Latches                : 74
+# FlipFlops/Latches                : 75
 #      FDC                         : 7
 #      FDCE                        : 40
 #      FDE                         : 8
 #      FDP                         : 2
-#      FDPE                        : 17
+#      FDPE                        : 18
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 32
@@ -336,9 +334,9 @@ Device utilization summary:
 
 Selected Device : 3s400ft256-4 
 
- Number of Slices:                       64  out of   3584     1%  
- Number of Slice Flip Flops:             74  out of   7168     1%  
- Number of 4 input LUTs:                118  out of   7168     1%  
+ Number of Slices:                       65  out of   3584     1%  
+ Number of Slice Flip Flops:             75  out of   7168     1%  
+ Number of 4 input LUTs:                119  out of   7168     1%  
  Number of IOs:                          33
  Number of bonded IOBs:                  33  out of    173    19%  
  Number of GCLKs:                         1  out of      8    12%  
@@ -364,7 +362,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 74    |
+clk                                | BUFGP                  | 75    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -372,7 +370,7 @@ Asynchronous Control Signals Information:
 -----------------------------------+------------------------+-------+
 Control Signal                     | Buffer(FF name)        | Load  |
 -----------------------------------+------------------------+-------+
-reset                              | IBUF                   | 66    |
+reset                              | IBUF                   | 67    |
 -----------------------------------+------------------------+-------+
 
 Timing Summary:
@@ -391,23 +389,23 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 7.796ns (frequency: 128.271MHz)
-  Total number of paths / destination ports: 1501 / 122
+  Total number of paths / destination ports: 1526 / 124
 -------------------------------------------------------------------------
 Delay:               7.796ns (Levels of Logic = 3)
-  Source:            contador_baudios_3 (FF)
-  Destination:       registro_0 (FF)
+  Source:            contador_baudiosrx_3 (FF)
+  Destination:       registrorx_0 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: contador_baudios_3 to registro_0
+  Data Path: contador_baudiosrx_3 to registrorx_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             2   0.720   1.216  contador_baudios_3 (contador_baudios_3)
-     LUT4:I0->O            1   0.551   0.996  ACTUALIZACION_TX_cmp_eq000022 (ACTUALIZACION_TX_cmp_eq000022)
-     LUT4:I1->O           18   0.551   1.485  ACTUALIZACION_TX_cmp_eq000071 (ACTUALIZACION_TX)
-     LUT3:I2->O            9   0.551   1.124  registro_not00011 (registro_not0001)
-     FDPE:CE                   0.602          registro_0
+     FDCE:C->Q             2   0.720   1.216  contador_baudiosrx_3 (contador_baudiosrx_3)
+     LUT4:I0->O            1   0.551   0.996  ACTUALIZACION_RX_cmp_eq000022 (ACTUALIZACION_RX_cmp_eq000022)
+     LUT4:I1->O           18   0.551   1.485  ACTUALIZACION_RX_cmp_eq000071 (ACTUALIZACION_RX)
+     LUT3:I2->O            9   0.551   1.124  registrorx_not00011 (registrorx_not0001)
+     FDPE:CE                   0.602          registrorx_0
     ----------------------------------------
     Total                      7.796ns (2.975ns logic, 4.821ns route)
                                        (38.2% logic, 61.8% route)
@@ -455,13 +453,13 @@ Offset:              7.241ns (Levels of Logic = 1)
 
 
 Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.50 secs
+Total CPU time to Xst completion: 6.45 secs
  
 --> 
 
-Total memory usage is 4521504 kilobytes
+Total memory usage is 260752 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    5 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

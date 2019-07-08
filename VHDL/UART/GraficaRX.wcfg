@@ -3,7 +3,7 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="D:/GIT/Pracs_Microprocesadores/VHDL/UART/tb_uart_rx_isim_beh.wdb" id="1" type="auto">
+      <db_ref path="C:/Users/detcp/Desktop/UART/tb_uart_rx_isim_beh.wdb" id="1" type="auto">
          <top_modules>
             <top_module name="numeric_std" />
             <top_module name="std_logic_1164" />
@@ -11,7 +11,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="13" />
+   <WVObjectSize size="16" />
    <wvobject fp_name="/tb_uart_rx/rx_in" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">rx_in</obj_property>
       <obj_property name="ObjectShortName">rx_in</obj_property>
@@ -23,10 +23,6 @@
    <wvobject fp_name="/tb_uart_rx/reset" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_uart_rx/rx_data" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">rx_data[7:0]</obj_property>
-      <obj_property name="ObjectShortName">rx_data[7:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_uart_rx/rx_newdata" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">rx_newdata</obj_property>
@@ -63,5 +59,23 @@
    <wvobject fp_name="/tb_uart_rx/uut/rx_nbit" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">rx_nbit[3:0]</obj_property>
       <obj_property name="ObjectShortName">rx_nbit[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uart_rx/uut/rx_data" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rx_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_data[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uart_rx/uut/reinicia" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reinicia</obj_property>
+      <obj_property name="ObjectShortName">reinicia</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uart_rx/uut/enable_rx" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">enable_rx</obj_property>
+      <obj_property name="ObjectShortName">enable_rx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uart_rx/uut/enable_rxnewdata" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">enable_rxnewdata</obj_property>
+      <obj_property name="ObjectShortName">enable_rxnewdata</obj_property>
    </wvobject>
 </wave_config>

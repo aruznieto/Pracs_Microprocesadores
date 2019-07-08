@@ -46,15 +46,15 @@ Setup/Hold to clock clk
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
 BTN_IN      |    1.064(R)|    0.624(R)|clk_BUFGP         |   0.000|
-RX_IN       |    1.334(R)|    0.476(R)|clk_BUFGP         |   0.000|
-TX_DATA<0>  |    3.304(R)|   -1.168(R)|clk_BUFGP         |   0.000|
-TX_DATA<1>  |    2.886(R)|   -0.840(R)|clk_BUFGP         |   0.000|
-TX_DATA<2>  |    2.205(R)|   -0.295(R)|clk_BUFGP         |   0.000|
-TX_DATA<3>  |    3.081(R)|   -0.996(R)|clk_BUFGP         |   0.000|
-TX_DATA<4>  |    1.549(R)|    0.229(R)|clk_BUFGP         |   0.000|
-TX_DATA<5>  |    2.236(R)|   -0.314(R)|clk_BUFGP         |   0.000|
-TX_DATA<6>  |    1.411(R)|    0.346(R)|clk_BUFGP         |   0.000|
-TX_DATA<7>  |    1.630(R)|    0.171(R)|clk_BUFGP         |   0.000|
+RX_IN       |    1.704(R)|    0.312(R)|clk_BUFGP         |   0.000|
+TX_DATA<0>  |    3.133(R)|   -1.038(R)|clk_BUFGP         |   0.000|
+TX_DATA<1>  |    2.954(R)|   -0.894(R)|clk_BUFGP         |   0.000|
+TX_DATA<2>  |    2.188(R)|   -0.281(R)|clk_BUFGP         |   0.000|
+TX_DATA<3>  |    1.654(R)|    0.145(R)|clk_BUFGP         |   0.000|
+TX_DATA<4>  |    1.493(R)|    0.274(R)|clk_BUFGP         |   0.000|
+TX_DATA<5>  |    1.597(R)|    0.192(R)|clk_BUFGP         |   0.000|
+TX_DATA<6>  |    0.559(R)|    1.022(R)|clk_BUFGP         |   0.000|
+TX_DATA<7>  |    0.496(R)|    1.072(R)|clk_BUFGP         |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Clock clk to Pad
@@ -64,24 +64,24 @@ Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
 RX_DATA<0>  |    9.974(R)|clk_BUFGP         |   0.000|
 RX_DATA<1>  |    9.238(R)|clk_BUFGP         |   0.000|
-RX_DATA<2>  |    9.995(R)|clk_BUFGP         |   0.000|
-RX_DATA<3>  |    9.238(R)|clk_BUFGP         |   0.000|
-RX_DATA<4>  |    9.258(R)|clk_BUFGP         |   0.000|
-RX_DATA<5>  |    9.124(R)|clk_BUFGP         |   0.000|
-RX_DATA<6>  |    9.124(R)|clk_BUFGP         |   0.000|
-RX_DATA<7>  |    9.141(R)|clk_BUFGP         |   0.000|
-RX_NEWDATA  |   12.021(R)|clk_BUFGP         |   0.000|
-TSR<0>      |   10.172(R)|clk_BUFGP         |   0.000|
-TSR<1>      |    9.257(R)|clk_BUFGP         |   0.000|
-TSR<2>      |    9.699(R)|clk_BUFGP         |   0.000|
-TSR<3>      |    9.755(R)|clk_BUFGP         |   0.000|
-TSR<4>      |   10.424(R)|clk_BUFGP         |   0.000|
-TSR<5>      |   10.905(R)|clk_BUFGP         |   0.000|
-TSR<6>      |   10.135(R)|clk_BUFGP         |   0.000|
-TSR<7>      |    9.631(R)|clk_BUFGP         |   0.000|
-TSR<8>      |   10.090(R)|clk_BUFGP         |   0.000|
-TX_OUT      |    9.833(R)|clk_BUFGP         |   0.000|
-TX_READY    |   12.216(R)|clk_BUFGP         |   0.000|
+RX_DATA<2>  |    9.827(R)|clk_BUFGP         |   0.000|
+RX_DATA<3>  |    9.194(R)|clk_BUFGP         |   0.000|
+RX_DATA<4>  |    9.579(R)|clk_BUFGP         |   0.000|
+RX_DATA<5>  |    9.212(R)|clk_BUFGP         |   0.000|
+RX_DATA<6>  |   10.150(R)|clk_BUFGP         |   0.000|
+RX_DATA<7>  |    9.677(R)|clk_BUFGP         |   0.000|
+RX_NEWDATA  |   12.454(R)|clk_BUFGP         |   0.000|
+TSR<0>      |   11.104(R)|clk_BUFGP         |   0.000|
+TSR<1>      |   10.129(R)|clk_BUFGP         |   0.000|
+TSR<2>      |    9.778(R)|clk_BUFGP         |   0.000|
+TSR<3>      |    9.822(R)|clk_BUFGP         |   0.000|
+TSR<4>      |    9.457(R)|clk_BUFGP         |   0.000|
+TSR<5>      |    9.640(R)|clk_BUFGP         |   0.000|
+TSR<6>      |    9.436(R)|clk_BUFGP         |   0.000|
+TSR<7>      |    9.469(R)|clk_BUFGP         |   0.000|
+TSR<8>      |    9.154(R)|clk_BUFGP         |   0.000|
+TX_OUT      |   11.381(R)|clk_BUFGP         |   0.000|
+TX_READY    |   12.250(R)|clk_BUFGP         |   0.000|
 ------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -89,18 +89,18 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    5.835|         |         |         |
+clk            |    6.700|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Mon Jul 08 10:29:19 2019 
+Analysis completed Mon Jul 08 12:29:10 2019 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 4492 MB
+Peak Memory Usage: 146 MB
 
 
 

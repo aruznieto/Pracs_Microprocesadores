@@ -101,7 +101,7 @@ BEGIN
 						siguiente_rx <= RX_datos;
 					
 				WHEN RX_datos =>
-					IF(RX_NBIT = 10) THEN
+					IF(RX_NBIT = 9) THEN
 						siguiente_rx <= RX_fin;
 					ELSE
 						siguiente_rx <= RX_datos;
@@ -124,7 +124,7 @@ BEGIN
 				IF (reinicia = '1') THEN
 				RX_NBIT <= (OTHERS => '0');
 				ELSIF (enable_RX = '1') THEN
-					IF (RX_NBIT = 10) THEN
+					IF (RX_NBIT = 9) THEN
 						RX_NBIT <= (OTHERS => '0');
 					ELSIF(ACTUALIZACION_RX = '1') THEN
 						RX_NBIT <= RX_NBIT + 1;
@@ -151,7 +151,7 @@ BEGIN
 			END IF;
 	END PROCESS;
 	
-	RSR <= registro(8 downto 1);
+	RSR <= registro(7 downto 0);
 -- ############################################
 
 	-- regRX (RSR to RX_DATA)
@@ -159,7 +159,7 @@ BEGIN
 	PROCESS(clk)
 		BEGIN
 			IF(clk'event and clk = '1') THEN
-				IF(enable_RX = '1') THEN
+				IF(enable_rxnewdata = '1') THEN
 					RX_DATA <= RSR;
 				END IF;
 			END IF;

@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -o "D:/GIT/Pracs_Microprocesadores/VHDL/UART/tb_uart_rx_isim_beh.exe" -prj "D:/GIT/Pracs_Microprocesadores/VHDL/UART/tb_uart_rx_beh.prj" "work.tb_uart_rx" 
+-intstyle "ise" -incremental -o "C:/Users/detcp/Desktop/UART/tb_uart_rx_isim_beh.exe" -prj "C:/Users/detcp/Desktop/UART/tb_uart_rx_beh.prj" "work.tb_uart_rx" 

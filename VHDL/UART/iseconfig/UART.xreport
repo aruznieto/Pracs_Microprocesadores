@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2019-07-05T11:10:10</DateModified>
-  <ModuleName>UART_TX</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>D:/GIT/Pracs_Microprocesadores/VHDL/UART/iseconfig/UART.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>D:/GIT/Pracs_Microprocesadores/VHDL/UART\</ImplementationReportsDirectory>
-  <DateInitialized>2019-07-05T11:10:09</DateInitialized>
+  <DateModified>2019-07-08T11:13:41</DateModified>
+  <ModuleName>UART</ModuleName>
+  <SummaryTimeStamp>2019-07-08T11:00:08</SummaryTimeStamp>
+  <SavedFilePath>C:/Users/detcp/Desktop/UART/iseconfig/UART.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/detcp/Desktop/UART\</ImplementationReportsDirectory>
+  <DateInitialized>2019-07-08T11:13:41</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

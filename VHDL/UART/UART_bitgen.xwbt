@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=D:\GIT\Pracs_Microprocesadores\VHDL\UART\UART.ncd
-OUTFILE=D:\GIT\Pracs_Microprocesadores\VHDL\UART\UART.bit
+INFILE=C:\Users\detcp\Desktop\UART\UART.ncd
+OUTFILE=C:\Users\detcp\Desktop\UART\UART.bit
 FAMILY=Spartan3
 PART=xc3s400-4ft256
-WORKINGDIR=D:\GIT\Pracs_Microprocesadores\VHDL\UART
+WORKINGDIR=C:\Users\detcp\Desktop\UART
 LICENSE=WebPack
-USER_INFO=__0_0_0
+USER_INFO=210682935_1777487889_210671885_200
