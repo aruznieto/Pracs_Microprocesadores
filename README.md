@@ -1,6 +1,8 @@
 # Prácticas de Microprocesadores (2018-2019). UPCT
 
-_A continuación podrás ver todas las prácticas resueltas que se realizaron en la asignatura de Microprocesadores en el curso 2018-2019, también podrás encontrar el manual utilizado y los enunciados de las prácticas._
+_A continuación podrás ver todas las prácticas resueltas que se realizaron en la asignatura de Microprocesadores en el curso 2018-2019, también podrás encontrar el manual utilizado y los enunciados de las prácticas. También incluimos el proyecto de PIC realizado en el curso 2019 - 2020_
+
+
 
 Si detectáis algún error, os agradeceríamos que lo avisarais haciendo [click aquí.](https://github.com/aruznieto/Pracs_Microprocesadores/issues/new)
 
@@ -14,7 +16,8 @@ _A continuación encontrarás un índice con las prácticas que hemos hecho._
     * Práctica 3: Interrupciones
     * Práctica 4: Convertidos A/D
     * Práctica 5: Usart
-    * Proyecto: PICaRC
+    * Proyecto (2018 - 2019): PICaRC
+    * Proyecto (2019 - 2020): Sistema básico de control de acceso + Detección e identificación de la pulsación de una tecla en teclado matricial
     * Documentos
     
 * [VHDL](https://github.com/aruznieto/Pracs_Microprocesadores/tree/master/VHDL)
