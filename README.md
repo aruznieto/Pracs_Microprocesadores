@@ -2,7 +2,7 @@
 
 _A continuación podrás ver todas las prácticas resueltas que se realizaron en la asignatura de Microprocesadores en el curso 2018-2019, también podrás encontrar el manual utilizado y los enunciados de las prácticas._
 
-Si detectáis algún error, os agradeceríamos que lo avisarais haciendo [click aquí](https://github.com/aruznieto/Pracs_Microprocesadores/issues/new)
+Si detectáis algún error, os agradeceríamos que lo avisarais haciendo [click aquí].(https://github.com/aruznieto/Pracs_Microprocesadores/issues/new)
 
 ## Indice 🚀
 
